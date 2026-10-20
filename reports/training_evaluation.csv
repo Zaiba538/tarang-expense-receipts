@@ -1,0 +1,284 @@
+claim_id,category,historical_status,reference_label,predicted_decision,reason,receipt_image_matched,receipt_vendor,receipt_date,receipt_number,receipt_amount
+CLM-30412,Food,approved,approve,approve,Receipt and available policy checks passed.,True,HIGHWAY KING DHABA,2026-06-08,1223,330.0
+CLM-30416,Food,approved,approve,review,Possible duplicate claim or receipt; investigate before payment. Possible related claims found: CLM-31063; verify before payment.,True,HOTEL RAJDHANI DHABA,2026-06-09,3278,325.0
+CLM-30418,Lodging,approved,approve,review,Claimed amount differs from receipt by more than ₹10. Confirm the hotel bill is a GST tax invoice in the employee's name. Confirm the lodging was for an eligible outstation night.,True,HOTEL GULMOHAR EXECUTIVE,2026-06-08,HGE/26-27/7471,1.0
+CLM-30421,Fuel,approved,approve,review,Confirm the fuel expense relates to an eligible field day.,True,BPCL,2026-06-10,003203,250.0
+CLM-30424,Fuel,approved,approve,review,Confirm the fuel expense relates to an eligible field day.,True,BPCL,2026-06-11,003350,300.0
+CLM-30425,Fuel,approved,approve,review,Confirm the fuel expense relates to an eligible field day.,True,BPCL,2026-06-08,003075,150.0
+CLM-30428,Food,approved,approve,review,Receipt field issue: receipt date missing or unreadable.,True,ANNAPURNA DINING HALL,,A/1202,536.0
+CLM-30430,Fuel,approved,approve,review,Confirm the fuel expense relates to an eligible field day.,True,HPCL,2026-06-13,001026,250.0
+CLM-30432,Fuel,approved,approve,review,Confirm the fuel expense relates to an eligible field day.,True,IndianOil,2026-06-13,006093,3680.19
+CLM-30435,Food,approved,approve,review,Claimed amount differs from receipt by more than ₹10.,True,SPICE ROUTE KITCHEN,2026-06-09,5726,368.0
+CLM-30436,Food,approved,approve,review,Receipt amount is missing or unreadable. Receipt field issue: receipt date missing or unreadable. Receipt field issue: receipt number missing or unreadable. Receipt field issue: total amount missing or unreadable.,True,GREEN LEAF RESTAURANT,,,
+CLM-30437,Courier,approved,approve,approve,Receipt and available policy checks passed.,True,SPEEDLINK COURIERS,2026-06-13,SL92216340,330.4
+CLM-30439,Fuel,approved,approve,review,Confirm the fuel expense relates to an eligible field day.,True,HPCL,2026-06-09,002015,3481.8
+CLM-30443,Fuel,approved,approve,review,Confirm the fuel expense relates to an eligible field day.,True,BPCL,2026-06-13,003571,200.0
+CLM-30446,Fuel,approved,approve,review,Claimed amount differs from receipt by more than ₹10. Confirm the fuel expense relates to an eligible field day. Receipt field issue: receipt date missing or unreadable.,True,IndianOil,,008298,3039.2
+CLM-30447,Fuel,approved,approve,review,Confirm the fuel expense relates to an eligible field day.,True,BPCL,2026-06-14,001031,200.0
+CLM-30451,Fuel,approved,approve,review,"Confirm the fuel expense relates to an eligible field day. Possible related claims found: CLM-30481, CLM-30689; verify before payment.",True,HPCL,2026-06-13,002123,300.0
+CLM-30454,Food,approved,approve,approve,Receipt and available policy checks passed.,True,SPICE ROUTE KITCHEN,2026-06-13,5796,588.0
+CLM-30458,Parking,approved,approve,review,Claimed amount differs from receipt by more than ₹10.,True,SITABULDI MULTILEVEL PARKING,2026-06-13,108873,30.0
+CLM-30462,Food,approved,approve,review,Receipt field issue: receipt date missing or unreadable. Receipt field issue: receipt number missing or unreadable.,True,GREEN LEAF RESTAURANT,,,546.0
+CLM-30465,Food,approved,approve,approve,Receipt and available policy checks passed.,True,SHIVAM FAMILY RESTAURANT,2026-06-11,2511,357.0
+CLM-30468,Food,approved,approve,review,Claimed amount differs from receipt by more than ₹10.,True,PUNJABI TADKA DHABA,2026-06-11,8153,2.0
+CLM-30469,Food,approved,approve,review,Possible duplicate claim or receipt; investigate before payment. Possible related claims found: CLM-30665; verify before payment.,True,PUNJABI TADKA DHABA,2026-06-15,8199,335.0
+CLM-30472,Local travel,approved,approve,review,Local travel requires a readable driver receipt. Possible duplicate claim or receipt; investigate before payment. Possible related claims found: CLM-30840; verify before payment.,True,SHREE GANESH TOURS & TRAVELS,2026-06-14,3678,1120.0
+CLM-30475,Parking,approved,approve,review,Claimed amount differs from receipt by more than ₹10. Possible related claims found: CLM-30494; verify before payment.,True,SITABULDI MULTILEVEL PARKING,2026-06-11,107957,30.0
+CLM-30476,Fuel,approved,approve,review,Claimed amount differs from receipt by more than ₹10. Confirm the fuel expense relates to an eligible field day.,True,IndianOil,2026-06-15,006326,200.0
+CLM-30479,Fuel,approved,approve,review,Claimed amount differs from receipt by more than ₹10. Confirm the fuel expense relates to an eligible field day.,True,BPCL,2026-06-12,000885,500.0
+CLM-30481,Fuel,approved,approve,review,"Confirm the fuel expense relates to an eligible field day. Possible duplicate claim or receipt; investigate before payment. Possible related claims found: CLM-30689, CLM-30451; verify before payment.",True,HPCL,2026-06-13,002147,300.0
+CLM-30484,Food,approved,approve,review,Possible duplicate claim or receipt; investigate before payment. Possible related claims found: CLM-30767; verify before payment.,True,HOTEL PRADEEP PURE VEG,2026-06-12,1130,178.0
+CLM-30488,Food,approved,approve,approve,Receipt and available policy checks passed.,True,PUNJABI TADKA DHABA,2026-06-10,8144,345.0
+CLM-30489,Food,approved,approve,review,Claimed amount differs from receipt by more than ₹10.,True,HIGHWAY KING DHABA,2026-06-09,1250,270.0
+CLM-30492,Lodging,approved,approve,review,Receipt amount is missing or unreadable. Confirm the hotel bill is a GST tax invoice in the employee's name. Confirm the lodging was for an eligible outstation night. Receipt field issue: total amount missing or unreadable.,True,HOTEL GULMOHAR EXECUTIVE,2026-06-16,HGE/26-27/7505,
+CLM-30494,Parking,approved,approve,review,Possible related claims found: CLM-30475; verify before payment.,True,SITABULDI MULTILEVEL PARKING,2026-06-11,108471,30.0
+CLM-30495,Fuel,approved,approve,review,Confirm the fuel expense relates to an eligible field day. Receipt field issue: receipt date missing or unreadable.,True,IndianOil,,008255,200.0
+CLM-30499,Fuel,approved,approve,review,Confirm the fuel expense relates to an eligible field day.,True,HPCL,2026-06-09,001885,2714.11
+CLM-30502,Food,approved,approve,approve,Receipt and available policy checks passed.,True,SAI RAM TEA & SNACKS,2026-06-15,6884,220.0
+CLM-30503,Food,approved,approve,approve,Receipt and available policy checks passed.,True,HIGHWAY KING DHABA,2026-06-08,1239,310.0
+CLM-30506,Local travel,approved,approve,review,Receipt amount is missing or unreadable. Local travel requires a readable driver receipt. Receipt field issue: total amount missing or unreadable.,True,MAA DURGA CAB SERVICE,2026-06-14,8219,
+CLM-30508,Courier,approved,approve,approve,Receipt and available policy checks passed.,True,SPEEDLINK COURIERS,2026-06-12,SL90524164,1212.4
+CLM-30509,Lodging,approved,approve,review,Claimed amount differs from receipt by more than ₹10. Confirm the hotel bill is a GST tax invoice in the employee's name. Confirm the lodging was for an eligible outstation night. Receipt field issue: receipt date missing or unreadable.,True,HOTEL KRISHNA COMFORTS,,HKC/26-27/5171,1.0
+CLM-30510,Lodging,approved,approve,review,Claimed amount differs from receipt by more than ₹10. Confirm the hotel bill is a GST tax invoice in the employee's name. Confirm the lodging was for an eligible outstation night. Receipt field issue: receipt date missing or unreadable.,True,HOTEL KRISHNA COMFORTS,,HKC/26-27/5145,1.0
+CLM-30511,Fuel,approved,approve,review,Confirm the fuel expense relates to an eligible field day.,True,BPCL,2026-06-11,003407,488.9
+CLM-30512,Fuel,approved,approve,review,Confirm the fuel expense relates to an eligible field day.,True,BPCL,2026-06-12,003440,400.0
+CLM-30514,Food,approved,approve,approve,Receipt and available policy checks passed.,True,CAFE COFFEE CORNER,2026-06-14,A/1319,494.0
+CLM-30515,Food,approved,approve,approve,Receipt and available policy checks passed.,True,HOTEL SAIBABA BHOJNALAYA,2026-06-14,6158,614.0
+CLM-30519,Food,approved,approve,review,Receipt field issue: receipt date missing or unreadable.,True,ANNAPURNA DINING HALL,,A/1275,1806.0
+CLM-30523,Food,approved,approve,approve,Receipt and available policy checks passed.,True,PUNJABI TADKA DHABA,2026-06-13,8178,125.0
+CLM-30524,Local travel,approved,approve,review,Local travel requires a readable driver receipt.,True,SHREE GANESH TOURS & TRAVELS,2026-06-18,3717,920.0
+CLM-30527,Local travel,approved,approve,review,Local travel requires a readable driver receipt. Receipt field issue: receipt date missing or unreadable.,True,ROYAL TRAVELS,,8338,510.0
+CLM-30528,Courier,approved,approve,review,Claimed amount differs from receipt by more than ₹10.,True,PROMPT PARCEL SERVICES,2026-06-10,PP14933472,141.6
+CLM-30529,Courier,approved,approve,approve,Receipt and available policy checks passed.,True,PROMPT PARCEL SERVICES,2026-06-17,PP88026279,226.56
+CLM-30531,Courier,queried,review,review,Receipt image unavailable or unreadable; request a readable copy. Receipt amount is missing or unreadable.,False,,,,
+CLM-30533,Lodging,approved,approve,review,Claimed amount differs from receipt by more than ₹10. Confirm the hotel bill is a GST tax invoice in the employee's name. Confirm the lodging was for an eligible outstation night. Possible duplicate claim or receipt; investigate before payment. Possible related claims found: CLM-30736; verify before payment.,True,HOTEL SHUBHAM RESIDENCY,2026-06-12,HSR/26-27/4873,1.0
+CLM-30535,Lodging,approved,approve,review,Claimed amount differs from receipt by more than ₹10. Confirm the hotel bill is a GST tax invoice in the employee's name. Confirm the lodging was for an eligible outstation night.,True,HOTEL CENTRE POINT INN,2026-06-10,HCP/26-27/4571,1.0
+CLM-30536,Parking,approved,approve,approve,Receipt and available policy checks passed.,True,SITABULDI MULTILEVEL PARKING,2026-06-14,109314,30.0
+CLM-30539,Parking,approved,approve,review,"Claimed amount differs from receipt by more than ₹10. Possible related claims found: CLM-30546, CLM-30592; verify before payment.",True,SITABULDI MULTILEVEL PARKING,2026-06-15,110584,30.0
+CLM-30543,Parking,approved,approve,approve,Receipt and available policy checks passed.,True,SITABULDI MULTILEVEL PARKING,2026-06-09,107539,30.0
+CLM-30546,Parking,approved,approve,review,"Possible related claims found: CLM-30539, CLM-30592; verify before payment.",True,SITABULDI MULTILEVEL PARKING,2026-06-15,110241,30.0
+CLM-30549,Fuel,approved,approve,review,Confirm the fuel expense relates to an eligible field day.,True,HPCL,2026-06-18,002234,200.0
+CLM-30553,Food,approved,approve,approve,Receipt and available policy checks passed.,True,SPICE ROUTE KITCHEN,2026-06-15,5832,178.0
+CLM-30556,Food,approved,approve,approve,Receipt and available policy checks passed.,True,HOTEL PRADEEP PURE VEG,2026-06-10,1081,798.0
+CLM-30558,Food,approved,approve,review,Claimed amount differs from receipt by more than ₹10.,True,PUNJABI TADKA DHABA,2026-06-18,8224,380.0
+CLM-30560,Local travel,approved,approve,review,Local travel requires a readable driver receipt. Possible duplicate claim or receipt; investigate before payment. Possible related claims found: CLM-30991; verify before payment.,True,MAA DURGA CAB SERVICE,2026-06-15,8235,500.0
+CLM-30562,Local travel,approved,approve,review,Local travel requires a readable driver receipt. Receipt field issue: receipt date missing or unreadable.,True,MAA DURGA CAB SERVICE,,8210,390.0
+CLM-30566,Parking,approved,approve,review,Claimed amount differs from receipt by more than ₹10. Possible duplicate claim or receipt; investigate before payment. Possible related claims found: CLM-30799; verify before payment.,True,SITABULDI MULTILEVEL PARKING,2026-06-19,110914,30.0
+CLM-30568,Food,approved,approve,approve,Receipt and available policy checks passed.,True,HOTEL PRADEEP PURE VEG,2026-06-13,1145,1514.0
+CLM-30570,Food,approved,approve,approve,Receipt and available policy checks passed.,True,HIGHWAY KING DHABA,2026-06-20,1293,690.0
+CLM-30572,Food,approved,approve,review,Receipt field issue: receipt date missing or unreadable.,True,SAI RAM TEA & SNACKS,,Date,190.0
+CLM-30573,Food,approved,approve,approve,Receipt and available policy checks passed.,True,HOTEL RAJDHANI DHABA,2026-06-20,3353,110.0
+CLM-30577,Food,approved,approve,review,Receipt amount is missing or unreadable. Receipt field issue: total amount missing or unreadable.,True,HOTEL RAJDHANIDHABA,2026-06-11,3295,
+CLM-30581,Local travel,approved,approve,review,Claimed amount differs from receipt by more than ₹10. Local travel requires a readable driver receipt.,True,MAA DURGA CAB SERVICE,2026-06-15,8247,1380.0
+CLM-30584,Local travel,approved,approve,review,Local travel requires a readable driver receipt.,True,SHREE GANESH TOURS & TRAVELS,2026-06-11,3653,500.0
+CLM-30585,Food,approved,approve,review,Claimed amount differs from receipt by more than ₹10.,True,SAI RAM TEA & SNACKS,2026-06-14,6866,270.0
+CLM-30586,Food,approved,approve,approve,Receipt and available policy checks passed.,True,PUNJABI TADKA DHABA,2026-06-19,8230,160.0
+CLM-30587,Food,approved,approve,review,Claimed amount differs from receipt by more than ₹10.,True,HIGHWAY KING DHABA,2026-06-13,1268,190.0
+CLM-30591,Local travel,approved,approve,review,Local travel requires a readable driver receipt. Receipt field issue: receipt number missing or unreadable.,True,ROYAL TRAVELS,2026-06-19,,1260.0
+CLM-30592,Parking,approved,approve,review,"Possible related claims found: CLM-30539, CLM-30546; verify before payment. Receipt field issue: receipt number missing or unreadable.",True,SITABULDI MULTILEVEL PARKING,2026-06-15,,30.0
+CLM-30594,Fuel,approved,approve,review,Confirm the fuel expense relates to an eligible field day.,True,IndianOil,2026-06-19,006595,300.0
+CLM-30596,Food,approved,approve,approve,Receipt and available policy checks passed.,True,SHIVAM FAMILY RESTAURANT,2026-06-18,2574,462.0
+CLM-30600,Food,approved,approve,review,Possible duplicate claim or receipt; investigate before payment. Possible related claims found: CLM-30963; verify before payment.,True,HOTEL SAIBABA BHOJNALAYA,2026-06-19,6175,672.0
+CLM-30601,Food,approved,approve,review,Claimed amount differs from receipt by more than ₹10.,True,HOTEL SAIBABA BHOJNALAYA,2026-06-13,6084,262.0
+CLM-30603,Food,approved,approve,review,Claimed amount differs from receipt by more than ₹10.,True,HOTEL RAJDHANI DHABA,2026-06-15,3302,20.0
+CLM-30606,Local travel,approved,approve,review,Claimed amount differs from receipt by more than ₹10. Local travel requires a readable driver receipt.,True,SHREE GANESH TOURS & TRAVELS,2026-06-16,3695,76.0
+CLM-30607,Courier,approved,approve,approve,Receipt and available policy checks passed.,True,SPEEDLINK COURIERS,2026-06-18,SL31253353,226.56
+CLM-30608,Courier,approved,approve,approve,Receipt and available policy checks passed.,True,PROMPT PARCEL SERVICES,2026-06-14,PP38188814,212.4
+CLM-30611,Courier,approved,approve,approve,Receipt and available policy checks passed.,True,SPEEDLINK COURIERS,2026-06-13,SL51865365,339.84
+CLM-30614,Fuel,approved,approve,review,Confirm the fuel expense relates to an eligible field day. Possible duplicate claim or receipt; investigate before payment. Possible related claims found: CLM-30978; verify before payment.,True,IndianOil,2026-06-14,006239,150.0
+CLM-30618,Food,approved,approve,review,Receipt field issue: receipt date missing or unreadable.,True,GREEN LEAF RESTAURANT,,A/6200,914.0
+CLM-30620,Food,approved,approve,approve,Receipt and available policy checks passed.,True,SPICE ROUTE KITCHEN,2026-06-15,5920,262.0
+CLM-30623,Local travel,approved,approve,review,Claimed amount differs from receipt by more than ₹10. Local travel requires a readable driver receipt.,True,MAA DURGA CAB SERVICE,2026-06-18,8290,1.0
+CLM-30625,Courier,approved,approve,approve,Receipt and available policy checks passed.,True,SPEEDLINK COURIERS,2026-06-23,SL36715972,330.4
+CLM-30629,Parking,approved,approve,review,Receipt amount is missing or unreadable. Receipt field issue: total amount missing or unreadable.,True,SITABULDI MULTILEVEL PARKING,2026-06-23,112378,
+CLM-30630,Fuel,approved,approve,review,Confirm the fuel expense relates to an eligible field day.,True,HPCL,2026-06-19,001316,200.0
+CLM-30633,Fuel,approved,approve,review,Confirm the fuel expense relates to an eligible field day.,True,BPCL,2026-06-23,003897,500.0
+CLM-30634,Fuel,approved,approve,review,Confirm the fuel expense relates to an eligible field day.,True,IndianOil,2026-06-18,006537,100.0
+CLM-30636,Food,approved,approve,approve,Receipt and available policy checks passed.,True,HOTEL PRADEEP PURE VEG,2026-06-15,1171,430.0
+CLM-30639,Food,approved,approve,review,Claimed amount differs from receipt by more than ₹10.,True,HOTEL RAJDHANI DHABA,2026-06-15,3321,275.0
+CLM-30640,Food,approved,approve,approve,Receipt and available policy checks passed.,True,HOTEL RAJDHANI DHABA,2026-06-17,3337,120.0
+CLM-30642,Local travel,approved,approve,review,Local travel requires a readable driver receipt.,True,MAA DURGA CAB SERVICE,2026-06-18,8270,290.0
+CLM-30643,Lodging,approved,approve,review,Claimed amount differs from receipt by more than ₹10. Confirm the hotel bill is a GST tax invoice in the employee's name. Confirm the lodging was for an eligible outstation night. Receipt field issue: receipt date missing or unreadable.,True,HOTEL KRISHNA COMFORTS,,HKC/26-27/5190,1.0
+CLM-30646,Lodging,approved,approve,review,Claimed amount differs from receipt by more than ₹10. Confirm the hotel bill is a GST tax invoice in the employee's name. Confirm the lodging was for an eligible outstation night.,True,HOTEL GULMOHAR EXECUTIVE,2026-06-16,HGE/26-27/7496,1.0
+CLM-30648,Parking,approved,approve,approve,Receipt and available policy checks passed.,True,SITABULDI MULTILEVEL PARKING,2026-06-21,111255,30.0
+CLM-30649,Fuel,approved,approve,review,Confirm the fuel expense relates to an eligible field day.,True,HPCL,2026-06-23,002665,200.0
+CLM-30652,Fuel,approved,approve,review,Confirm the fuel expense relates to an eligible field day.,True,HPCL,2026-06-16,001169,2658.91
+CLM-30656,Fuel,approved,approve,review,Confirm the fuel expense relates to an eligible field day. Receipt field issue: receipt date missing or unreadable.,True,IndianOil,,008366,500.0
+CLM-30660,Fuel,approved,approve,review,Confirm the fuel expense relates to an eligible field day. Possible duplicate claim or receipt; investigate before payment. Possible related claims found: CLM-30954; verify before payment.,True,IndianOil,2026-06-16,006429,300.0
+CLM-30661,Food,approved,approve,review,Receipt field issue: receipt date missing or unreadable. Receipt field issue: receipt number missing or unreadable.,True,ANNAPURNA DINING HALL,,,1559.0
+CLM-30664,Food,approved,approve,review,Receipt field issue: receipt number missing or unreadable.,True,CAFE COFFEE CORNER,2026-06-21,,987.0
+CLM-30665,Food,approved,approve,review,Possible duplicate claim or receipt; investigate before payment. Possible related claims found: CLM-30469; verify before payment. Receipt field issue: receipt date missing or unreadable.,True,PUNJABI TADKA DHABA,,8199,335.0
+CLM-30668,Food,approved,approve,approve,Receipt and available policy checks passed.,True,HOTEL RAJDHANI DHABA,2026-06-22,3377,420.0
+CLM-30672,Local travel,approved,approve,review,Receipt amount is missing or unreadable. Local travel requires a readable driver receipt. Receipt field issue: total amount missing or unreadable.,True,SHREE GANESH TOURS & TRAVELS,2026-06-16,3685,
+CLM-30676,Food,approved,approve,approve,Receipt and available policy checks passed.,True,HOTEL RAJDHANI DHABA,2026-06-23,3385,340.0
+CLM-30679,Courier,approved,approve,review,Claimed amount differs from receipt by more than ₹10. Possible duplicate claim or receipt; investigate before payment. Possible related claims found: CLM-31079; verify before payment.,True,VIDARBHA EXPRESS COURIER,2026-06-22,VX11449697,448.4
+CLM-30680,Courier,approved,approve,approve,Receipt and available policy checks passed.,True,PROMPT PARCEL SERVICES,2026-06-23,PP26468741,528.64
+CLM-30681,Lodging,approved,approve,review,Claimed amount differs from receipt by more than ₹10. Confirm the hotel bill is a GST tax invoice in the employee's name. Confirm the lodging was for an eligible outstation night.,True,HOTEL CENTRE POINT INN,2026-06-21,HCP/26-27/4594,1.0
+CLM-30684,Fuel,approved,approve,review,Confirm the fuel expense relates to an eligible field day.,True,HPCL,2026-06-21,002487,3698.3
+CLM-30685,Fuel,approved,approve,review,Claimed amount differs from receipt by more than ₹10. Confirm the fuel expense relates to an eligible field day.,True,HPCL,2026-06-21,002598,300.0
+CLM-30687,Fuel,approved,approve,review,Claimed amount differs from receipt by more than ₹10. Confirm the fuel expense relates to an eligible field day.,True,HPCL,2026-06-24,002691,300.0
+CLM-30688,Fuel,approved,approve,review,Confirm the fuel expense relates to an eligible field day. Possible duplicate claim or receipt; investigate before payment. Possible related claims found: CLM-31023; verify before payment.,True,BPCL,2026-06-19,003638,150.0
+CLM-30689,Fuel,approved,approve,review,"Confirm the fuel expense relates to an eligible field day. Possible duplicate claim or receipt; investigate before payment. Possible related claims found: CLM-30481, CLM-30451; verify before payment.",True,HPCL,2026-06-13,002147,300.0
+CLM-30690,Food,approved,approve,review,Receipt field issue: receipt date missing or unreadable.,True,ASHIRWAD VEG RESTAURANT,,5921,892.0
+CLM-30691,Food,approved,approve,approve,Receipt and available policy checks passed.,True,SHIVAM FAMILY RESTAURANT,2026-06-26,2647,336.0
+CLM-30693,Food,approved,approve,approve,Receipt and available policy checks passed.,True,HOTEL PRADEEP PURE VEG,2026-06-24,1203,861.0
+CLM-30697,Food,approved,approve,review,Claimed amount differs from receipt by more than ₹10.,True,SAI RAM TEA & SNACKS,2026-06-24,6906,210.0
+CLM-30701,Food,approved,approve,approve,Receipt and available policy checks passed.,True,SAI RAM TEA & SNACKS,2026-06-27,6925,240.0
+CLM-30702,Local travel,approved,approve,review,Receipt amount is missing or unreadable. Local travel requires a readable driver receipt. Receipt field issue: total amount missing or unreadable.,True,SHREE GANESH TOURS & TRAVELS,2026-06-28,3755,
+CLM-30703,Courier,approved,approve,approve,Receipt and available policy checks passed.,True,SPEEDLINK COURIERS,2026-06-24,SL26816175,330.4
+CLM-30706,Courier,approved,approve,approve,Receipt and available policy checks passed.,True,VIDARBHA EXPRESS COURIER,2026-06-19,VX61377270,330.4
+CLM-30710,Parking,queried,review,review,Receipt image unavailable or unreadable; request a readable copy. Receipt amount is missing or unreadable.,False,,,,
+CLM-30711,Parking,approved,approve,review,Claimed amount differs from receipt by more than ₹10.,True,SITABULDI MULTILEVEL PARKING,2026-06-22,112002,30.0
+CLM-30713,Fuel,approved,approve,review,Confirm the fuel expense relates to an eligible field day.,True,HPCL,2026-06-20,002385,250.0
+CLM-30717,Fuel,approved,approve,review,Confirm the fuel expense relates to an eligible field day.,True,BPCL,2026-06-25,004023,558.0
+CLM-30721,Fuel,approved,approve,review,Confirm the fuel expense relates to an eligible field day.,True,HPCL,2026-06-27,002890,333.64
+CLM-30724,Food,approved,approve,review,Receipt field issue: receipt number missing or unreadable.,True,HOTEL SAIBABA BHOJNALAYA,2026-06-23,,315.0
+CLM-30728,Food,approved,approve,review,Receipt field issue: receipt date missing or unreadable.,True,GREEN LEAF RESTAURANT,,A/6248,840.0
+CLM-30732,Local travel,approved,approve,review,Local travel requires a readable driver receipt.,True,SHREE GANESH TOURS & TRAVELS,2026-06-25,3747,700.0
+CLM-30735,Local travel,approved,approve,review,Local travel requires a readable driver receipt.,True,ROYAL TRAVELS,2026-06-26,26-6-2026,1060.0
+CLM-30736,Lodging,approved,approve,review,Receipt amount is missing or unreadable. Confirm the hotel bill is a GST tax invoice in the employee's name. Confirm the lodging was for an eligible outstation night. Possible duplicate claim or receipt; investigate before payment. Possible related claims found: CLM-30533; verify before payment. Receipt field issue: total amount missing or unreadable.,True,HOTEL SHUBHAM RESIDENCY,2026-06-12,HSR/26-27/4873,
+CLM-30737,Parking,approved,approve,approve,Receipt and available policy checks passed.,True,SITABULDI MULTILEVEL PARKING,2026-06-26,112904,30.0
+CLM-30738,Fuel,approved,approve,review,Confirm the fuel expense relates to an eligible field day. Receipt field issue: receipt date missing or unreadable.,True,IndianOil,,008572,200.0
+CLM-30740,Fuel,approved,approve,review,Claimed amount differs from receipt by more than ₹10. Confirm the fuel expense relates to an eligible field day.,True,HPCL,2026-06-24,002830,3566.52
+CLM-30741,Food,approved,approve,review,Possible related claims found: CLM-30982; verify before payment. Receipt field issue: receipt date missing or unreadable. Receipt field issue: receipt number missing or unreadable.,True,ASHIRWAD VEG RESTAURANT,,,1102.0
+CLM-30742,Food,approved,approve,review,Claimed amount differs from receipt by more than ₹10. Receipt field issue: receipt number missing or unreadable.,True,CAFE COFFEE CORNER,2026-06-29,,672.0
+CLM-30745,Food,approved,approve,approve,Receipt and available policy checks passed.,True,HOTEL SAIBABA BHOJNALAYA,2026-06-29,6313,514.0
+CLM-30749,Food,approved,approve,approve,Receipt and available policy checks passed.,True,HOTEL PRADEEP PURE VEG,2026-06-24,1286,504.0
+CLM-30750,Food,approved,approve,approve,Receipt and available policy checks passed.,True,HOTEL RAJDHANI DHABA,2026-06-23,3408,50.0
+CLM-30751,Lodging,approved,approve,review,Claimed amount differs from receipt by more than ₹10. Confirm the hotel bill is a GST tax invoice in the employee's name. Confirm the lodging was for an eligible outstation night. Receipt field issue: receipt date missing or unreadable.,True,HOTEL KRISHNA COMFORTS,,HKC/26-27/5219,1.0
+CLM-30753,Fuel,approved,approve,review,Confirm the fuel expense relates to an eligible field day.,True,IndianOil,2026-06-27,006738,500.0
+CLM-30757,Fuel,approved,approve,review,Confirm the fuel expense relates to an eligible field day.,True,BPCL,2026-06-23,003841,400.0
+CLM-30759,Fuel,approved,approve,review,Confirm the fuel expense relates to an eligible field day.,True,BPCL,2026-06-28,004137,250.0
+CLM-30762,Fuel,approved,approve,review,Confirm the fuel expense relates to an eligible field day.,True,BPCL,2026-06-22,003752,200.0
+CLM-30764,Food,approved,approve,review,Receipt amount is missing or unreadable. Receipt field issue: receipt date missing or unreadable. Receipt field issue: receipt number missing or unreadable. Receipt field issue: total amount missing or unreadable.,True,ASHIRWAD VEG RESTAURANT,,,
+CLM-30766,Food,approved,approve,approve,Receipt and available policy checks passed.,True,HOTEL SAIBABA BHOJNALAYA,2026-06-30,6416,640.0
+CLM-30767,Food,approved,approve,review,Possible duplicate claim or receipt; investigate before payment. Possible related claims found: CLM-30484; verify before payment.,True,HOTEL PRADEEP PURE VEG,2026-06-12,1130,178.0
+CLM-30769,Food,approved,approve,review,Receipt field issue: receipt date missing or unreadable. Receipt field issue: receipt number missing or unreadable.,True,ANNAPURNA DINING HALL,,,394.0
+CLM-30770,Courier,approved,approve,approve,Receipt and available policy checks passed.,True,VIDARBHA EXPRESS COURIER,2026-06-24,VX33212324,528.64
+CLM-30774,Lodging,approved,approve,review,Confirm the hotel bill is a GST tax invoice in the employee's name. Confirm the lodging was for an eligible outstation night. Receipt field issue: receipt date missing or unreadable.,True,HOTEL KRISHNA COMFORTS,,HKC/26-27/5205,1.0
+CLM-30775,Fuel,approved,approve,review,Confirm the fuel expense relates to an eligible field day. Receipt field issue: receipt date missing or unreadable.,True,IndianOil,,008446,400.0
+CLM-30779,Fuel,approved,approve,review,Confirm the fuel expense relates to an eligible field day. Receipt field issue: receipt number missing or unreadable.,True,HPCL,2026-06-23,,500.0
+CLM-30780,Food,approved,approve,approve,Receipt and available policy checks passed.,True,SHIVAM FAMILY RESTAURANT,2026-06-29,2774,578.0
+CLM-30783,Food,approved,approve,review,Receipt field issue: receipt date missing or unreadable.,True,GREEN LEAF RESTAURANT,,A/6280,578.0
+CLM-30787,Food,approved,approve,review,Receipt field issue: receipt date missing or unreadable.,True,HIGHWAYKINGDHABA,,1299,220.0
+CLM-30790,Local travel,approved,approve,review,Local travel requires a readable driver receipt.,True,SHREE GANESH TOURS & TRAVELS,2026-06-23,3741,1550.0
+CLM-30794,Courier,approved,approve,approve,Receipt and available policy checks passed.,True,SPEEDLINK COURIERS,2026-06-25,SL10299588,339.84
+CLM-30796,Courier,approved,approve,approve,Receipt and available policy checks passed.,True,VIDARBHA EXPRESS COURIER,2026-06-28,VX35831154,339.84
+CLM-30797,Lodging,approved,approve,review,Claimed amount differs from receipt by more than ₹10. Confirm the hotel bill is a GST tax invoice in the employee's name. Confirm the lodging was for an eligible outstation night.,True,HOTEL CENTRE POINT INN,2026-07-02,HCP/26-27/4602,1.0
+CLM-30799,Parking,approved,approve,review,Possible duplicate claim or receipt; investigate before payment. Possible related claims found: CLM-30566; verify before payment.,True,SITABULDI MULTILEVEL PARKING,2026-06-19,110914,30.0
+CLM-30803,Fuel,approved,approve,review,Confirm the fuel expense relates to an eligible field day.,True,HPCL,2026-07-02,003089,403.72
+CLM-30804,Food,approved,approve,review,Receipt field issue: receipt date missing or unreadable. Receipt field issue: receipt number missing or unreadable.,True,ANNAPURNA DINING HALL,,,1559.0
+CLM-30807,Food,approved,approve,review,Receipt field issue: receipt number missing or unreadable.,True,SPICE ROUTE KITCHEN,2026-06-24,,1008.0
+CLM-30811,Food,approved,approve,review,Receipt field issue: receipt date missing or unreadable.,True,ANNAPURNA DINING HALL,,A/1466,662.0
+CLM-30814,Food,approved,approve,approve,Receipt and available policy checks passed.,True,HIGHWAY KING DHABA,2026-06-28,1316,270.0
+CLM-30815,Local travel,approved,approve,review,Receipt amount is missing or unreadable. Local travel requires a readable driver receipt. Receipt field issue: total amount missing or unreadable.,True,SHREE GANESH TOURS & TRAVELS,2026-06-29,3780,
+CLM-30819,Lodging,approved,approve,review,Receipt amount is missing or unreadable. Confirm the hotel bill is a GST tax invoice in the employee's name. Confirm the lodging was for an eligible outstation night. Receipt field issue: receipt date missing or unreadable. Receipt field issue: total amount missing or unreadable.,True,HOTEL KRISHNA COMFORTS,,HKC/26-27/5240,
+CLM-30820,Fuel,approved,approve,review,Confirm the fuel expense relates to an eligible field day. Receipt field issue: receipt date missing or unreadable.,True,IndianOil,,008887,250.0
+CLM-30821,Fuel,approved,approve,review,Claimed amount differs from receipt by more than ₹10. Confirm the fuel expense relates to an eligible field day. Receipt field issue: receipt date missing or unreadable.,True,IndianOil,,008812,333.16
+CLM-30824,Fuel,approved,approve,review,Confirm the fuel expense relates to an eligible field day.,True,BPCL,2026-07-04,004308,300.0
+CLM-30826,Fuel,approved,approve,review,Confirm the fuel expense relates to an eligible field day.,True,BPCL,2026-07-01,001166,150.0
+CLM-30827,Food,approved,approve,approve,Receipt and available policy checks passed.,True,HOTEL SAIBABA BHOJNALAYA,2026-06-25,6263,436.0
+CLM-30829,Food,approved,approve,review,Claimed amount differs from receipt by more than ₹10. Possible related claims found: CLM-30879; verify before payment. Receipt field issue: receipt date missing or unreadable. Receipt field issue: receipt number missing or unreadable.,True,ASHIRWAD VEG RESTAURANT,,,388.0
+CLM-30833,Food,approved,approve,approve,Receipt and available policy checks passed.,True,HOTEL RAJDHANI DHABA,2026-07-04,3485,200.0
+CLM-30837,Local travel,approved,approve,review,Local travel requires a readable driver receipt.,True,MAA DURGA CAB SERVICE,2026-06-25,8293,1130.0
+CLM-30840,Local travel,approved,approve,review,Local travel requires a readable driver receipt. Possible duplicate claim or receipt; investigate before payment. Possible related claims found: CLM-30472; verify before payment.,True,SHREE GANESH TOURS & TRAVELS,2026-06-14,3678,1120.0
+CLM-30843,Fuel,approved,approve,review,Claimed amount differs from receipt by more than ₹10. Confirm the fuel expense relates to an eligible field day.,True,HPCL,2026-06-28,001482,200.0
+CLM-30846,Food,approved,approve,review,Receipt field issue: receipt date missing or unreadable.,True,ASHIRWAD VEG RESTAURANT,,6185,620.0
+CLM-30849,Food,approved,approve,approve,Receipt and available policy checks passed.,True,SHIVAM FAMILY RESTAURANT,2026-06-26,2730,483.0
+CLM-30851,Food,approved,approve,approve,Receipt and available policy checks passed.,True,HOTEL PRADEEP PURE VEG,2026-06-27,1361,430.0
+CLM-30854,Food,approved,approve,review,Claimed amount differs from receipt by more than ₹10.,True,HOTEL RAJDHANI DHABA,2026-07-04,3467,360.0
+CLM-30856,Local travel,queried,review,review,Receipt image unavailable or unreadable; request a readable copy. Receipt amount is missing or unreadable. Local travel requires a readable driver receipt. Receipt field issue: vendor missing. Receipt field issue: receipt date missing or unreadable. Receipt field issue: receipt number missing or unreadable. Receipt field issue: total amount missing or unreadable.,True,,,,
+CLM-30857,Courier,approved,approve,approve,Receipt and available policy checks passed.,True,VIDARBHA EXPRESS COURIER,2026-06-27,VX68449901,141.6
+CLM-30860,Fuel,approved,approve,review,Confirm the fuel expense relates to an eligible field day.,True,HPCL,2026-07-03,003159,100.0
+CLM-30863,Food,approved,approve,approve,Receipt and available policy checks passed.,True,HOTEL SAIBABA BHOJNALAYA,2026-06-30,6339,220.0
+CLM-30865,Food,approved,approve,approve,Receipt and available policy checks passed.,True,PUNJABI TADKA DHABA,2026-07-06,8240,80.0
+CLM-30868,Local travel,approved,approve,review,Local travel requires a readable driver receipt.,True,ROYAL TRAVELS,2026-07-05,8435,1130.0
+CLM-30871,Courier,approved,approve,approve,Receipt and available policy checks passed.,True,PROMPT PARCEL SERVICES,2026-07-04,PP30275457,141.6
+CLM-30872,Parking,approved,approve,approve,Receipt and available policy checks passed.,True,SITABULDI MULTILEVEL PARKING,2026-07-02,114424,30.0
+CLM-30874,Parking,approved,approve,approve,Receipt and available policy checks passed.,True,SITABULDI MULTILEVEL PARKING,2026-06-29,113445,30.0
+CLM-30875,Fuel,approved,approve,review,Confirm the fuel expense relates to an eligible field day. Possible related claims found: CLM-30950; verify before payment. Receipt field issue: receipt date missing or unreadable.,True,IndianOil,,009010,500.0
+CLM-30879,Food,approved,approve,review,Possible related claims found: CLM-30829; verify before payment. Receipt field issue: receipt date missing or unreadable. Receipt field issue: receipt number missing or unreadable.,True,ASHIRWAD VEG RESTAURANT,,,388.0
+CLM-30880,Food,approved,approve,approve,Receipt and available policy checks passed.,True,HOTEL RAJDHANI DHABA,2026-06-30,3422,170.0
+CLM-30883,Courier,approved,approve,approve,Receipt and available policy checks passed.,True,PROMPT PARCEL SERVICES,2026-07-02,PP57107049,141.6
+CLM-30886,Courier,queried,review,review,Receipt amount is missing or unreadable. Receipt field issue: receipt date missing or unreadable. Receipt field issue: total amount missing or unreadable.,True,VIDARBHA EXPRESS COURIER,,VX93237127,
+CLM-30887,Courier,queried,review,review,Receipt image unavailable or unreadable; request a readable copy. Receipt amount is missing or unreadable.,False,,,,
+CLM-30891,Parking,approved,approve,approve,Receipt and available policy checks passed.,True,SITABULDI MULTILEVEL PARKING,2026-06-30,113846,30.0
+CLM-30892,Fuel,approved,approve,review,Confirm the fuel expense relates to an eligible field day.,True,BPCL,2026-07-03,001340,250.0
+CLM-30893,Fuel,approved,approve,review,Confirm the fuel expense relates to an eligible field day.,True,IndianOil,2026-07-03,006924,200.0
+CLM-30897,Fuel,approved,approve,review,Confirm the fuel expense relates to an eligible field day.,True,BPCL,2026-06-30,001087,300.0
+CLM-30901,Fuel,approved,approve,review,Confirm the fuel expense relates to an eligible field day.,True,BPCL,2026-07-02,001251,300.0
+CLM-30902,Fuel,approved,approve,review,Confirm the fuel expense relates to an eligible field day.,True,BPCL,2026-07-08,004383,500.0
+CLM-30904,Fuel,approved,approve,review,Confirm the fuel expense relates to an eligible field day.,True,HPCL,2026-06-30,002959,200.0
+CLM-30906,Food,approved,approve,review,Claimed amount differs from receipt by more than ₹10. Receipt field issue: receipt date missing or unreadable.,True,ASHIRWAD VEG RESTAURANT,,6235,630.0
+CLM-30910,Local travel,approved,approve,review,Receipt amount is missing or unreadable. Local travel requires a readable driver receipt. Receipt field issue: total amount missing or unreadable.,True,SHREE GANESH TOURS & TRAVELS,2026-07-08,3835,
+CLM-30913,Local travel,approved,approve,review,Claimed amount differs from receipt by more than ₹10. Local travel requires a readable driver receipt. Receipt field issue: receipt date missing or unreadable.,True,ROYAL TRAVELS,,8400,290.0
+CLM-30916,Parking,approved,approve,approve,Receipt and available policy checks passed.,True,SITABULDI MULTILEVEL PARKING,2026-07-05,114666,30.0
+CLM-30919,Fuel,approved,approve,review,Confirm the fuel expense relates to an eligible field day.,True,IndianOil,2026-07-08,007191,800.0
+CLM-30920,Fuel,approved,approve,review,Confirm the fuel expense relates to an eligible field day.,True,HPCL,2026-07-05,001638,482.58
+CLM-30923,Fuel,approved,approve,review,Claimed amount differs from receipt by more than ₹10. Confirm the fuel expense relates to an eligible field day.,True,IndianOil,2026-07-06,007012,2949.8
+CLM-30925,Fuel,approved,approve,review,Vehicle number is not readable on the fuel bill. Confirm the fuel expense relates to an eligible field day. Receipt field issue: receipt date missing or unreadable.,True,IndianOil,,088732,100.0
+CLM-30929,Food,approved,approve,approve,Receipt and available policy checks passed.,True,SPICE ROUTE KITCHEN,2026-06-30,6019,420.0
+CLM-30932,Food,approved,approve,approve,Receipt and available policy checks passed.,True,HOTEL RAJDHANI DHABA,2026-07-01,3442,1225.0
+CLM-30934,Local travel,approved,approve,review,Claimed amount differs from receipt by more than ₹10. Local travel requires a readable driver receipt.,True,ROYAL TRAVELS,2026-07-06,8464,1020.0
+CLM-30937,Courier,approved,approve,approve,Receipt and available policy checks passed.,True,VIDARBHA EXPRESS COURIER,2026-07-05,VX22516656,212.4
+CLM-30940,Lodging,approved,approve,review,Claimed amount differs from receipt by more than ₹10. Confirm the hotel bill is a GST tax invoice in the employee's name. Confirm the lodging was for an eligible outstation night. Receipt field issue: receipt date missing or unreadable.,True,SAI PALACE LODGE,,SPL/26-27/2343,1.0
+CLM-30944,Fuel,approved,approve,review,Confirm the fuel expense relates to an eligible field day.,True,IndianOil,2026-07-03,006817,100.0
+CLM-30947,Fuel,approved,approve,review,Confirm the fuel expense relates to an eligible field day.,True,IndianOil,2026-07-02,006790,300.0
+CLM-30950,Fuel,approved,approve,review,Confirm the fuel expense relates to an eligible field day. Possible related claims found: CLM-30875; verify before payment.,True,IndianOil,2026-07-05,006950,500.0
+CLM-30954,Fuel,approved,approve,review,Claimed amount differs from receipt by more than ₹10. Confirm the fuel expense relates to an eligible field day. Possible duplicate claim or receipt; investigate before payment. Fuel bill vehicle number does not match employee records. Possible related claims found: CLM-30660; verify before payment.,True,IndianOil,2026-06-16,006429,300.0
+CLM-30957,Fuel,approved,approve,review,Confirm the fuel expense relates to an eligible field day.,True,HPCL,2026-07-10,003295,300.0
+CLM-30959,Fuel,approved,approve,review,Confirm the fuel expense relates to an eligible field day.,True,BPCL,2026-07-04,004200,308.84
+CLM-30963,Food,approved,approve,review,Possible duplicate claim or receipt; investigate before payment. Possible related claims found: CLM-30600; verify before payment.,True,HOTEL SAIBABA BHOJNALAYA,2026-06-19,6175,672.0
+CLM-30967,Food,approved,approve,approve,Receipt and available policy checks passed.,True,PUNJABI TADKA DHABA,2026-07-10,8297,50.0
+CLM-30971,Local travel,approved,approve,review,Claimed amount differs from receipt by more than ₹10. Local travel requires a readable driver receipt.,True,SHREE GANESH TOURS & TRAVELS,2026-07-03,3799,1280.0
+CLM-30974,Lodging,approved,approve,review,Claimed amount differs from receipt by more than ₹10. Confirm the hotel bill is a GST tax invoice in the employee's name. Confirm the lodging was for an eligible outstation night. Receipt field issue: receipt date missing or unreadable.,True,HOTEL KRISHNA COMFORTS,,HKC/26-27/5253,1.0
+CLM-30978,Fuel,approved,approve,review,Confirm the fuel expense relates to an eligible field day. Possible duplicate claim or receipt; investigate before payment. Fuel bill vehicle number does not match employee records. Possible related claims found: CLM-30614; verify before payment.,True,IndianOil,2026-06-14,006239,150.0
+CLM-30979,Fuel,queried,review,review,Receipt image unavailable or unreadable; request a readable copy. Receipt amount is missing or unreadable. Vehicle number is not readable on the fuel bill. Confirm the fuel expense relates to an eligible field day. Receipt field issue: vendor missing. Receipt field issue: receipt date missing or unreadable. Receipt field issue: receipt number missing or unreadable. Receipt field issue: total amount missing or unreadable.,True,,,,
+CLM-30980,Food,approved,approve,review,Receipt field issue: receipt date missing or unreadable. Receipt field issue: receipt number missing or unreadable.,True,GREEN LEAF RESTAURANT,,,630.0
+CLM-30982,Food,approved,approve,review,Possible related claims found: CLM-30741; verify before payment. Receipt field issue: receipt date missing or unreadable.,True,ASHIRWAD VEG RESTAURANT,,5967,1102.0
+CLM-30983,Food,approved,approve,review,Receipt field issue: receipt date missing or unreadable.,True,GREEN LEAF RESTAURANT,,A/6356,399.0
+CLM-30985,Food,approved,approve,review,Receipt amount is missing or unreadable. Receipt field issue: total amount missing or unreadable.,True,SPICE ROUTE KITCHEN,2026-07-06,6107,
+CLM-30989,Food,approved,approve,approve,Receipt and available policy checks passed.,True,PUNJABI TADKA DHABA,2026-07-08,8263,195.0
+CLM-30991,Local travel,approved,approve,review,Claimed amount differs from receipt by more than ₹10. Local travel requires a readable driver receipt. Possible duplicate claim or receipt; investigate before payment. Possible related claims found: CLM-30560; verify before payment.,True,MAA DURGA CAB SERVICE,2026-06-15,8235,500.0
+CLM-30992,Local travel,approved,approve,review,Local travel requires a readable driver receipt.,True,SHREE GANESH TOURS & TRAVELS,2026-07-09,3849,900.0
+CLM-30996,Local travel,approved,approve,review,Receipt amount is missing or unreadable. Local travel requires a readable driver receipt. Receipt field issue: total amount missing or unreadable.,True,SHREE GANESH TOURS & TRAVELS,2026-07-11,3855,
+CLM-31000,Courier,approved,approve,approve,Receipt and available policy checks passed.,True,VIDARBHA EXPRESS COURIER,2026-07-03,VX42419591,141.6
+CLM-31004,Lodging,approved,approve,review,Receipt amount is missing or unreadable. Confirm the hotel bill is a GST tax invoice in the employee's name. Confirm the lodging was for an eligible outstation night. Receipt field issue: receipt date missing or unreadable. Receipt field issue: total amount missing or unreadable.,True,HOTEL KRISHNA COMFORTS,,HKC/26-27/5273,
+CLM-31007,Parking,approved,approve,approve,Receipt and available policy checks passed.,True,MEDICAL SQUARE PAY & PARK,2026-07-02,104727,20.0
+CLM-31009,Fuel,rejected,review,review,Confirm the fuel expense relates to an eligible field day.,True,BPCL,2026-07-05,004338,1536.01
+CLM-31010,Food,approved,approve,review,Receipt field issue: receipt number missing or unreadable.,True,SHIVAM FAMILY RESTAURANT,2026-07-10,,819.0
+CLM-31011,Food,approved,approve,approve,Receipt and available policy checks passed.,True,PUNJABI TADKA DHABA,2026-07-08,8286,130.0
+CLM-31013,Food,approved,approve,approve,Receipt and available policy checks passed.,True,PUNJABI TADKA DHABA,2026-07-11,8309,330.0
+CLM-31015,Lodging,approved,approve,review,Receipt amount is missing or unreadable. Confirm the hotel bill is a GST tax invoice in the employee's name. Confirm the lodging was for an eligible outstation night. Receipt field issue: total amount missing or unreadable.,True,HOTEL SHUBHAM RESIDENCY,2026-07-09,HSR/26-27/4886,
+CLM-31016,Fuel,approved,approve,review,Confirm the fuel expense relates to an eligible field day.,True,HPCL,2026-07-06,001777,100.0
+CLM-31018,Food,approved,approve,review,Receipt amount is missing or unreadable. Receipt field issue: receipt date missing or unreadable. Receipt field issue: total amount missing or unreadable.,True,ASHIRWAD VEG RESTAURANT,,6290,
+CLM-31019,Food,approved,approve,approve,Receipt and available policy checks passed.,True,SHIVAM FAMILY RESTAURANT,2026-07-11,2911,304.0
+CLM-31020,Local travel,approved,approve,review,Local travel requires a readable driver receipt.,True,ROYAL TRAVELS,2026-07-05,8458,370.0
+CLM-31021,Local travel,approved,approve,review,Local travel requires a readable driver receipt.,True,SHREE GANESH TOURS & TRAVELS,2026-07-12,3894,850.0
+CLM-31022,Local travel,approved,approve,review,Local travel requires a readable driver receipt.,True,SHREE GANESH TOURS & TRAVELS,2026-07-06,3824,1130.0
+CLM-31023,Fuel,approved,approve,review,Confirm the fuel expense relates to an eligible field day. Possible duplicate claim or receipt; investigate before payment. Fuel bill vehicle number does not match employee records. Possible related claims found: CLM-30688; verify before payment.,True,BPCL,2026-06-19,003638,150.0
+CLM-31026,Fuel,approved,approve,review,Confirm the fuel expense relates to an eligible field day.,True,IndianOil,2026-07-06,007038,300.0
+CLM-31030,Food,approved,approve,review,Claimed amount differs from receipt by more than ₹10.,True,HOTEL SAIBABA BHOJNALAYA,2026-07-07,6500,682.0
+CLM-31032,Food,approved,approve,review,Receipt field issue: receipt date missing or unreadable. Receipt field issue: receipt number missing or unreadable.,True,ANNAPURNA DINING HALL,,,242.0
+CLM-31034,Food,approved,approve,approve,Receipt and available policy checks passed.,True,HOTEL PRADEEP PURE VEG,2026-07-13,1451,756.0
+CLM-31035,Courier,approved,approve,approve,Receipt and available policy checks passed.,True,VIDARBHA EXPRESS COURIER,2026-07-08,VX38678601,212.4
+CLM-31038,Food,approved,approve,approve,Receipt and available policy checks passed.,True,SPICE ROUTE KITCHEN,2026-07-09,6144,1113.0
+CLM-31042,Food,approved,approve,review,Receipt field issue: receipt date missing or unreadable.,True,ANNAPURNA DINING HALL,,A/1559,326.0
+CLM-31045,Food,approved,approve,approve,Receipt and available policy checks passed.,True,PUNJABI TADKA DHABA,2026-07-09,8294,110.0
+CLM-31047,Food,approved,approve,approve,Receipt and available policy checks passed.,True,PUNJABI TADKA DHABA,2026-07-06,8245,310.0
+CLM-31049,Food,approved,approve,review,Claimed amount differs from receipt by more than ₹10.,True,HIGHWAY KING DHABA,2026-07-08,1325,190.0
+CLM-31053,Local travel,approved,approve,review,Local travel requires a readable driver receipt.,True,ROYAL TRAVELS,2026-07-07,8467,260.0
+CLM-31055,Local travel,approved,approve,review,Local travel requires a readable driver receipt.,True,SHREE GANESH TOURS & TRAVELS,2026-07-12,3871,900.0
+CLM-31056,Courier,approved,approve,approve,Receipt and available policy checks passed.,True,SPEEDLINK COURIERS,2026-07-06,SL43722202,339.84
+CLM-31057,Fuel,approved,approve,review,Confirm the fuel expense relates to an eligible field day.,True,IndianOil,2026-07-10,007343,200.0
+CLM-31059,Fuel,approved,approve,review,Confirm the fuel expense relates to an eligible field day.,True,BPCL,2026-07-16,004582,400.0
+CLM-31063,Food,approved,approve,review,Possible duplicate claim or receipt; investigate before payment. Possible related claims found: CLM-30416; verify before payment.,True,HOTEL RAJDHANI DHABA,2026-06-09,3278,325.0
+CLM-31066,Courier,approved,approve,approve,Receipt and available policy checks passed.,True,VIDARBHA EXPRESS COURIER,2026-07-12,VX71480646,226.56
+CLM-31067,Courier,approved,approve,approve,Receipt and available policy checks passed.,True,PROMPT PARCEL SERVICES,2026-07-15,PP37248102,528.64
+CLM-31069,Fuel,approved,approve,review,Confirm the fuel expense relates to an eligible field day.,True,HPCL,2026-07-16,002182,500.0
+CLM-31071,Food,approved,approve,review,Receipt amount is missing or unreadable. Receipt field issue: total amount missing or unreadable.,True,HOTEL PRADEEP PURE VEG,2026-07-16,1504,
+CLM-31072,Courier,approved,approve,review,Claimed amount differs from receipt by more than ₹10.,True,PROMPT PARCEL SERVICES,2026-07-16,PP53300855,330.4
+CLM-31075,Fuel,approved,approve,review,Claimed amount differs from receipt by more than ₹10. Confirm the fuel expense relates to an eligible field day.,True,HPCL,2026-07-16,002150,486.75
+CLM-31079,Courier,rejected,review,review,Possible duplicate claim or receipt; investigate before payment. Possible related claims found: CLM-30679; verify before payment.,True,VIDARBHA EXPRESS COURIER,2026-06-22,VX11449697,448.4
+CLM-31081,Courier,approved,approve,approve,Receipt and available policy checks passed.,True,PROMPT PARCELSERVICES,2026-06-14,PP38188814,212.4
+CLM-31084,Parking,approved,approve,review,Claimed amount differs from receipt by more than ₹10.,True,SITABULDI MULTILEVEL PARKING,2026-07-10,115179,30.0

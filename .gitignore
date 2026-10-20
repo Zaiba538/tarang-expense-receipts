@@ -1,0 +1,32 @@
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Python virtual environments
+.venv/
+venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Test and coverage artifacts
+.coverage
+htmlcov/
+
+# Editor and operating-system files
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Browser automation profile
+.playwright-chrome-profile/
+
+# Downloaded receipt images
+images/
+tarang-expense-receipts/images/
+
+# Local generated OCR cache, if present
