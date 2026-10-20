@@ -2,21 +2,21 @@
 
 ## 1. GitHub repository URL
 
-[PASTE YOUR PUBLIC GITHUB REPOSITORY URL HERE]
+**GitHub URL:** https://github.com/Zaiba538/tarang-expense-receipts
 
-The repository should contain the application code, README, memo, reports, tests, and `predictions.csv` at the repository root.
+The repository contains the application code, README, memo, reports, tests, and `predictions.csv` at the repository root.
 
 ## 2. What did you build, and what decision does it support for Nilesh? State the number and the rupees.
 
-I built an OCR-assisted receipt review prototype that extracts receipt fields, validates available evidence, checks applicable policy rules and potential duplicates, and returns an approve or review recommendation.
+I built an OCR-assisted receipt review prototype that extracts receipt fields, validates available evidence, checks applicable expense-policy rules and potential duplicates, and returns an approve or review recommendation.
 
-The generated test file contains 190 claims. The current training evaluation covered 283 claims, matched 280 receipt images, and agreed with historical approve/review labels on 88 claims (31.1%). This is historical-label agreement, not verified policy accuracy.
+The generated test file contains 190 claims. The training evaluation covered 283 claims, matched 280 receipt images, and agreed with historical approve/review labels on 88 claims (31.1%). This is historical-label agreement, not verified policy accuracy.
 
 At an illustrative loaded staff cost of ₹200/hour and 3 minutes of manual typing per claim, 2,400 claims require 120 hours/month, equivalent to ₹24,000 of typing time. If the tool saves 1 minute per claim, the time value is ₹8,000/month; if it saves 2 minutes, it is ₹16,000/month. These are scenarios, not measured savings. A pilot must measure actual time saved.
 
 ## 3. What do you expect predictions.csv to score on the hidden answers, field by field and on the approve/review decision, and why? Say how you estimated it.
 
-I would not claim a verified hidden-set score from the current evidence. The current OCR run processed 467 receipt images. It left 3 vendor fields, 91 dates, 32 receipt numbers, 302 GSTINs, and 37 amounts blank. These are extraction completeness figures, not field accuracy scores.
+I would not claim a verified hidden-set score from the current evidence. The OCR run processed 467 receipt images. It left 3 vendor fields, 91 dates, 32 receipt numbers, 302 GSTINs, and 37 amounts blank. These are extraction completeness figures, not field accuracy scores.
 
 My provisional expectation is that vendor and amount extraction will be stronger than GSTIN extraction, while dates and receipt numbers will be affected by image quality, receipt layouts, and OCR confusion. These expectations are qualitative, not measured accuracy percentages.
 
@@ -24,7 +24,7 @@ The training decision comparison showed 31.1% agreement with historical labels. 
 
 ## 4. How do you know it works? What did you measure it against, how did you get those answers, how many receipts, and what kinds of receipts does it get wrong?
 
-The prototype was tested with automated unit and API tests; the recorded baseline was 56 passing tests. Receipt extraction processed 467 images, with 464 marked readable and 3 not marked readable. Six claims across the train and test datasets did not match a downloaded receipt image.
+The prototype was tested with automated unit and API tests. My latest test run passed 56 tests in 7.19 seconds. Receipt extraction processed 467 images, with 464 marked readable and 3 not marked readable. Six claims across the train and test datasets did not match a downloaded receipt image.
 
 The training evaluation compared 283 predicted decisions with historical statuses and achieved 88/283 (31.1%) agreement. Historical clerk fields are useful reference data but are not independently verified ground truth. Field-level accuracy against manually verified receipt values has not yet been established.
 
@@ -46,13 +46,13 @@ The main limitations are:
 - Some policy checks need evidence not represented in the structured claim data, such as field-day eligibility, outstation nights, driver receipts, and invoice type.
 - Potential duplicate matches require human verification and must not be treated as proof of fraud.
 - Field-level accuracy against independently checked receipts has not yet been measured.
-- The clean-machine startup, UI, public repository, and recording must be verified before submission.
+- Clean-machine startup and reviewer access should be verified before final deployment.
 
 These limitations mean the prototype should not yet be used to authorize unattended reimbursement payments.
 
-## 7. What does checking one claim cost, and what would a month cost at Tarang's volume? Show the arithmetic. If you used no paid calls, say so.
+## 7. What does checking one claim cost, and what would a month cost at Tarang's volume (about 2,400 photo claims a month)? Show the arithmetic. If you used no paid calls, say so.
 
-I have not yet measured the end-to-end cost of checking one claim in a live workflow, and I will not present a hypothetical labor estimate as a measured operating cost.
+I have not measured the end-to-end cost of checking one claim in a live workflow, and I will not present a hypothetical labor estimate as a measured operating cost.
 
 For an illustrative manual baseline of 3 minutes per claim and ₹200 per loaded staff hour:
 
@@ -73,17 +73,18 @@ I also did not fabricate missing receipt fields or automatically reject claims w
 
 ## 9. Anything you built or found that nobody asked for?
 
-The prototype includes automated tests, image matching diagnostics, duplicate checks, claim-level training evaluation, and written error analysis. These additions help identify missing images and uncertain decisions rather than merely generating a CSV.
+The prototype includes automated tests, image-matching diagnostics, duplicate checks, claim-level training evaluation, and written error analysis. These additions help identify missing images and uncertain decisions rather than merely generating a CSV.
 
-**Three-minute screen recording:** [PASTE YOUR SHAREABLE RECORDING LINK HERE]
+## 10. What did you use AI for? Which tools and models, where they helped, where they misled you, what you threw away. Link your three-minute screen recording here.
 
-## 10. What did you use AI for? Which tools and models, where they helped, where they misled you, what you threw away.
-
-I used ChatGPT for implementation guidance, debugging, test development, documentation, and structuring the evaluation. I used PaddleOCR with PaddlePaddle for local receipt text extraction, along with Python, pandas, FastAPI, and pytest.
+I used ChatGPT for implementation guidance, debugging, test development, documentation, and structuring the evaluation. I used PaddleOCR with PaddlePaddle for local receipt text extraction, along with Python, pandas, FastAPI, Streamlit, and pytest.
 
 AI assistance helped troubleshoot implementation issues and organize the pipeline, but generated code and OCR results still required execution and verification. OCR sometimes missed or misread receipt fields, and the initial decision comparison showed that the rules were too conservative relative to historical statuses. I therefore documented these limitations instead of claiming unsupported accuracy.
 
 No paid model API calls were required for the recorded local OCR and evaluation runs. The current prototype should be treated as an assisted-review system, not a fully validated autonomous reimbursement system.
+
+**Three-minute screen recording:** https://drive.google.com/file/d/1Ls3cjYtqzVLBKZBbDoQ-WZbnJrat_DpT/view?usp=sharing
+
 
 ## 11. Someone picks this up on Monday and you are unreachable. The three things they need to know.
 

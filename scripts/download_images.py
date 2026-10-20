@@ -1,33 +1,32 @@
 """
 Bulk Image Downloader
 =====================
-Reads a locally saved HTML file (your task email page),
-extracts all image URLs, and downloads them all in parallel.
+Reads a locally saved HTML file or a publicly accessible URL,
+extracts image URLs, and downloads them in parallel.
 
 Usage:
-    python scripts/download_images.py --html "path/to/your/saved_page.html" --out "data/images"
+    python scripts/download_images.py --html "path/to/saved_page.html" --out "data/images"
 
-Or if you have a direct URL (no login needed):
     python scripts/download_images.py --url "https://example.com/task-page" --out "data/images"
 """
 
-import os
+import argparse
 import re
 import sys
 import time
-import argparse
-import requests
-from pathlib import Path
-from bs4 import BeautifulSoup
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from pathlib import Path
 from urllib.parse import urljoin, urlparse
 
-# ─────────────────────────────────────────────
+import requests
+from bs4 import BeautifulSoup
+
+
 # CONFIG
-# ─────────────────────────────────────────────
-MAX_WORKERS = 10          # parallel downloads at once
-TIMEOUT     = 30          # seconds per request
-HEADERS     = {
+MAX_WORKERS = 10
+TIMEOUT = 30
+
+HEADERS = {
     "User-Agent": (
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
         "AppleWebKit/537.36 (KHTML, like Gecko) "
@@ -35,115 +34,136 @@ HEADERS     = {
     )
 }
 
+IMAGE_EXTENSIONS = re.compile(
+    r"\.(jpg|jpeg|png|gif|webp|bmp|tiff?)(\?.*)?$",
+    re.IGNORECASE,
+)
 
-# ─────────────────────────────────────────────
-# STEP 1 — Load HTML (local file or live URL)
-# ─────────────────────────────────────────────
-def load_html(html_path: str = None, url: str = None) -> tuple[str, str]:
-    """Returns (html_content, base_url)."""
+
+def load_html(html_path: str | None = None, url: str | None = None) -> tuple[str, str]:
+    """Return (HTML content, base URL)."""
+
     if html_path:
         path = Path(html_path)
+
         if not path.exists():
             print(f"[ERROR] File not found: {html_path}")
             sys.exit(1)
+
         print(f"[INFO] Reading local HTML: {path.resolve()}")
-        return path.read_text(encoding="utf-8", errors="ignore"), path.as_uri()
-    elif url:
+        return path.read_text(encoding="utf-8", errors="ignore"), path.resolve().as_uri()
+
+    if url:
         print(f"[INFO] Fetching URL: {url}")
-        resp = requests.get(url, headers=HEADERS, timeout=TIMEOUT)
-        resp.raise_for_status()
-        return resp.text, url
-    else:
-        print("[ERROR] Provide either --html or --url")
-        sys.exit(1)
+        response = requests.get(url, headers=HEADERS, timeout=TIMEOUT)
+        response.raise_for_status()
+        return response.text, url
+
+    print("[ERROR] Provide either --html or --url")
+    sys.exit(1)
 
 
-# ─────────────────────────────────────────────
-# STEP 2 — Extract all image URLs from HTML
-# ─────────────────────────────────────────────
 def extract_image_urls(html: str, base_url: str) -> list[str]:
-    """Parse HTML and collect every image src / anchor href that looks like an image."""
+    """Extract image URLs from HTML image tags, links, and raw HTML text."""
+
     soup = BeautifulSoup(html, "html.parser")
     urls = set()
 
-    # <img src="...">
+    # Images in <img> tags
     for tag in soup.find_all("img"):
         src = tag.get("src") or tag.get("data-src") or tag.get("data-original")
-        if src:
+
+        if src and not src.startswith("data:"):
             urls.add(urljoin(base_url, src))
 
-    # <a href="...jpg"> — clickable download links
-    img_extensions = re.compile(r"\.(jpg|jpeg|png|gif|webp|bmp|tiff?)(\?.*)?$", re.IGNORECASE)
+    # Links that point directly to image files
     for tag in soup.find_all("a", href=True):
         href = tag["href"]
-        if img_extensions.search(href):
+
+        if IMAGE_EXTENSIONS.search(href):
             urls.add(urljoin(base_url, href))
 
-    # Also scan raw text for blob: or https: image links (some email clients embed them)
-    raw_links = re.findall(
-        r'https?://[^\s\'"<>]+\.(?:jpg|jpeg|png|gif|webp)(?:\?[^\s\'"<>]*)?',
-        html, re.IGNORECASE
+    # Image URLs written directly in the HTML source
+    raw_pattern = (
+        r"""https?://[^\s"'<>]+?\.(?:jpg|jpeg|png|gif|webp|bmp|tiff?)(?:\?[^\s"'<>]*)?"""
     )
-    urls.update(raw_links)
+
+    for match in re.findall(raw_pattern, html, re.IGNORECASE):
+        urls.add(match.rstrip(".,);"))
 
     image_urls = sorted(urls)
     print(f"[INFO] Found {len(image_urls)} image URL(s)")
     return image_urls
 
 
-# ─────────────────────────────────────────────
-# STEP 3 — Download a single image
-# ─────────────────────────────────────────────
 def download_image(url: str, out_dir: Path, idx: int, total: int) -> str:
-    """Download one image. Returns status string."""
+    """Download one image and return a status message."""
+
     try:
-        # Derive filename from URL
-        parsed   = urlparse(url)
+        parsed = urlparse(url)
         filename = Path(parsed.path).name
+
         if not filename or "." not in filename:
             filename = f"image_{idx:04d}.jpg"
 
+        # Remove filename characters that are invalid on Windows
+        filename = re.sub(r'[<>:"/\\|?*]', "_", filename)
         out_path = out_dir / filename
 
-        # Skip if already downloaded
         if out_path.exists():
             return f"[SKIP] ({idx}/{total}) Already exists: {filename}"
 
-        resp = requests.get(url, headers=HEADERS, timeout=TIMEOUT, stream=True)
-        resp.raise_for_status()
+        response = requests.get(
+            url,
+            headers=HEADERS,
+            timeout=TIMEOUT,
+            stream=True,
+        )
+        response.raise_for_status()
 
-        with open(out_path, "wb") as f:
-            for chunk in resp.iter_content(chunk_size=8192):
-                f.write(chunk)
+        # Avoid saving HTML error pages as images
+        content_type = response.headers.get("Content-Type", "").lower()
+        if content_type and not (
+            content_type.startswith("image/")
+            or content_type == "application/octet-stream"
+        ):
+            return f"[FAIL] ({idx}/{total}) Not an image response: {url}"
 
-        return f"[OK]   ({idx}/{total}) {filename}"
+        with response, open(out_path, "wb") as file:
+            for chunk in response.iter_content(chunk_size=8192):
+                if chunk:
+                    file.write(chunk)
 
-    except Exception as e:
-        return f"[FAIL] ({idx}/{total}) {url} — {e}"
+        return f"[OK] ({idx}/{total}) {filename}"
+
+    except Exception as exc:
+        return f"[FAIL] ({idx}/{total}) {url} — {exc}"
 
 
-# ─────────────────────────────────────────────
-# STEP 4 — Bulk parallel download
-# ─────────────────────────────────────────────
-def bulk_download(urls: list[str], out_dir: Path):
+def bulk_download(urls: list[str], out_dir: Path) -> None:
+    """Download URLs in parallel and print a summary."""
+
     out_dir.mkdir(parents=True, exist_ok=True)
-    total    = len(urls)
-    success  = 0
-    failed   = 0
-    skipped  = 0
-    start    = time.time()
 
-    print(f"\n[START] Downloading {total} images → {out_dir.resolve()}")
-    print(f"        Using {MAX_WORKERS} parallel threads\n")
+    total = len(urls)
+    success = 0
+    failed = 0
+    skipped = 0
+    start = time.time()
+
+    print(f"\n[START] Downloading {total} images -> {out_dir.resolve()}")
+    print(f"Using {MAX_WORKERS} parallel threads\n")
 
     with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
         futures = {
-            executor.submit(download_image, url, out_dir, i + 1, total): url
-            for i, url in enumerate(urls)
+            executor.submit(download_image, url, out_dir, index + 1, total): url
+            for index, url in enumerate(urls)
         }
+
         for future in as_completed(futures):
             result = future.result()
             print(result)
+
             if result.startswith("[OK]"):
                 success += 1
             elif result.startswith("[SKIP]"):
@@ -152,36 +172,56 @@ def bulk_download(urls: list[str], out_dir: Path):
                 failed += 1
 
     elapsed = time.time() - start
-    print(f"\n{'='*55}")
-    print(f"  ✅ Downloaded : {success}")
-    print(f"  ⏭  Skipped   : {skipped}")
-    print(f"  ❌ Failed     : {failed}")
-    print(f"  ⏱  Time      : {elapsed:.1f}s")
-    print(f"  📁 Saved to  : {out_dir.resolve()}")
-    print(f"{'='*55}\n")
+
+    print("\n" + "=" * 55)
+    print(f"Downloaded : {success}")
+    print(f"Skipped    : {skipped}")
+    print(f"Failed     : {failed}")
+    print(f"Time       : {elapsed:.1f}s")
+    print(f"Saved to   : {out_dir.resolve()}")
+    print("=" * 55)
 
 
-# ─────────────────────────────────────────────
-# MAIN
-# ─────────────────────────────────────────────
-def main():
-    parser = argparse.ArgumentParser(description="Bulk image downloader from HTML page")
-    parser.add_argument("--html",    help="Path to locally saved HTML file")
-    parser.add_argument("--url",     help="Live URL of the page (if no login needed)")
-    parser.add_argument("--out",     default="data/images", help="Output folder (default: data/images)")
-    parser.add_argument("--workers", type=int, default=MAX_WORKERS, help="Parallel threads (default: 10)")
+def main() -> None:
+    global MAX_WORKERS
+
+    parser = argparse.ArgumentParser(
+        description="Bulk image downloader from an HTML page"
+    )
+    parser.add_argument("--html", help="Path to a locally saved HTML file")
+    parser.add_argument("--url", help="Public URL of a page that needs no login")
+    parser.add_argument(
+        "--out",
+        default="data/images",
+        help="Output directory (default: data/images)",
+    )
+    parser.add_argument(
+        "--workers",
+        type=int,
+        default=MAX_WORKERS,
+        help="Number of parallel downloads (default: 10)",
+    )
+
     args = parser.parse_args()
 
-    global MAX_WORKERS
+    if args.workers < 1:
+        parser.error("--workers must be at least 1")
+
     MAX_WORKERS = args.workers
 
     html, base_url = load_html(html_path=args.html, url=args.url)
     urls = extract_image_urls(html, base_url)
 
     if not urls:
-        print("[WARN] No image URLs found. The page may require login or use JavaScript rendering.")
-        print("       Try: Save the page as 'Complete Webpage' (Ctrl+S in browser) and use --html")
-        sys.exit(0)
+        print(
+            "[WARN] No image URLs found. The page may require login "
+            "or JavaScript rendering."
+        )
+        print(
+            "Try saving the page with Ctrl+S and selecting "
+            "'Complete Webpage', then use --html."
+        )
+        return
 
     bulk_download(urls, Path(args.out))
 
