@@ -32,9 +32,7 @@ Likely failure cases include blurry or low-contrast receipts, unusual layouts, a
 
 ## 5. Did you change, narrow, or push back on Nilesh's ask? What, when, and why?
 
-Yes. I would not automatically approve every claim under ₹2,000 based only on amount. Low-value claims can still be duplicates or fail policy requirements. The prototype routes claims to review when fields are missing, OCR is uncertain, amounts disagree, duplicate concerns arise, or required policy evidence is unavailable.
-
-I recommend a shadow-mode pilot before enabling automatic payments. This preserves the goal of reducing clerical typing without treating a receipt photo or low claim value as proof of eligibility.
+I deliberately narrowed Nilesh’s request to automatically approve every claim below ₹2,000. During implementation, I decided that a low amount alone was not enough to guarantee eligibility. Claims with missing or unreadable receipt details, possible duplicates, or policy exceptions are flagged for review to reduce incorrect payments. This is a safer approach, although it means the system does not fully automate all low-value claims.
 
 ## 6. What is wrong with what you are handing us, or with the data you handed us?
 
