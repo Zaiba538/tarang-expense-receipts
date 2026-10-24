@@ -73,9 +73,7 @@ I used ChatGPT and Claude Code (Anthropic) for implementation, debugging, test w
 
 Where it helped: building the extraction rules and tests from real OCR lines, the audit ledger, and reading photos to build the 52-photo check set. Where it misled: early extraction "fixes" that filled blanks with guesses, a ledger draft that counted the same money twice, and overconfident wording (calling discrepancies losses, or clerk agreement "accuracy"). I threw those away and kept only rules that leave uncertain values blank and figures traced to evidence.
 
-**Three-minute screen recording:** https://drive.google.com/file/d/1Ls3cjYtqzVLBKZBbDoQ-WZbnJrat_DpT/view?usp=sharing
-
-*(This link is from an earlier recording and is to be replaced with the final recording before submission.)*
+**Three-minute screen recording:** https://drive.google.com/file/d/11RCzCrbJzV79gu8X1T3tkUCCRUGgOGzn/view?usp=sharing
 
 ## 11. Someone picks this up on Monday and you are unreachable. The three things they need to know.
 
