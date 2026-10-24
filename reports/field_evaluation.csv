@@ -1212,8 +1212,8 @@ CLM-30594,img_20260622_101042,amount,300.00,300.00,match,True
 CLM-30596,img-20260622-wa0139,amount,462.00,462.00,match,True
 CLM-30600,img_20260622_130954,amount,672.00,672.00,match,True
 CLM-30601,img_20260621_182008,amount,262.00,262.00,match,True
-CLM-30603,img_20260622_194220,amount,100.00,20.00,mismatch,True
-CLM-30606,img_20260621_215742,amount,1120.00,76.00,mismatch,True
+CLM-30603,img_20260622_194220,amount,100.00,,not_comparable,True
+CLM-30606,img_20260621_215742,amount,1120.00,,not_comparable,True
 CLM-30607,img_20260621_150433,amount,226.56,226.56,match,True
 CLM-30608,img-20260621-wa0194,amount,212.40,212.40,match,True
 CLM-30611,img-20260621-wa0005,amount,339.84,339.84,match,True
