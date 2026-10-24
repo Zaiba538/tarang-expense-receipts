@@ -187,3 +187,46 @@ regenerated: they still use `ocr_extractions_v3.csv` (190 test claims, 80
 approve, 110 review, every reason filled). Using the fresh file would need them
 regenerated and every changed decision traced. The latest recorded test run was
 183 passed; tests were not re-run for this documentation update.
+
+## Update: predictions and ledger regenerated from v4 (2026-10-25)
+
+`reports/ocr_extractions_v4.csv` is `ocr_extractions_fresh.csv` re-extracted
+with the current field rules (`scripts/reextract_from_raw_text.py`), so the
+plate and total fixes made after the fresh run are kept. It differs from v3
+only on 7 photos, all values filled by the enhanced second pass: dates on 275,
+417 and 459; totals on 388 and 444; bill number on 462; vehicle numbers on 388
+and 456. Images 187 and 192 stay blank (a Km reading and an item price are
+not totals) and every plate in v3 is unchanged. `generate_predictions.py`
+and `build_audit_ledger.py` now read v4 and refuse the raw fresh file.
+
+Two rule changes come with it:
+
+- A key field (vendor, date, number, GSTIN, total, vehicle) read only by the
+  second pass sends the claim to review, with a reason asking a person to
+  confirm it against the photo. A recovered value never approves a claim.
+- When the second pass filled the total, the bill's own figures are checked
+  on that pass. Run over all 467 claims, this changes one finding: 444
+  (CLM-31440) loses a false line-item warning (the first pass read Chai "60"
+  as "09"; 110 + 45 + 30 + 60 = 245 on the photo). All 13 photo-identified
+  altered totals, including CLM-31192, are still flagged.
+
+Test predictions (decisions unchanged: 80 approve, 110 review):
+
+| Claim (image) | Field change | Reason change |
+|---|---|---|
+| CLM-31356 (417) | date blank -> 2026-07-30 | "date missing" -> second-pass date to confirm |
+| CLM-31486 (462) | number blank -> 8354 | "number missing" -> second-pass number to confirm |
+| CLM-31478 (459) | date blank -> 2026-08-05 | "date missing" -> second-pass date to confirm; the false "not supported" warning stays (both passes misread the subtotal 1030.00), as does "number missing" |
+| CLM-31440 (444) | total blank -> 245.00 | "amount missing" -> second-pass total to confirm |
+| CLM-31244 (388) | total blank -> 1100.00 (probable: amount in words scribbled over) | "amount missing" -> second-pass total and vehicle to confirm |
+| CLM-31497 (456) | none in the submission columns (vehicle MH32CP8817 filled) | second-pass vehicle to confirm added |
+
+Blank values in `predictions.csv`: dates 7 -> 5, numbers 6 -> 5, totals 10 -> 8.
+Against the 52-photo sample, dates rise from 43/46 to 46/46; the other fields
+are unchanged, and no field has a wrong value. Training: CLM-30913 (275) gains
+its date; decision agreement stays 127/283.
+
+Ledger: 532 -> 530 rows. Two uncounted "OCR could not read the bill total"
+questions are removed (CLM-31244, CLM-31440) and CLM-31244's driver-receipt
+row now shows the OCR total. Counted exposure is unchanged in every category.
+208 tests passed. The pre-change files are in Git at commit 0bdb24f.

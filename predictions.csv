@@ -68,7 +68,7 @@ CLM-31233,ANNAPURNA DINING HALL,2026-07-20,A/1651,27GIZFL1093Q2ZK,462.00,approve
 CLM-31236,ANNAPURNA DINING HALL,2026-07-27,A/1689,27GIZFL1093Q2ZK,483.00,approve,Receipt and available policy checks passed.
 CLM-31240,CAFE COFFEE CORNER,2026-07-25,A/1508,27TABPX3765R2Z6,425.00,approve,Receipt and available policy checks passed.
 CLM-31243,SHREE GANESH TOURS & TRAVELS,2026-07-27,4043,,790.00,review,Local travel requires a readable driver receipt.
-CLM-31244,SHREE GANESH TOURS & TRAVELS,2026-07-23,3974,,,review,Receipt amount is missing or unreadable. Local travel requires a readable driver receipt. Receipt field issue: total amount missing or unreadable.
+CLM-31244,SHREE GANESH TOURS & TRAVELS,2026-07-23,3974,,1100.00,review,"Local travel requires a readable driver receipt. Total amount and vehicle number read only on a second, enhanced OCR pass; confirm against the photo before payment."
 CLM-31247,VIDARBHA EXPRESS COURIER,2026-07-24,VX23263164,27OUUFX7743H2ZR,330.40,approve,Receipt and available policy checks passed.
 CLM-31249,VIDARBHA EXPRESS COURIER,2026-07-19,VX21608808,27OUUFX7743H2ZR,141.60,approve,Receipt and available policy checks passed.
 CLM-31251,SPEEDLINK COURIERS,2026-07-28,SL59393970,27HJXCW9975D1ZJ,141.60,approve,Receipt and available policy checks passed.
@@ -115,7 +115,7 @@ CLM-31344,HIGHWAY KING DHABA,2026-07-28,1399,,,review,Receipt amount is missing 
 CLM-31347,HOTEL RAJDHANI DHABA,2026-08-01,3554,,270.00,approve,Receipt and available policy checks passed.
 CLM-31351,SHREE GANESH TOURS & TRAVELS,2026-07-29,4067,,930.00,review,Local travel requires a readable driver receipt.
 CLM-31352,PROMPT PARCEL SERVICES,2026-07-23,PP31929414,27IRWFN4293M2Z1,141.60,review,"Possible duplicate of CLM-31185: same vendor, amount and bill date; receipt number not matched; different employee, payer not established. Verify before payment."
-CLM-31356,SITABULDI MULTILEVEL PARKING,,118340,,30.00,review,Receipt field issue: receipt date missing or unreadable.
+CLM-31356,SITABULDI MULTILEVEL PARKING,2026-07-30,118340,,30.00,review,"Receipt date read only on a second, enhanced OCR pass; confirm against the photo before payment."
 CLM-31359,MEDICAL SQUARE PAY & PARK,2026-08-01,105547,,20.00,review,"Parking time conflict with CLM-31516: same vehicle MH31EK4471 on 2026-08-01 at MEDICAL SQUARE PAY & PARK 10:07-14:42 (CLM-31359) and at SITABULDI MULTILEVEL PARKING 09:28-13:37 (CLM-31516); the parking times overlap, so the tickets conflict. Which ticket is wrong is not established. Verify before payment."
 CLM-31361,SHREE SAI PETROLEUM,2026-07-24,007720,,250.00,review,Confirm the fuel expense relates to an eligible field day.
 CLM-31362,LAXMI AUTO FUELS,2026-07-27,004694,27DPAFU4120X1ZM,200.00,review,Confirm the fuel expense relates to an eligible field day.
@@ -157,7 +157,7 @@ CLM-31433,ANNAPURNA DINING HALL,2026-07-28,A/1796,27GIZFL1093Q2ZK,273.00,approve
 CLM-31436,SHIVAM FAMILY RESTAURANT,2026-07-31,3124,27XMECH9812R2ZH,756.00,approve,Receipt and available policy checks passed.
 CLM-31438,ANNAPURNA DINING HALL,2026-07-28,A/1882,27GIZFL1093Q2ZK,651.00,approve,Receipt and available policy checks passed.
 CLM-31439,SAI RAM TEA & SNACKS,2026-08-05,7012,,240.00,approve,Receipt and available policy checks passed.
-CLM-31440,HIGHWAY KING DHABA,2026-08-02,1414,,,review,Receipt amount is missing or unreadable. Receipt field issue: total amount missing or unreadable.
+CLM-31440,HIGHWAY KING DHABA,2026-08-02,1414,,245.00,review,"Total amount read only on a second, enhanced OCR pass; confirm against the photo before payment."
 CLM-31444,SHREE SAI PETROLEUM,2026-07-30,007965,,250.00,review,Claimed amount differs from receipt by more than ₹10. Confirm the fuel expense relates to an eligible field day.
 CLM-31447,OM SAI FUEL POINT,2026-07-30,004471,,300.00,review,Confirm the fuel expense relates to an eligible field day.
 CLM-31451,JAI AMBE FUELS,2026-08-04,001882,,200.00,review,Confirm the fuel expense relates to an eligible field day.
@@ -171,16 +171,16 @@ CLM-31469,SHREE SAI PETROLEUM,2026-08-04,007993,,100.00,review,"Confirm the fuel
 CLM-31473,SPICE ROUTE KITCHEN,2026-08-03,6567,27NCRPN1784A3Z1,756.00,approve,Receipt and available policy checks passed.
 CLM-31474,CAFE COFFEE CORNER,2026-08-05,A/1751,27TABPX3765R2Z6,746.00,approve,Receipt and available policy checks passed.
 CLM-31475,CAFE COFFEE CORNER,2026-06-21,A/1406,27TABPX3765R2Z6,987.00,review,Possible duplicate claim or receipt; investigate before payment. Duplicate of CLM-30664: identical receipt image. Verify before payment.
-CLM-31478,CAFE COFFEE CORNER,,,,1082.00,review,"Printed total Rs 1,082.00 is not supported by the bill's own figures; possible altered total or OCR misread. Verify against the original bill. Receipt field issue: receipt date missing or unreadable. Receipt field issue: receipt number missing or unreadable."
+CLM-31478,CAFE COFFEE CORNER,2026-08-05,,,1082.00,review,"Printed total Rs 1,082.00 is not supported by the bill's own figures; possible altered total or OCR misread. Verify against the original bill. Receipt date read only on a second, enhanced OCR pass; confirm against the photo before payment. Receipt field issue: receipt number missing or unreadable."
 CLM-31479,CAFE COFFEE CORNER,2026-08-03,A/1594,27TABPX3765R2Z6,567.00,approve,Receipt and available policy checks passed.
 CLM-31480,HOTEL PRADEEP PURE VEG,2026-07-24,1524,27ODUFJ1789K3ZU,735.00,review,Possible duplicate claim or receipt; investigate before payment. Duplicate of CLM-31301: identical receipt image. Verify before payment.
 CLM-31483,ANNAPURNA DINING HALL,2026-08-03,A/1958,27GIZFL1093Q2ZK,798.00,approve,Receipt and available policy checks passed.
 CLM-31485,PUNJABI TADKA DHABA,2026-08-04,8379,,410.00,approve,Receipt and available policy checks passed.
-CLM-31486,PUNJABI TADKA DHABA,2026-08-03,,,500.00,review,Receipt field issue: receipt number missing or unreadable.
+CLM-31486,PUNJABI TADKA DHABA,2026-08-03,8354,,500.00,review,"Receipt number read only on a second, enhanced OCR pass; confirm against the photo before payment."
 CLM-31490,HOTEL RAJDHANI DHABA,2026-07-30,3551,,370.00,approve,Receipt and available policy checks passed.
 CLM-31494,HIGHWAY KING DHABA,2026-08-05,1433,,165.00,approve,Receipt and available policy checks passed.
 CLM-31495,MAA DURGA CAB SERVICE,2026-08-03,8323,,910.00,review,Local travel requires a readable driver receipt.
-CLM-31497,SHREE GANESH TOURS & TRAVELS,2026-07-23,3950,,,review,"Receipt amount is missing or unreadable. Local travel requires a readable driver receipt. Possible duplicate claim or receipt; investigate before payment. Duplicate of CLM-31310: same vendor and receipt number, same bill date; different employee, payer not established. Verify before payment. Receipt field issue: total amount missing or unreadable."
+CLM-31497,SHREE GANESH TOURS & TRAVELS,2026-07-23,3950,,,review,"Receipt amount is missing or unreadable. Local travel requires a readable driver receipt. Possible duplicate claim or receipt; investigate before payment. Duplicate of CLM-31310: same vendor and receipt number, same bill date; different employee, payer not established. Verify before payment. Vehicle number read only on a second, enhanced OCR pass; confirm against the photo before payment. Receipt field issue: total amount missing or unreadable."
 CLM-31501,VIDARBHA EXPRESS COURIER,2026-08-01,VX53559174,27OUUFX7743H2ZR,141.60,approve,Receipt and available policy checks passed.
 CLM-31503,VIDARBHA EXPRESS COURIER,2026-08-04,VX62429997,27OUUFX7743H2ZR,1226.56,review,"Printed total Rs 1,226.56 is not supported by the bill's own figures; possible altered total or OCR misread. Verify against the original bill."
 CLM-31506,SPEEDLINK COURIERS,2026-08-02,SL73161147,,141.60,approve,Receipt and available policy checks passed.

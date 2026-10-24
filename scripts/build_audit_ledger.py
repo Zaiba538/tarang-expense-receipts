@@ -6,7 +6,7 @@ Usage (from the project root):
 
 Inputs (read only):
   data/Task 2 Files/claims_train.csv, claims_test.csv, employees.csv
-  reports/ocr_extractions_v3.csv   - OCR fields and raw text per image (or --ocr)
+  reports/ocr_extractions_v4.csv   - OCR fields and raw text per image (or --ocr)
   tarang-expense-receipts/images/  - receipt images, hashed with SHA-256 to
                                      find identical files (git-ignored: the
                                      hashes need a local copy of the images)
@@ -91,11 +91,18 @@ from app.integrity_checks import (
     classify_vehicle,
     find_hostile_text,
     normalize_plate,
+    total_source_text,
 )
 from app.normalization import amounts_match, normalize_amount
-from scripts.generate_predictions import clean, filename_key, image_sha256, truthy
+from scripts.generate_predictions import (
+    OCR_FILE,
+    clean,
+    filename_key,
+    image_sha256,
+    require_reextracted,
+    truthy,
+)
 
-OCR_FILE = ROOT / "reports" / "ocr_extractions_v3.csv"
 OUTPUT_FILE = ROOT / "reports" / "audit_exposure_ledger.csv"
 
 CONFIRMED = "confirmed_photo"
@@ -387,7 +394,9 @@ def build_ledger(
                 add(claim_id, POLICY, "missing_receipt_evidence",
                     "OCR could not read the bill total.", "OCR text")
 
-            for finding in check_receipt_integrity(text, receipt.get("total_amount"), claim.get("amount_claimed")):
+            for finding in check_receipt_integrity(
+                total_source_text(receipt), receipt.get("total_amount"), claim.get("amount_claimed")
+            ):
                 add(claim_id, LEAD, f"{finding['code']}", finding["message"], "OCR text",
                     status=lead_status(claim_id, "amount"))
 
@@ -708,6 +717,7 @@ def load_project_inputs(
     employees = pd.read_csv(data_dir / "employees.csv", dtype=str, keep_default_na=False).to_dict("records")
 
     ocr_file = ocr_file or root / "reports" / OCR_FILE.name
+    require_reextracted(ocr_file)
     ocr = pd.read_csv(ocr_file, dtype=str, keep_default_na=False)
     ocr["filename_key"] = ocr["image_filename"].map(filename_key)
     counts = ocr["filename_key"].value_counts()

@@ -494,7 +494,7 @@ CLM-30902,img_20260708_120658,receipt_date,08-07-2026,2026-07-08,match,True
 CLM-30904,img-20260708-wa0072,receipt_date,30-06-2026,2026-06-30,match,True
 CLM-30906,img_20260708_204220,receipt_date,08-07-2026,2026-07-08,match,True
 CLM-30910,img_20260708_205926,receipt_date,08-07-2026,2026-07-08,match,True
-CLM-30913,img_20260708_091254,receipt_date,01-07-2026,,not_comparable,True
+CLM-30913,img_20260708_091254,receipt_date,01-07-2026,2026-07-01,match,True
 CLM-30916,img_20260707_110240,receipt_date,05-07-2026,2026-07-05,match,True
 CLM-30919,img_20260708_103658,receipt_date,08-07-2026,2026-07-08,match,True
 CLM-30920,img-20260709-wa0067,receipt_date,05-07-2026,2026-07-05,match,True

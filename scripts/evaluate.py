@@ -29,7 +29,7 @@ DATA_DIR = ROOT / "data" / "Task 2 Files"
 REPORT_DIR = ROOT / "reports"
 TRAIN_FILE = DATA_DIR / "claims_train.csv"
 EMPLOYEE_FILE = DATA_DIR / "employees.csv"
-OCR_FILE = REPORT_DIR / "ocr_extractions_v3.csv"
+OCR_FILE = REPORT_DIR / "ocr_extractions_v4.csv"
 OUTPUT_FILE = REPORT_DIR / "training_evaluation.csv"
 SUMMARY_FILE = REPORT_DIR / "evaluation_summary.txt"
 
@@ -97,6 +97,8 @@ def main() -> None:
                 "total_amount": clean(ocr.get("total_amount")),
                 "vehicle_no": clean(ocr.get("vehicle_no")),
                 "raw_text": clean(ocr.get("raw_text")),
+                "raw_text_enhanced": clean(ocr.get("raw_text_enhanced")),
+                "filled_by_enhanced_pass": clean(ocr.get("filled_by_enhanced_pass")),
                 "image_sha256": image_sha256(ocr.get("image_filename")),
                 "readable": truthy(ocr.get("readable")),
                 "_receipt_available": True,

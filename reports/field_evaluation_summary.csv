@@ -1,6 +1,6 @@
 field,total_claims,image_matched_claims,unmatched_images,correct,incorrect,comparable,not_comparable,missing_reference,missing_ocr,clerk_agreement_percent
 vendor,283,280,3,218,59,277,6,6,5,78.7
-receipt_date,283,280,3,268,8,276,7,6,7,97.1
+receipt_date,283,280,3,269,8,277,6,6,6,97.11
 receipt_number,283,280,3,261,16,277,6,6,5,94.22
 gstin,283,280,3,105,7,112,171,171,157,93.75
 amount,283,280,3,269,5,274,9,6,9,98.18

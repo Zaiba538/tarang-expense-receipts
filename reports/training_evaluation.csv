@@ -211,7 +211,7 @@ CLM-30902,Fuel,approved,approve,review,Confirm the fuel expense relates to an el
 CLM-30904,Fuel,approved,approve,review,Confirm the fuel expense relates to an eligible field day.,True,OM SAI FUEL POINT,2026-06-30,002959,200.0
 CLM-30906,Food,approved,approve,approve,Receipt and available policy checks passed.,True,ASHIRWAD VEG RESTAURANT,2026-07-08,6235,630.0
 CLM-30910,Local travel,approved,approve,review,Local travel requires a readable driver receipt.,True,SHREE GANESH TOURS & TRAVELS,2026-07-08,3835,1550.0
-CLM-30913,Local travel,approved,approve,review,Local travel requires a readable driver receipt. Receipt field issue: receipt date missing or unreadable.,True,ROYAL TRAVELS,,8400,290.0
+CLM-30913,Local travel,approved,approve,review,"Local travel requires a readable driver receipt. Receipt date read only on a second, enhanced OCR pass; confirm against the photo before payment.",True,ROYAL TRAVELS,2026-07-01,8400,290.0
 CLM-30916,Parking,approved,approve,approve,Receipt and available policy checks passed.,True,SITABULDI MULTILEVEL PARKING,2026-07-05,114666,30.0
 CLM-30919,Fuel,approved,approve,review,Confirm the fuel expense relates to an eligible field day. Receipt contains printed instructions addressed to approvers or automated processing; treated as untrusted content and ignored. Printed total Rs 800.00 is not supported by the bill's own figures; possible altered total or OCR misread. Verify against the original bill.,True,SHREE SAI PETROLEUM,2026-07-08,007191,800.0
 CLM-30920,Fuel,approved,approve,review,Confirm the fuel expense relates to an eligible field day.,True,NEW HIGHWAY SERVICE STATION,2026-07-05,001638,482.58

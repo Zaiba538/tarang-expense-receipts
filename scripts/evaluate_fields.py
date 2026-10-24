@@ -23,7 +23,7 @@ REPORT_DIR = ROOT / "reports"
 
 CLAIMS_FILE = DATA_DIR / "claims_train.csv"
 # Fields re-extracted from the stored OCR text with the current rules.
-OCR_FILE = REPORT_DIR / "ocr_extractions_v3.csv"
+OCR_FILE = REPORT_DIR / "ocr_extractions_v4.csv"
 
 
 # Actual reference columns in claims_train.csv.

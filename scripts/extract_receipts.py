@@ -7,7 +7,7 @@ Usage (from the project root):
 
 Writes reports/ocr_extractions_fresh.csv by default. The production
 extraction files (ocr_extractions.csv, ocr_extractions_v2.csv,
-ocr_extractions_v3.csv) are never overwritten. With --resume, images already
+ocr_extractions_v3.csv, ocr_extractions_v4.csv) are never overwritten. With --resume, images already
 saved in the output are skipped and each new row is written to disk before
 the next image, so an interrupted run can be continued.
 """
@@ -34,6 +34,7 @@ PROTECTED_OUTPUTS = {
     PROJECT_ROOT / "reports" / "ocr_extractions.csv",
     PROJECT_ROOT / "reports" / "ocr_extractions_v2.csv",
     PROJECT_ROOT / "reports" / "ocr_extractions_v3.csv",
+    PROJECT_ROOT / "reports" / "ocr_extractions_v4.csv",
 }
 
 # The first ten columns are unchanged from earlier extraction files.

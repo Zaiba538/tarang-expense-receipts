@@ -6,7 +6,12 @@ from __future__ import annotations
 from decimal import Decimal
 from typing import Any
 
-from app.integrity_checks import check_receipt_integrity, find_hostile_text
+from app.integrity_checks import (
+    check_receipt_integrity,
+    enhanced_pass_fields,
+    find_hostile_text,
+    total_source_text,
+)
 from app.normalization import normalize_amount
 from app.policy_engine import evaluate_policy
 from app.validation import validate_claim_amount, validate_receipt_fields
@@ -15,6 +20,17 @@ from app.validation import validate_claim_amount, validate_receipt_fields
 # Expense policy v3.2, section 7 (draft): clerks check claims of Rs 2,000
 # and above; only smaller claims may be approved without a clerk.
 CLERK_REVIEW_THRESHOLD = Decimal("2000")
+
+# Receipt fields that, when read only by the enhanced second OCR pass, must be
+# confirmed against the photo by a person: a recovered value never approves.
+SECOND_PASS_FIELD_LABELS = {
+    "vendor": "vendor",
+    "receipt_date": "receipt date",
+    "receipt_number": "receipt number",
+    "gstin": "GSTIN",
+    "total_amount": "total amount",
+    "vehicle_no": "vehicle number",
+}
 
 
 def make_decision(
@@ -77,10 +93,28 @@ def make_decision(
         )
 
     for finding in check_receipt_integrity(
-        raw_text, receipt.get("total_amount"), claim.get("amount_claimed")
+        total_source_text(receipt) if receipt_available else None,
+        receipt.get("total_amount"),
+        claim.get("amount_claimed"),
     ):
         flags.append(finding["code"])
         reasons.append(finding["message"])
+
+    second_pass = [
+        SECOND_PASS_FIELD_LABELS[field]
+        for field in enhanced_pass_fields(receipt)
+        if field in SECOND_PASS_FIELD_LABELS
+    ] if receipt_available else []
+    if second_pass:
+        flags.append("read_on_second_pass")
+        fields = (
+            second_pass[0] if len(second_pass) == 1
+            else ", ".join(second_pass[:-1]) + " and " + second_pass[-1]
+        )
+        reasons.append(
+            f"{fields[0].upper()}{fields[1:]} read only on a second, enhanced "
+            "OCR pass; confirm against the photo before payment."
+        )
 
     # The larger figure counts, so a low claim cannot hide a high bill.
     amounts = [

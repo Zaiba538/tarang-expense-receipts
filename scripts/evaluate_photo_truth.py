@@ -12,7 +12,8 @@ Match rules:
   receipt_number  letters and digits only, case-insensitive
   gstin           exact; for NONE, a blank value is correct
   total_amount    within Rs 0.01
-  A blank extracted value counts as a miss.
+  A blank extracted value counts as a miss, and is reported apart from a
+  wrong (non-blank) value.
 
 The sample deliberately over-represents difficult and changed extractions, so
 its results are not a dataset-wide accuracy estimate; results for the random
@@ -40,8 +41,8 @@ from app.normalization import normalize_amount, normalize_date
 from scripts.generate_predictions import filename_key
 
 TRUTH_FILE = ROOT / "audit" / "photo_field_truth.csv"
-OLD_FILE = ROOT / "reports" / "ocr_extractions_v2.csv"
-NEW_FILE = ROOT / "reports" / "ocr_extractions_v3.csv"
+OLD_FILE = ROOT / "reports" / "ocr_extractions_v3.csv"
+NEW_FILE = ROOT / "reports" / "ocr_extractions_v4.csv"
 CLAIMS_FILE = ROOT / "data" / "Task 2 Files" / "claims_train.csv"
 OUTPUT_FILE = ROOT / "reports" / "photo_field_evaluation.md"
 
@@ -70,6 +71,27 @@ def matches(field: str, truth: str, value: str) -> bool:
         amount = normalize_amount(value)
         return amount is not None and abs(amount - Decimal(truth)) <= Decimal("0.01")
     return _alnum(value) == _alnum(truth)
+
+
+def outcome(field: str, truth: str, value: str) -> str:
+    """'correct', 'wrong' (non-blank, disagrees with the photo) or 'blank' (a miss)."""
+    if matches(field, truth, value):
+        return "correct"
+    return "wrong" if (value or "").strip() else "blank"
+
+
+def breakdown(sample: pd.DataFrame, column_of) -> dict[str, dict[str, int]]:
+    """field -> counts of correct, wrong, blank and unknown-in-photo values."""
+    result = {}
+    for field in FIELDS:
+        known = sample[sample[field] != UNKNOWN]
+        compared = known[known[column_of(field)].notna()]
+        counts = {"correct": 0, "wrong": 0, "blank": 0}
+        for truth, value in zip(compared[field], compared[column_of(field)]):
+            counts[outcome(field, truth, value)] += 1
+        counts["unknown"] = int((sample[field] == UNKNOWN).sum())
+        result[field] = counts
+    return result
 
 
 def score(sample: pd.DataFrame, column_of) -> dict[str, tuple[int, int, int]]:
@@ -137,8 +159,28 @@ def build_report() -> str:
             pct = lambda c, n: f"{c}/{n} ({c / n:.0%})" if n else "n/a"
             lines.append(f"| {field} | {unknown} | {pct(oc, on)} | {pct(nc, nn)} | {pct(cc, cn)} |")
 
+    def outcome_table(title: str, rows: pd.DataFrame) -> None:
+        counts = breakdown(rows, lambda f: f"new_{f}")
+        lines.extend([
+            "", f"## {title}", "",
+            "| Field | Compared with photo | Correct | Wrong (non-blank) | Blank (counted as a miss) "
+            "| Unknown in photo (excluded) |",
+            "|---|---|---|---|---|---|",
+        ])
+        for field in FIELDS:
+            c = counts[field]
+            lines.append(
+                f"| {field} | {c['correct'] + c['wrong'] + c['blank']} | {c['correct']} "
+                f"| {c['wrong']} | {c['blank']} | {c['unknown']} |"
+            )
+
     table("Photo-verified results, whole sample (difficult cases over-represented)", sample)
     table("Photo-verified results, random picks only", sample[sample["selection_reason"] == "random"])
+    outcome_table(f"New extraction ({NEW_FILE.name}) by outcome, whole sample", sample)
+    outcome_table(
+        f"New extraction ({NEW_FILE.name}) by outcome, random picks only",
+        sample[sample["selection_reason"] == "random"],
+    )
 
     lines.extend(["", "## New extraction disagreements with the photo", ""])
     for field in FIELDS:
@@ -157,7 +199,8 @@ def build_report() -> str:
         "as the GSTIN format requires.",
         "- Altered totals are recorded as displayed on the bill (with a note); detecting the "
         "alteration is a separate check.",
-        "- The sample is small and deliberately difficult; it does not estimate dataset-wide accuracy.",
+        "- The sample is small and deliberately difficult; it does not estimate dataset-wide accuracy, "
+        "and it does not show that the 95% field target is met across the dataset.",
         "- Random picks were drawn in fixed numbers per layout family, not in proportion to the "
         "dataset, so the random-only table is not a dataset-wide accuracy estimate either.",
         "- Processing coverage (all 467 images) is reported separately from this verified accuracy.",

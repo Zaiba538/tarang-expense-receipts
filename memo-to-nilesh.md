@@ -19,7 +19,7 @@ Potential exposure, each claim or group counted once: not a proven loss, not rec
 - **Printed instructions:** a "TARANG FINANCE DESK - PRE-VERIFIED" stamp on five bills tells automated processing to approve and skip duplicate checks; the tool ignores it (both test cases held).
 
 ## How well it reads bills
-On 52 photos read by eye (30 random across layouts, 22 deliberately difficult) it matched 49/49 vendors, 43/46 dates, 47/48 bill numbers, 47/48 GSTINs and 46/47 totals; every miss was a blank, not a wrong value. Separately, 67 targeted checks on 46 photos (chosen for a reason, not a sample): 65 confirmed, 1 probable, 1 uncertain. **The 95% target is not demonstrated**; the sample is too small.
+On 52 photos read by eye (30 random across layouts, 22 deliberately difficult) it matched 49/49 vendors, 46/46 dates, 47/48 bill numbers, 47/48 GSTINs and 46/47 totals; every miss was a blank, not a wrong value. Separately, 67 targeted checks on 46 photos (chosen for a reason, not a sample): 65 confirmed, 1 probable, 1 uncertain. **The 95% target is not demonstrated**; the sample is too small.
 
 ## Your ₹2,000 rule versus the current checks
 | Rule (190 test claims) | Approved | Approved with risk findings | Potential exposure paid |
@@ -27,7 +27,7 @@ On 52 photos read by eye (30 random across layouts, 22 deliberately difficult) i
 | Approve everything under ₹2,000 | 176 (92.6%) | 34 | ₹14,001.03 |
 | Current checks | 80 (42.1%) | 0 | ₹0 |
 
-The 34 include 18 unverified OCR leads, accounting for ₹3,196.80 of the ₹14,001.03. Most of the 110 reviews need evidence the data lacks: fuel field day (54), possible duplicates (23), driver's receipt (16), ₹2,000 or more (14), lodging (11); unreadable fields 13.
+The 34 include 18 unverified OCR leads, accounting for ₹3,196.80 of the ₹14,001.03. Most of the 110 reviews need evidence the data lacks: fuel field day (54), possible duplicates (23), driver's receipt (16), ₹2,000 or more (14), lodging (11); unreadable fields 9; values from a second OCR read (6).
 
 ## Time and money
 Today: 2,400 claims × 3.5 minutes = 140 clerk-hours a month; two clerks cost ₹76,000 (at most ₹31.67 a claim). *Scenario, not a measured saving:* if the 42% that pass (about 1,011 claims) each save 1–3.5 minutes, that frees 17–59 hours, about **₹3,600–₹12,700 a month**, assuming 176 working hours per clerk (₹215.9 an hour) and this batch's pass rate. Only a timed pilot can show the real figure. No per-photo fee.

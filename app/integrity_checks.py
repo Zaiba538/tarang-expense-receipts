@@ -186,6 +186,26 @@ def _amount_in_words(text: str) -> Decimal | None:
     return None
 
 
+def enhanced_pass_fields(receipt: dict[str, Any]) -> list[str]:
+    """Fields the enhanced second OCR pass filled (a list, or '; '-joined in CSV files)."""
+    value = receipt.get("filled_by_enhanced_pass") or []
+    if isinstance(value, str):
+        value = value.split(";")
+    return [str(field).strip() for field in value if str(field).strip()]
+
+
+def total_source_text(receipt: dict[str, Any]) -> str:
+    """
+    Return the OCR text the printed total was read from. When the enhanced
+    second pass filled the total, the bill's figures are checked on that pass:
+    checking its total against figures from the first pass, which could not
+    read the total, mixes two readings of one bill.
+    """
+    if "total_amount" in enhanced_pass_fields(receipt):
+        return str(receipt.get("raw_text_enhanced") or "")
+    return str(receipt.get("raw_text") or "")
+
+
 def check_receipt_integrity(
     raw_text: Any,
     total_amount: Any,

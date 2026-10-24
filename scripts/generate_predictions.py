@@ -29,10 +29,12 @@ from app.duplicate_detection import detect_duplicates
 ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "data" / "Task 2 Files"
 REPORT_DIR = ROOT / "reports"
-# Fields re-extracted from the stored OCR text with the current rules
-# (scripts/reextract_from_raw_text.py); the original run is ocr_extractions.csv.
-# v3: full OCR re-run with the enhanced second pass (scripts/extract_receipts.py).
-OCR_FILE = REPORT_DIR / "ocr_extractions_v3.csv"
+# Fields re-extracted with the current rules (scripts/reextract_from_raw_text.py)
+# from the fresh OCR run's text, both passes (ocr_extractions_fresh.csv).
+OCR_FILE = REPORT_DIR / "ocr_extractions_v4.csv"
+# The raw OCR run carries fields from the rules in force when it ran; it is
+# re-extracted first and never used directly.
+RAW_OCR_RUN = "ocr_extractions_fresh.csv"
 IMAGE_DIR = ROOT / "tarang-expense-receipts" / "images"
 OUTPUT_FILE = ROOT / "predictions.csv"
 
@@ -117,10 +119,20 @@ def image_sha256(image_filename: Any) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def require_reextracted(ocr_file: Path) -> None:
+    """Refuse the raw OCR run: its fields predate the current extraction rules."""
+    if Path(ocr_file).name == RAW_OCR_RUN:
+        raise ValueError(
+            f"{RAW_OCR_RUN} holds fields from older extraction rules; run "
+            "scripts/reextract_from_raw_text.py on it and use that output."
+        )
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--ocr", type=Path, default=OCR_FILE)
     ocr_file = parser.parse_args().ocr
+    require_reextracted(ocr_file)
 
     train_path = DATA_DIR / "claims_train.csv"
     test_path = DATA_DIR / "claims_test.csv"
@@ -182,6 +194,8 @@ def main() -> None:
                 "total_amount": clean(ocr.get("total_amount")),
                 "vehicle_no": clean(ocr.get("vehicle_no")),
                 "raw_text": clean(ocr.get("raw_text")),
+                "raw_text_enhanced": clean(ocr.get("raw_text_enhanced")),
+                "filled_by_enhanced_pass": clean(ocr.get("filled_by_enhanced_pass")),
                 "image_sha256": image_sha256(ocr.get("image_filename")),
                 "readable": truthy(ocr.get("readable")),
                 "gst_tax_invoice": False,
