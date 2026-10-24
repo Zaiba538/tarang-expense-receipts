@@ -30,7 +30,7 @@ Every miss in the sample was a blank, never a wrong value, so the score is rough
 
 - **Photos read by eye:** 52 receipts across 9 layouts (cab, courier, fuel, handwritten, hotel, no-text, parking, restaurant, other). Results in `reports/photo_field_evaluation.md`. A further 47 photo findings are recorded in `audit/photo_review_findings.csv`, and 19 bill dates of approved claims were checked in a follow-up review (`reports/v2_regeneration_change_report.md`).
 - **Clerk entries** on 283 training claims, as agreement only (clerks are sometimes wrong: in the photo sample, clerk vendor was wrong on 5 of 33 bills).
-- **180 automated tests** pass, including regression tests built from real OCR lines.
+- **183 automated tests** passed in the latest recorded run, including regression tests built from real OCR lines.
 
 It gets wrong, by leaving blank: blurred or black photos (3 have no text), handwritten dates the OCR misses, totals whose handwritten "/-" OCR misreads when the amount in words is also unreadable, and a total label covered by a pen note. OCR also varies when the same photo is re-compressed. Every blank goes to review.
 
@@ -40,7 +40,7 @@ Yes. Nilesh asked for auto-approval of everything under ₹2,000. After reading 
 
 ## 6. What is wrong with what you are handing us, or with the data you handed us?
 
-**My work:** field accuracy is estimated from 52 photos, not measured on all 467; photo checks were AI-assisted with no named reviewer; 18 of the photo checks behind the memo are described in a report rather than recorded in an audit file; the single-photo API does not compare a claim with other claims; savings are not measured; the final OCR file was rebuilt from stored OCR text after a full re-run stopped for lack of memory.
+**My work:** field accuracy is estimated from 52 photos, not measured on all 467; photo checks were AI-assisted with no named reviewer; 18 of the photo checks behind the memo are described in a report rather than recorded in an audit file; the single-photo API does not compare a claim with other claims; savings are not measured; `predictions.csv` is generated from `reports/ocr_extractions_v3.csv`, built from stored OCR text. A fresh full OCR run of all 467 photos was completed afterwards (`reports/ocr_extractions_fresh.csv`): the same text, plus 6 more fields filled and checked against the photos (on one, image 388, the amount in words is scribbled over and cannot confirm the figure). It is not yet used by `predictions.csv`.
 
 **The data:** 6 claims have no photo; 3 photos have no readable text; image file names vary (full phone paths, .jpeg vs .jpg); expense dates and amounts are typed in many formats; 4 pairs of photos are byte-identical copies; some photos are rotated or blurred; bills carry altered totals, duplicates and printed approval instructions; nothing in the data shows who paid, field days or outstation nights.
 
@@ -52,7 +52,7 @@ Yes. Nilesh asked for auto-approval of everything under ₹2,000. After reading 
 
 ## 8. What did you deliberately leave out, and why that rather than something else?
 
-Auto-approval under ₹2,000 (unsafe on this evidence, see 5); guessing unreadable fields (blanks go to review instead); deciding who paid a shared or duplicated bill (the photo cannot show it); calling any finding misconduct; a paid vision API (not needed for these bills and would add per-photo cost); and a fresh full OCR re-run for the final version (stopped by low memory; the stored OCR text was re-checked against 10 fresh readings).
+Auto-approval under ₹2,000 (unsafe on this evidence, see 5); guessing unreadable fields (blanks go to review instead); deciding who paid a shared or duplicated bill (the photo cannot show it); calling any finding misconduct; a paid vision API (not needed for these bills and would add per-photo cost); and switching the predictions to the fresh full OCR run (`reports/ocr_extractions_fresh.csv`, completed in resumable batches after a first attempt ran out of memory): its 6 extra fields would need the predictions and ledger regenerated and every changed decision traced, so the submitted predictions stay on the stored-text extraction.
 
 ## 9. Anything you built or found that nobody asked for?
 
@@ -69,8 +69,10 @@ Where it helped: building the extraction rules and tests from real OCR lines, th
 
 **Three-minute screen recording:** https://drive.google.com/file/d/1Ls3cjYtqzVLBKZBbDoQ-WZbnJrat_DpT/view?usp=sharing
 
+*(This link is from an earlier recording and is to be replaced with the final recording before submission.)*
+
 ## 11. Someone picks this up on Monday and you are unreachable. The three things they need to know.
 
-1. Start with `README.md`: install, run `python -m pytest -q` (180 tests), then the API and Streamlit commands. No API key is needed; the receipt photos must be placed in `tarang-expense-receipts\images\`.
+1. Start with `README.md`: install, run `python -m pytest -q` (183 tests passed in the latest recorded run), then the API and Streamlit commands. No API key is needed; the receipt photos must be placed in `tarang-expense-receipts\images\`.
 2. Every number comes from a script: `generate_predictions.py`, `build_audit_ledger.py` and `evaluate_photo_truth.py` read `reports/ocr_extractions_v3.csv`. Change extraction rules, re-run `reextract_from_raw_text.py`, then regenerate and trace changes; never fill a blank by hand.
 3. Do not enable unattended payment. Run the Nagpur pilot in `memo-to-nilesh.md`, record clerk time and whether passed claims were correct, and get Finance's decision on how payer, field-day, driver's-receipt and lodging evidence will be provided.

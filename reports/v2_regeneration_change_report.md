@@ -131,9 +131,9 @@ outputs before this change: `backups/pre_parking_check_2026-10-24/`.
 
 `reports/ocr_extractions_v3.csv` re-applies improved field rules to the stored
 OCR text of all 467 images (`scripts/reextract_from_raw_text.py`). A fresh full
-OCR run with the new enhanced second pass was started but stopped at 10 images
-because the machine ran low on memory; those 10 fresh readings matched the
-stored text exactly. v3 therefore uses the stored first-pass text only; the
+OCR run with the new enhanced second pass was first attempted at this point but
+stopped at 10 images because the machine ran low on memory (it was completed
+later; see the next section). v3 uses the stored first-pass text only; the
 second pass (`raw_text_enhanced`) is empty for every row.
 
 Rule changes: a handwritten total that OCR misread ('1230/-' as '12307-') is
@@ -161,3 +161,29 @@ were opened: 122 is in the photo-truth sample; 379 was checked on 2026-10-24
 Rs 141.60, all matching) and is recorded here only, not in an audit file.
 Six other test claims changed reason text only. Counted ledger exposure is
 unchanged; the ledger has 533 rows. Backups: `backups/pre_v3_2026-10-24/`.
+
+## Update: fresh full OCR run completed (2026-10-24)
+
+`scripts/extract_receipts.py --resume` re-ran OCR on the photos one at a time,
+writing each result to `reports/ocr_extractions_fresh.csv` before the next and
+skipping photos already saved. The 10 photos from the interrupted attempt were
+kept (not re-run); the other 457 were processed in 11 batches. Result: 467 rows
+for the same 467 photos, no duplicates, no missing photos and no OCR failures.
+
+- The first-pass OCR text is identical to the stored OCR text for all 467 photos.
+- The enhanced second pass ran on 12 photos whose date, number or total was
+  blank, and filled 6 fields that are blank in v3: dates on 275 (2026-07-01),
+  417 (2026-07-30) and 459 (2026-08-05); totals on 388 (Rs 1,100) and 444
+  (Rs 245); bill number on 462 (8354). No value read in v3 changed.
+- All 6 match the photos. The three dates are confirmed by
+  `audit/photo_field_truth.csv`; 388, 444 and 462 were checked by opening the
+  photos and are recorded here only. On 388 the amount in words is scribbled
+  over, so it cannot confirm the Rs 1,100 figure.
+- Against the 52-photo sample, dates rise from 43/46 to 46/46; vendor, number,
+  GSTIN and total are unchanged, with no wrong values.
+
+`predictions.csv`, the audit ledger and the evaluation reports were **not**
+regenerated: they still use `ocr_extractions_v3.csv` (190 test claims, 80
+approve, 110 review, every reason filled). Using the fresh file would need them
+regenerated and every changed decision traced. The latest recorded test run was
+183 passed; tests were not re-run for this documentation update.

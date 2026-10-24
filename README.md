@@ -44,9 +44,10 @@ Open `http://localhost:8501`: upload a photo, enter the claim details, **Extract
 ## 4. Batch pipeline (reproduces the deliverables)
 
 ```powershell
-# OCR text + fields for every photo (about 50 minutes on a laptop CPU)
-.\.venv\Scripts\python.exe scripts\extract_receipts.py --output reports\ocr_extractions_v3.csv
-# or: re-apply the current field rules to stored OCR text (seconds)
+# Fresh OCR text + fields for every photo, resumable (about 10 s per photo on a laptop CPU).
+# Writes reports\ocr_extractions_fresh.csv; repeat until it prints "remaining: 0".
+.\.venv\Scripts\python.exe -B scripts\extract_receipts.py --resume --limit 40
+# Re-apply the current field rules to stored OCR text (seconds); this builds the v3 file used by predictions
 .\.venv\Scripts\python.exe scripts\reextract_from_raw_text.py --input reports\ocr_extractions.csv --output reports\ocr_extractions_v3.csv
 .\.venv\Scripts\python.exe scripts\generate_predictions.py     # predictions.csv (190 test claims)
 .\.venv\Scripts\python.exe scripts\build_audit_ledger.py       # reports\audit_exposure_ledger.csv
@@ -55,7 +56,11 @@ Open `http://localhost:8501`: upload a photo, enter the claim details, **Extract
 .\.venv\Scripts\python.exe scripts\evaluate.py                 # training decisions vs historical status
 ```
 
-**This submission's `reports/ocr_extractions_v3.csv` was built from stored OCR text**, not a fresh full OCR run: a full re-run was stopped at 10 images when the machine ran low on memory (those 10 matched the stored text exactly). The enhanced second OCR pass (`raw_text_enhanced`) is therefore empty in v3. Earlier extraction files are kept as records: `ocr_extractions.csv` (original OCR run) and `ocr_extractions_v2.csv`.
+**`predictions.csv`, the audit ledger and the evaluation reports are generated from `reports/ocr_extractions_v3.csv`**, which was built from stored OCR text (467 rows; the enhanced second OCR pass, `raw_text_enhanced`, is empty in v3).
+
+**A fresh full OCR run of all 467 photos is complete in `reports/ocr_extractions_fresh.csv`** (467 rows, the same 467 images). It was run in resumable batches after an earlier attempt stopped at 10 photos for lack of memory. Its first-pass OCR text is identical to the stored text for every photo; its enhanced second pass ran on 12 photos and filled 6 more fields than v3 (dates on 275, 417 and 459; totals on 388 and 444; bill number on 462). All 6 match the photos: the three dates are confirmed by `audit/photo_field_truth.csv`; the other three were checked by opening the photos and are not in an audit file. On 388 the figure ₹1,100 matches the photo but the amount in words is scribbled over, so it cannot confirm the figure. **The fresh file is not yet used by `predictions.csv`.**
+
+Earlier extraction files are kept as records: `ocr_extractions.csv` (original OCR run) and `ocr_extractions_v2.csv`.
 
 ## 5. Tests
 
@@ -63,7 +68,7 @@ Open `http://localhost:8501`: upload a photo, enter the claim details, **Extract
 .\.venv\Scripts\python.exe -m pytest -q
 ```
 
-180 tests passed on 24 October 2026 (extraction rules, normalization, duplicate and parking checks, integrity checks, decisions, policy, audit ledger, API and Streamlit screen; OCR is stubbed in the UI tests).
+The latest recorded run on 24 October 2026: 183 tests passed (extraction rules, normalization, duplicate and parking checks, integrity checks, decisions, policy, audit ledger, resumable OCR checkpointing, API and Streamlit screen; OCR is stubbed in the UI and resume tests). The suite was not re-run for this documentation update.
 
 ## 6. Outputs and evidence
 
