@@ -247,6 +247,90 @@ def _extract_details(lines: list[str]) -> dict[str, str]:
     }
 
 
+# A value line after one of these labels is that reading, not an amount.
+NON_AMOUNT_LABEL = re.compile(r"(?i)\s*(?:km|kms|qty|pcs|wt|weight)\s*[:.]?\s*")
+
+# Indian plate: state (2 letters), district (1-2 digits), series (1-3
+# letters), number (1-4 digits). OCR may put one punctuation mark between
+# parts ("MH34'CP 5187").
+_PLATE_SEP = r"[ \t]*['’`.\-]?[ \t]*"
+_PLATE = (
+    r"([A-Z]{2}" + _PLATE_SEP + r"\d{1,2}" + _PLATE_SEP + r"[A-Z0-9]{1,3}"
+    + _PLATE_SEP + r"\d{1,4})"
+)
+_VEHICLE_LABEL = r"\b(?:vehicle|veh|ken)\s*/?\s*(?:no\.?|number|#)"
+VEHICLE_LABEL = re.compile(_VEHICLE_LABEL, re.IGNORECASE)
+# Series letters OCR commonly reads as digits; only series positions are
+# repaired, never the district or number digits.
+_SERIES_DIGIT_TO_LETTER = str.maketrans("80152", "BOISZ")
+
+
+def _plate_from(token: str) -> tuple[str, bool]:
+    """Normalise a captured plate; ('', False) unless it is a valid plate.
+
+    Returns (plate, repaired). Digits in the series letters are read as the
+    letters they resemble only when the plate's structure leaves a single
+    reading.
+    """
+    compact = re.sub(r"[^A-Z0-9]", "", token.upper())
+    as_printed, repaired = set(), set()
+    for district_len in (1, 2):
+        series = compact[2 + district_len:len(compact) - 4]
+        state, district, number = compact[:2], compact[2:2 + district_len], compact[-4:]
+        if not (1 <= len(series) <= 3 and state.isalpha() and district.isdigit() and number.isdigit()):
+            continue
+        if series.isalpha():
+            as_printed.add(compact)
+        else:
+            fixed = series.translate(_SERIES_DIGIT_TO_LETTER)
+            if fixed.isalpha():
+                repaired.add(state + district + fixed + number)
+    # A plate valid as printed is never re-read; a repair is used only when
+    # nothing is valid as printed and exactly one repair fits.
+    if as_printed:
+        return compact, False
+    if len(repaired) == 1:
+        return repaired.pop(), True
+    return "", False
+
+
+def _extract_vehicle(lines: list[str]) -> tuple[str, list[str]]:
+    """
+    Vehicle number printed after a vehicle label, or on a plate-only line
+    within three lines of one (handwritten cab slips put the plate above the
+    label). Returns (plate, notes); blank when no single valid plate fits.
+    """
+    same_line = re.compile(r"(?im)" + _VEHICLE_LABEL + r"\s*[:\-]?\s*" + _PLATE + r"\b")
+    plate_only = re.compile(r"(?i)\s*[:\-]?\s*" + _PLATE + r"(?:\s+km\b.*)?\s*")
+
+    # The label may end one line and the plate start the next ("Veh No" /
+    # ": MH31DX0981"), so the labelled form is searched across the text.
+    for match in same_line.finditer("\n".join(lines)):
+        if "\n" in match.group(0):
+            continue  # plate on the next line: checked with its neighbours below
+        plate, repaired = _plate_from(match.group(1))
+        if plate:
+            return plate, (["vehicle_no_series_read_from_digits"] if repaired else [])
+
+    found: dict[str, bool] = {}
+    for index, line in enumerate(lines):
+        if not VEHICLE_LABEL.search(line):
+            continue
+        for neighbour in lines[max(0, index - 3):index + 4]:
+            match = plate_only.fullmatch(neighbour)
+            if match:
+                plate, repaired = _plate_from(match.group(1))
+                if plate:
+                    found[plate] = found.get(plate, False) or repaired
+    if len(found) == 1:
+        plate, repaired = next(iter(found.items()))
+        notes = ["vehicle_no_on_separate_line"]
+        if repaired:
+            notes.append("vehicle_no_series_read_from_digits")
+        return plate, notes
+    return "", (["vehicle_no_conflicting_candidates"] if len(found) > 1 else [])
+
+
 def _extract_receipt_number(text: str) -> str:
     """Extract a bill, invoice, receipt, AWB, or ticket identifier."""
     # OCR misreads "Bill" as "B1ll", "B111" or "Bil"; colons may be full-width.
@@ -446,6 +530,15 @@ def _extract_amount(text: str, lines: list[str], words_value: Any = None) -> Any
 
             candidate = cleaned[j]
             value = number_on_line(candidate)
+            # A bare figure right after a Km/Qty/Pcs/Wt label is that reading,
+            # not the bill amount ("Km: | 76 | Amount Rs."). A figure marked as
+            # rupees ("700/-") is still an amount: OCR scatters the labels.
+            if (
+                value is not None and j > 0
+                and NON_AMOUNT_LABEL.fullmatch(cleaned[j - 1])
+                and not re.search(r"(?i)/-|₹|\brs\b", candidate)
+            ):
+                continue
             if value is not None:
                 return value
 
@@ -492,6 +585,14 @@ def _extract_amount(text: str, lines: list[str], words_value: Any = None) -> Any
     for i, line in enumerate(cleaned):
         label_match = amount_label.search(line)
         if not label_match:
+            continue
+
+        # "Particulars | Amount" is an item-table column header; the next
+        # figure is the first item, not the bill total.
+        if re.fullmatch(r"(?i)amount", line.strip()) and any(
+            re.search(r"(?i)\bparticulars\b", neighbour)
+            for neighbour in cleaned[max(0, i - 1):i + 2]
+        ):
             continue
 
         # Example: "Amount Rs.390" or "Amount (Rs): 300.00".
@@ -628,13 +729,8 @@ def extract_fields_from_lines(lines: list[str]) -> dict[str, Any]:
 
     result["receipt_number"] = _extract_receipt_number(raw_text)
 
-    vehicle_match = re.search(
-        r"(?im)\b(?:vehicle|veh)\s*(?:no\.?|number|#)\s*[:\-]?\s*"
-        r"([A-Z]{2}\s*\d{1,2}\s*[A-Z]{1,3}\s*\d{1,4})\b",
-        raw_text,
-    )
-    if vehicle_match:
-        result["vehicle_no"] = re.sub(r"\s+", "", vehicle_match.group(1).upper())
+    result["vehicle_no"], vehicle_notes = _extract_vehicle(lines)
+    result["notes"].extend(vehicle_notes)
 
     result["amount_in_words"], result["amount_in_words_value"] = _extract_amount_in_words(lines)
     result["total_amount"] = _extract_amount(raw_text, lines, result["amount_in_words_value"])

@@ -271,3 +271,76 @@ def test_handwritten_figure_split_by_ocr_is_left_blank():
 
     assert fields["total_amount"] is None
     assert fields["amount_in_words_value"] == Decimal("940")
+
+
+# Vehicle numbers: patterns found in the dataset-wide audit.
+
+def vehicle(lines):
+    return extract_fields_from_lines(lines)["vehicle_no"]
+
+
+def test_vehicle_number_with_ocr_punctuation_between_parts():
+    # Receipt 050: handwritten 'MH34 CP 5187' read as "MH34'CP 5187".
+    assert vehicle(["SHREE GANESH TOURS & TRAVELS", "No. 3741", "Vehicle No: MH34'CP 5187", "Km: 42"]) == "MH34CP5187"
+    assert vehicle(["CAB", "Vehicle No: MH34’CP 5187"]) == "MH34CP5187"
+
+
+def test_vehicle_number_existing_formats_are_unchanged():
+    assert vehicle(FUEL_SLIP) == "MH32BB1205"
+    assert vehicle(["CAB", "Vehicle No: MH32 CP 9655 Km: 75"]) == "MH32CP9655"
+    assert vehicle(["PARKING", "Veh No", ": MH31DX0981"]) == "MH31DX0981"
+
+
+def test_vehicle_number_on_a_line_near_its_label():
+    # Cab slips: the handwritten plate is read above the printed label.
+    fields = extract_fields_from_lines(
+        ["SHREE GANESH TOURS & TRAVELS", "To:", "Hingna MIDC", "MH31 CN 7173", "41", "Vehicle No:", "Km:", "700/-", "Amount Rs."])
+    assert fields["vehicle_no"] == "MH31CN7173"
+    assert "vehicle_no_on_separate_line" in fields["notes"]
+    # Parking tickets: label misread as 'Veh/No' or 'Ken No :', plate below.
+    assert vehicle(["SITABULDI MULTILEVEL PARKING", "Veh/No", "MH31EK4471", "Type"]) == "MH31EK4471"
+    assert vehicle(["SITABULDI MULTILEVEL PARKING", "Ken No :", "MH31DX0981", "Type"]) == "MH31DX0981"
+
+
+def test_vehicle_series_letter_read_as_digit_is_repaired_only_when_unambiguous():
+    fields = extract_fields_from_lines(["GAJANAN PETROLEUM", "Vehicle No : MH348T9842"])
+    assert fields["vehicle_no"] == "MH34BT9842"
+    assert "vehicle_no_series_read_from_digits" in fields["notes"]
+    # 'MH32B81205' fits two structures (MH32 BB / MH3 ZBB); district digits
+    # are never re-read ('MHB1' may be MH31 or MH81): both stay blank.
+    assert vehicle(["FUEL", "Vehicle No : MH32B81205"]) == ""
+    assert vehicle(["CAB", "Vehicle No: MHB1 AT 7180 Km: 33"]) == ""
+
+
+def test_malformed_conflicting_or_absent_vehicle_numbers_stay_blank():
+    assert vehicle(["CAB", "Vehicle No:", "MFH32CP8817"]) == ""      # extra letter
+    assert vehicle(["CAB", "MH3NN 869", "Vehicle No:"]) == ""       # garbled
+    assert vehicle(["CAB", "MH34 CP1653 Km:"]) == ""                # no label
+    conflicting = extract_fields_from_lines(["CAB", "MH31DX0981", "Vehicle No:", "MH32BB1205"])
+    assert conflicting["vehicle_no"] == ""
+    assert "vehicle_no_conflicting_candidates" in conflicting["notes"]
+    assert vehicle(["GREEN LEAF RESTAURANT", "Bill No: A/6178", "GRAND TOTAL", "630.00"]) == ""
+
+
+# Totals: unrelated numbers next to amount labels.
+
+def test_km_reading_next_to_amount_label_is_not_the_total():
+    # Receipt 187: 'Km: | 76 | Amount Rs. | 11207-' with unreadable words.
+    lines = ["SHREE GANESH TOURS & TRAVELS", "Vehicle No: MH32 AT1716", "Km:", "76", "Amount Rs.", "11207-",
+             "One Thousand One Hundrad weyly only"]
+    assert extract_fields_from_lines(lines)["total_amount"] is None
+
+
+def test_rupee_marked_amount_after_scattered_km_label_is_kept():
+    # Receipt 038: the Km value sits above the labels; '700/-' is the amount.
+    lines = ["MH31 CN 7173", "41", "Vehicle No:", "Km:", "700/-", "Amount Rs.", "Seven Hundred only"]
+    assert extract_fields_from_lines(lines)["total_amount"] == Decimal("700")
+
+
+def test_item_table_amount_header_is_not_a_total_label():
+    # Receipt 192: 'Particulars | Amount | 20 | 1Samosa ...', total label unreadable.
+    lines = ["HOTEL RAJDHANI DHABA", "Bill No. 3302", "Particulars", "Amount", "20", "1Samosa", "1Rice", "80", "100", "o s."]
+    assert extract_fields_from_lines(lines)["total_amount"] is None
+    # With a readable total label the total is still found.
+    labelled = ["HOTEL RAJDHANI DHABA", "Particulars", "Amount", "20", "1Samosa", "1Rice", "80", "100", "Total Rs."]
+    assert extract_fields_from_lines(labelled)["total_amount"] == Decimal("100")
