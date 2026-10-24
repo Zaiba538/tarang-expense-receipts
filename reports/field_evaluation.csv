@@ -2,20 +2,20 @@ claim_id,image_file,field,reference_value,extracted_value,match_status,image_mat
 CLM-30412,img_20260608_080820,vendor,Highway King Dhaba,HIGHWAY KING DHABA,match,True
 CLM-30416,img_20260608_211607,vendor,Hotel Rajdhani Dhaba,HOTEL RAJDHANI DHABA,match,True
 CLM-30418,img_20260609_210118,vendor,Hotel Gulmohar Executive,HOTEL GULMOHAR EXECUTIVE,match,True
-CLM-30421,img_20260610_101606,vendor,Laxmi Auto Fuels,BPCL,mismatch,True
-CLM-30424,img-20260610-wa0001,vendor,Laxmi Auto Fuels,BPCL,mismatch,True
-CLM-30425,img_20260612_125007,vendor,Laxmi Auto Fuels,BPCL,mismatch,True
+CLM-30421,img_20260610_101606,vendor,Laxmi Auto Fuels,LAXMI AUTO FUELS,match,True
+CLM-30424,img-20260610-wa0001,vendor,Laxmi Auto Fuels,LAXMI AUTO FUELS,match,True
+CLM-30425,img_20260612_125007,vendor,Laxmi Auto Fuels,LAXMI AUTO FUELS,match,True
 CLM-30428,img_20260611_093933,vendor,Annapurna Dining Hall,ANNAPURNA DINING HALL,match,True
-CLM-30430,img-20260613-wa0094,vendor,NEW HIGHWAY SERVICE STATION,HPCL,mismatch,True
-CLM-30432,img_20260613_195138,vendor,Shree Sai Petroleum,IndianOil,mismatch,True
+CLM-30430,img-20260613-wa0094,vendor,NEW HIGHWAY SERVICE STATION,NEW HIGHWAY SERVICE STATION,match,True
+CLM-30432,img_20260613_195138,vendor,Shree Sai Petroleum,SHREE SAI PETROLEUM,match,True
 CLM-30435,img-20260612-wa0058,vendor,SPICE ROUTE KITCHEN,SPICE ROUTE KITCHEN,match,True
 CLM-30436,img_20260612_173637,vendor,GREEN LEAF RESTAURANT,GREEN LEAF RESTAURANT,match,True
 CLM-30437,img-20260612-wa0109,vendor,Speedlink Couriers,SPEEDLINK COURIERS,match,True
-CLM-30439,img_20260614_185526,vendor,Om Sai Fuel Point,HPCL,mismatch,True
-CLM-30443,img-20260613-wa0212,vendor,Auto Laxmi Fuels,BPCL,mismatch,True
-CLM-30446,img_20260614_121336,vendor,Gajanan Pteroleum,IndianOil,mismatch,True
-CLM-30447,img_20260613_202822,vendor,Amb Jai Fuels,BPCL,mismatch,True
-CLM-30451,img-20260614-wa0133,vendor,Om Sai Fuel Point,HPCL,mismatch,True
+CLM-30439,img_20260614_185526,vendor,Om Sai Fuel Point,OM SAI FUEL POINT,match,True
+CLM-30443,img-20260613-wa0212,vendor,Auto Laxmi Fuels,LAXMIAUTO FUELS,mismatch,True
+CLM-30446,img_20260614_121336,vendor,Gajanan Pteroleum,GAJANAN PETROLEUM,mismatch,True
+CLM-30447,img_20260613_202822,vendor,Amb Jai Fuels,JAI AMBE FUELS,mismatch,True
+CLM-30451,img-20260614-wa0133,vendor,Om Sai Fuel Point,OM SAI FUEL POINT,match,True
 CLM-30454,img-20260614-wa0165,vendor,Spice Route Kitchen,SPICE ROUTE KITCHEN,match,True
 CLM-30458,img_20260614_134518,vendor,Sitabuldi Multilevel Parking - Wardha,SITABULDI MULTILEVEL PARKING,mismatch,True
 CLM-30462,img_20260615_083214,vendor,GREEN LEAF RESTAURANT,GREEN LEAF RESTAURANT,match,True
@@ -24,24 +24,24 @@ CLM-30468,img_20260614_103050,vendor,Punjabi Tadka Dhaba,PUNJABI TADKA DHABA,mat
 CLM-30469,img_20260615_132831,vendor,Punjabi Tadka Dhaba,PUNJABI TADKA DHABA,match,True
 CLM-30472,img-20260614-wa0186,vendor,Shri Ganesh ours & Travels,SHREE GANESH TOURS & TRAVELS,mismatch,True
 CLM-30475,img_20260615_083022,vendor,sitabuldi multilevelparking,SITABULDI MULTILEVEL PARKING,mismatch,True
-CLM-30476,img_20260615_164330,vendor,Shree Sai Petroleum,IndianOil,mismatch,True
-CLM-30479,img_20260616_180311,vendor,Jai Ambe Fuels,BPCL,mismatch,True
-CLM-30481,img-20260615-wa0220,vendor,OM SAI FUEL POINT,HPCL,mismatch,True
+CLM-30476,img_20260615_164330,vendor,Shree Sai Petroleum,SHREE SAI PETROLEUM,match,True
+CLM-30479,img_20260616_180311,vendor,Jai Ambe Fuels,JAI AMBE FUELS,match,True
+CLM-30481,img-20260615-wa0220,vendor,OM SAI FUEL POINT,OM SAI FUEL POINT,match,True
 CLM-30484,img_20260616_124009,vendor,Hotel Pradeep Pure Veg,HOTEL PRADEEP PURE VEG,match,True
 CLM-30488,img_20260616_212151,vendor,Punjabi Tadka Dhaba,PUNJABI TADKA DHABA,match,True
 CLM-30489,img_20260616_204248,vendor,Highway King haba (Ngp),HIGHWAY KING DHABA,mismatch,True
 CLM-30492,img-20260615-wa0239,vendor,HOTEL GULMOHAR EXECUTIVE,HOTEL GULMOHAR EXECUTIVE,match,True
 CLM-30494,img_20260616_095149,vendor,Sitabuldi Multilevel Parking,SITABULDI MULTILEVEL PARKING,match,True
-CLM-30495,img_20260616_111529,vendor,Gajanan Petroleum (Ngp),IndianOil,mismatch,True
-CLM-30499,img_20260617_172550,vendor,Om Sai Fuel Point,HPCL,mismatch,True
+CLM-30495,img_20260616_111529,vendor,Gajanan Petroleum (Ngp),GAJANAN PETROLEUM,mismatch,True
+CLM-30499,img_20260617_172550,vendor,Om Sai Fuel Point,OM SAI FUEL POINT,match,True
 CLM-30502,img_20260617_084633,vendor,Sai Ram Tea & Snacks,SAI RAM TEA & SNACKS,match,True
 CLM-30503,img_20260617_084423,vendor,Highway King Dhaba,HIGHWAY KING DHABA,match,True
 CLM-30506,img-20260617-wa0228,vendor,Maa Durga Cab Service,MAA DURGA CAB SERVICE,match,True
 CLM-30508,img_20260617_205508,vendor,SpeedLink Couriers,SPEEDLINK COURIERS,match,True
 CLM-30509,img-20260617-wa0144,vendor,Hotel Krishna Comforts,HOTEL KRISHNA COMFORTS,match,True
 CLM-30510,img_20260617_105945,vendor,Hotel Krishna Comforts,HOTEL KRISHNA COMFORTS,match,True
-CLM-30511,img_20260618_082935,vendor,Laxmi Auto Fuels,BPCL,mismatch,True
-CLM-30512,img_20260618_103234,vendor,Laxmi Auto Fuels Nagpur,BPCL,mismatch,True
+CLM-30511,img_20260618_082935,vendor,Laxmi Auto Fuels,LAXMI AUTO FUELS,match,True
+CLM-30512,img_20260618_103234,vendor,Laxmi Auto Fuels Nagpur,LAXMI AUTO FUELS,mismatch,True
 CLM-30514,img_20260617_113530,vendor,Cafe Coffee Corner,CAFE COFFEE CORNER,match,True
 CLM-30515,img_20260618_150100,vendor,HOTEL SAIBABA BHOJNALAYA,HOTEL SAIBABA BHOJNALAYA,match,True
 CLM-30519,img_20260617_192020,vendor,annapurna dining hall,ANNAPURNA DINING HALL,match,True
@@ -57,7 +57,7 @@ CLM-30536,img-20260617-wa0093,vendor,Sitabuldi Multilevel Parking,SITABULDI MULT
 CLM-30539,img-20260618-wa0121,vendor,Sitabuldi Multilevel Parking,SITABULDI MULTILEVEL PARKING,match,True
 CLM-30543,img_20260617_104401,vendor,Sitabuldi Multilevel Parking,SITABULDI MULTILEVEL PARKING,match,True
 CLM-30546,img-20260618-wa0030,vendor,Sitabuldi M.L. Parking,SITABULDI MULTILEVEL PARKING,mismatch,True
-CLM-30549,img_20260619_212359,vendor,Om Sai Fuel Point (Ngp),HPCL,mismatch,True
+CLM-30549,img_20260619_212359,vendor,Om Sai Fuel Point (Ngp),OM SAI FUEL POINT,mismatch,True
 CLM-30553,img_20260619_155737,vendor,Spice Route Kitchen,SPICE ROUTE KITCHEN,match,True
 CLM-30556,img_20260618_200822,vendor,HOTEL PRADEEP PURE VEG,HOTEL PRADEEP PURE VEG,match,True
 CLM-30558,img_20260618_215842,vendor,Punjabi Tadka Dhaba,PUNJABI TADKA DHABA,match,True
@@ -76,7 +76,7 @@ CLM-30586,img_20260620_143225,vendor,PUNJABI TADKA DHABA,PUNJABI TADKA DHABA,mat
 CLM-30587,img-20260620-wa0198,vendor,Highway King Dhaba - Wardha,HIGHWAY KING DHABA,mismatch,True
 CLM-30591,img_20260621_170151,vendor,Royal Travels,ROYAL TRAVELS,match,True
 CLM-30592,img_20260620_204047,vendor,Sitabuldi Multilevel Parking,SITABULDI MULTILEVEL PARKING,match,True
-CLM-30594,img_20260622_101042,vendor,Shree Sai Petroleum,IndianOil,mismatch,True
+CLM-30594,img_20260622_101042,vendor,Shree Sai Petroleum,SHREE SAI PETROLEUM,match,True
 CLM-30596,img-20260622-wa0139,vendor,SHIVAM FAMILY RESTAURANT,SHIVAM FAMILY RESTAURANT,match,True
 CLM-30600,img_20260622_130954,vendor,Hotel Saibaba Bhojnalaya (Ngp),HOTEL SAIBABA BHOJNALAYA,mismatch,True
 CLM-30601,img_20260621_182008,vendor,Hotel Saibaba Bhojnalaya,HOTEL SAIBABA BHOJNALAYA,match,True
@@ -85,15 +85,15 @@ CLM-30606,img_20260621_215742,vendor,Shri Ganesh Tours & Travels,SHREE GANESH TO
 CLM-30607,img_20260621_150433,vendor,Speedlink Couriers,SPEEDLINK COURIERS,match,True
 CLM-30608,img-20260621-wa0194,vendor,Prompt Parcel Services,PROMPT PARCEL SERVICES,match,True
 CLM-30611,img-20260621-wa0005,vendor,Couriers SpeedLink,SPEEDLINK COURIERS,mismatch,True
-CLM-30614,img_20260622_112339,vendor,SHREE SAI PETROLEUM,IndianOil,mismatch,True
+CLM-30614,img_20260622_112339,vendor,SHREE SAI PETROLEUM,SHREE SAI PETROLEUM,match,True
 CLM-30618,img_20260623_200653,vendor,Green Leaf Restaurant,GREEN LEAF RESTAURANT,match,True
 CLM-30620,img_20260623_114733,vendor,spice route kitchen,SPICE ROUTE KITCHEN,match,True
 CLM-30623,img_20260622_191832,vendor,Maa Durga Cab Service,MAA DURGA CAB SERVICE,match,True
 CLM-30625,img_20260623_210019,vendor,SpeedLink Cour.s (Ngp),SPEEDLINK COURIERS,mismatch,True
 CLM-30629,img_20260622_200133,vendor,Multilevel Sitabuldi Parking,SITABULDI MULTILEVEL PARKING,mismatch,True
-CLM-30630,img-20260624-wa0163,vendor,NEW HIGHWAY SERVICE STATION,HPCL,mismatch,True
-CLM-30633,img_20260624_121405,vendor,Laxmi Auto Fuels,BPCL,mismatch,True
-CLM-30634,img_20260624_101828,vendor,Shree Sai Petroleum,IndianOil,mismatch,True
+CLM-30630,img-20260624-wa0163,vendor,NEW HIGHWAY SERVICE STATION,NEW HIGHWAY SERVICE STATION,match,True
+CLM-30633,img_20260624_121405,vendor,Laxmi Auto Fuels,LAXMI AUTO FUELS,match,True
+CLM-30634,img_20260624_101828,vendor,Shree Sai Petroleum,SHREE SAI PETROLEUM,match,True
 CLM-30636,img_20260624_125626,vendor,Hotel Pradeep Pure Veg,HOTEL PRADEEP PURE VEG,match,True
 CLM-30639,img_20260624_093028,vendor,Hotel Rajdhani Dhaba,HOTEL RAJDHANI DHABA,match,True
 CLM-30640,img-20260623-wa0017,vendor,hotel rajdhani dhaba,HOTEL RAJDHANI DHABA,match,True
@@ -101,10 +101,10 @@ CLM-30642,img_20260623_111031,vendor,Maa Durga Cab Service,MAA DURGA CAB SERVICE
 CLM-30643,img_20260623_203853,vendor,HOTEL KRISHNA COMFORTS,HOTEL KRISHNA COMFORTS,match,True
 CLM-30646,img_20260624_185702,vendor,Hotel Gulmohar Executive,HOTEL GULMOHAR EXECUTIVE,match,True
 CLM-30648,img_20260624_141220,vendor,SITABULDI MULTILEVEL PARKING,SITABULDI MULTILEVEL PARKING,match,True
-CLM-30649,img-20260624-wa0183,vendor,Sai Om Fuel Point,HPCL,mismatch,True
-CLM-30652,img_20260625_150759,vendor,New Highway Service Station,HPCL,mismatch,True
-CLM-30656,img_20260625_103056,vendor,Gajanan Petro,IndianOil,mismatch,True
-CLM-30660,img-20260624-wa0037,vendor,Shree Sai Petroleum,IndianOil,mismatch,True
+CLM-30649,img-20260624-wa0183,vendor,Sai Om Fuel Point,OM SAI FUEL POINT,mismatch,True
+CLM-30652,img_20260625_150759,vendor,New Highway Service Station,NEW HIGHWAY SERVICE STATION,match,True
+CLM-30656,img_20260625_103056,vendor,Gajanan Petro,GAJANAN PETROLEUM,mismatch,True
+CLM-30660,img-20260624-wa0037,vendor,Shree Sai Petroleum,SHREE SAI PETROLEUM,match,True
 CLM-30661,img_20260624_182555,vendor,Annapurna Dining Hall,ANNAPURNA DINING HALL,match,True
 CLM-30664,img_20260625_081750,vendor,Cafe Coffee Corner,CAFE COFFEE CORNER,match,True
 CLM-30665,img_20260624_102953,vendor,Punjabi Tadka Dhaba,PUNJABI TADKA DHABA,match,True
@@ -114,11 +114,11 @@ CLM-30676,img_20260625_141617,vendor,Hotel Rajdhani Dhaba,HOTEL RAJDHANI DHABA,m
 CLM-30679,img-20260626-wa0050,vendor,vidarbha express courier,VIDARBHA EXPRESS COURIER,match,True
 CLM-30680,img_20260625_144518,vendor,Prompt Parcel Services,PROMPT PARCEL SERVICES,match,True
 CLM-30681,img_20260625_124513,vendor,Centre Point Inn,HOTEL CENTRE POINT INN,mismatch,True
-CLM-30684,img_20260627_171328,vendor,Om Sai Fuel Point,HPCL,mismatch,True
-CLM-30685,img_20260627_101752,vendor,OM SAI FUEL POINT,HPCL,mismatch,True
-CLM-30687,img_20260626_111444,vendor,Om Sai Fuel Point,HPCL,mismatch,True
-CLM-30688,img_20260626_090926,vendor,Laxmi Atuo Fuels,BPCL,mismatch,True
-CLM-30689,img-20260626-wa0140,vendor,Om Shirdi Sai Fuel Point,HPCL,mismatch,True
+CLM-30684,img_20260627_171328,vendor,Om Sai Fuel Point,OM SAI FUEL POINT,match,True
+CLM-30685,img_20260627_101752,vendor,OM SAI FUEL POINT,OM SAI FUEL POINT,match,True
+CLM-30687,img_20260626_111444,vendor,Om Sai Fuel Point,OM SAI FUEL POINT,match,True
+CLM-30688,img_20260626_090926,vendor,Laxmi Atuo Fuels,LAXMI AUTO FUELS,mismatch,True
+CLM-30689,img-20260626-wa0140,vendor,Om Shirdi Sai Fuel Point,OM SAI FUEL POINT,mismatch,True
 CLM-30690,img-20260626-wa0214,vendor,Veg Ashirwad Restaurant,ASHIRWAD VEG RESTAURANT,mismatch,True
 CLM-30691,img_20260627_214225,vendor,Shivam Family Restaurant,SHIVAM FAMILY RESTAURANT,match,True
 CLM-30693,img_20260628_140015,vendor,Hotel Pradeep Pure Veg,HOTEL PRADEEP PURE VEG,match,True
@@ -129,35 +129,35 @@ CLM-30703,img-20260627-wa0143,vendor,SpeedLink Couriers,SPEEDLINK COURIERS,match
 CLM-30706,img_20260628_193333,vendor,Vidarbha Express Courier,VIDARBHA EXPRESS COURIER,match,True
 CLM-30710,img_20260627_161208,vendor,,,unmatched_image,False
 CLM-30711,img-20260628-wa0004,vendor,Sitabuldi Multilevel Parking,SITABULDI MULTILEVEL PARKING,match,True
-CLM-30713,img_20260628_215211,vendor,OM SAI FUEL POINT,HPCL,mismatch,True
-CLM-30717,img_20260629_170328,vendor,Laxmi Auto Fuels,BPCL,mismatch,True
-CLM-30721,img-20260628-wa0202,vendor,OM SAI FUEL POINT,HPCL,mismatch,True
+CLM-30713,img_20260628_215211,vendor,OM SAI FUEL POINT,OM SAI FUEL POINT,match,True
+CLM-30717,img_20260629_170328,vendor,Laxmi Auto Fuels,LAXMI AUTO FUELS,match,True
+CLM-30721,img-20260628-wa0202,vendor,OM SAI FUEL POINT,OM SAI FUEL POINT,match,True
 CLM-30724,img_20260629_160432,vendor,Hotel Saibaba Bhojnalaya,HOTEL SAIBABA BHOJNALAYA,match,True
 CLM-30728,img-20260629-wa0202,vendor,Green Leaf Restaurant,GREEN LEAF RESTAURANT,match,True
 CLM-30732,img-20260628-wa0048,vendor,Shree Ganesh Tours & Travels,SHREE GANESH TOURS & TRAVELS,match,True
 CLM-30735,img-20260628-wa0031,vendor,Royal Travels,ROYAL TRAVELS,match,True
 CLM-30736,img-20260629-wa0090,vendor,Hotel Shubham Residency,HOTEL SHUBHAM RESIDENCY,match,True
 CLM-30737,img-20260629-wa0170,vendor,Sitabuldi Multilevel Parking,SITABULDI MULTILEVEL PARKING,match,True
-CLM-30738,img_20260629_124013,vendor,GAJANAN PETROLEUM,IndianOil,mismatch,True
-CLM-30740,img_20260630_093309,vendor,Om SaiF uel Point,HPCL,mismatch,True
+CLM-30738,img_20260629_124013,vendor,GAJANAN PETROLEUM,GAJANAN PETROLEUM,match,True
+CLM-30740,img_20260630_093309,vendor,Om SaiF uel Point,OM SAI FUEL POINT,mismatch,True
 CLM-30741,img-20260630-wa0154,vendor,Ashirwad Veg Restaurant,ASHIRWAD VEG RESTAURANT,match,True
 CLM-30742,img_20260630_164905,vendor,CAFE COFFEE CORNER,CAFE COFFEE CORNER,match,True
 CLM-30745,img_20260629_150245,vendor,Hotel Saibaba Bhojnalaya,HOTEL SAIBABA BHOJNALAYA,match,True
 CLM-30749,img_20260629_163548,vendor,Pradeep Pure Veg,HOTEL PRADEEP PURE VEG,mismatch,True
 CLM-30750,img_20260630_180323,vendor,Hotel Rajdhani Dhaba,HOTEL RAJDHANI DHABA,match,True
 CLM-30751,img_20260629_170106,vendor,Hotel Krishna Comforts,HOTEL KRISHNA COMFORTS,match,True
-CLM-30753,img_20260701_161009,vendor,Shree Sai Petroleum,IndianOil,mismatch,True
-CLM-30757,img_20260701_194456,vendor,Laxmi Auto Fuels,BPCL,mismatch,True
-CLM-30759,img_20260630_151546,vendor,laxmi auto fuels,BPCL,mismatch,True
-CLM-30762,img_20260630_093537,vendor,Laxmi Auto Fuels,BPCL,mismatch,True
+CLM-30753,img_20260701_161009,vendor,Shree Sai Petroleum,SHREE SAI PETROLEUM,match,True
+CLM-30757,img_20260701_194456,vendor,Laxmi Auto Fuels,LAXMI AUTO FUELS,match,True
+CLM-30759,img_20260630_151546,vendor,laxmi auto fuels,LAXMI AUTO FUELS,match,True
+CLM-30762,img_20260630_093537,vendor,Laxmi Auto Fuels,LAXMI AUTO FUELS,match,True
 CLM-30764,img-20260630-wa0097,vendor,Ashirwad Veg Restauraant,ASHIRWAD VEG RESTAURANT,mismatch,True
 CLM-30766,img_20260701_090903,vendor,Saibaba Bhojnalaya,HOTEL SAIBABA BHOJNALAYA,mismatch,True
 CLM-30767,img_20260701_150314,vendor,HOTEL PRADEEP PURE VEG,HOTEL PRADEEP PURE VEG,match,True
 CLM-30769,img_20260630_162530,vendor,Annapurna Dining Hall,ANNAPURNA DINING HALL,match,True
 CLM-30770,img_20260630_175914,vendor,vidarbha expreess courier,VIDARBHA EXPRESS COURIER,mismatch,True
 CLM-30774,img-20260701-wa0166,vendor,Hotel Krishna Comforts,HOTEL KRISHNA COMFORTS,match,True
-CLM-30775,img_20260702_113739,vendor,Gajanan Petroleum,IndianOil,mismatch,True
-CLM-30779,img-20260701-wa0067,vendor,New Highway Service Station,HPCL,mismatch,True
+CLM-30775,img_20260702_113739,vendor,Gajanan Petroleum,GAJANAN PETROLEUM,match,True
+CLM-30779,img-20260701-wa0067,vendor,New Highway Service Station,NEW HIGHWAY SERVICE STATION,match,True
 CLM-30780,img_20260701_105637,vendor,shivam family restaurant,SHIVAM FAMILY RESTAURANT,match,True
 CLM-30783,img-20260701-wa0110,vendor,GREEN LEAF RESTAURANT,GREEN LEAF RESTAURANT,match,True
 CLM-30787,img_20260702_104058,vendor,Highway King Dhaba,HIGHWAYKINGDHABA,mismatch,True
@@ -166,73 +166,73 @@ CLM-30794,img_20260701_194303,vendor,SPEEDLINK COURIERS,SPEEDLINK COURIERS,match
 CLM-30796,img_20260701_161359,vendor,Express Vidarbha Courier (Ngp),VIDARBHA EXPRESS COURIER,mismatch,True
 CLM-30797,img-20260701-wa0140,vendor,Hotel Centre Point Inn,HOTEL CENTRE POINT INN,match,True
 CLM-30799,img_20260702_154204,vendor,Multilevel Sitabuldi Parking,SITABULDI MULTILEVEL PARKING,mismatch,True
-CLM-30803,img_20260702_155903,vendor,Om Sai Fuel Point,HPCL,mismatch,True
+CLM-30803,img_20260702_155903,vendor,Om Sai Fuel Point,OM SAI FUEL POINT,match,True
 CLM-30804,img_20260702_150756,vendor,Annapurna Dining Hall,ANNAPURNA DINING HALL,match,True
 CLM-30807,img_20260703_090155,vendor,Spice Route Kitchen,SPICE ROUTE KITCHEN,match,True
 CLM-30811,img_20260703_083622,vendor,Dining Annapurna Hall,ANNAPURNA DINING HALL,mismatch,True
 CLM-30814,img_20260702_105135,vendor,Highway King Dhaba,HIGHWAY KING DHABA,match,True
 CLM-30815,img-20260703-wa0152,vendor,Shree Ganesh Tours & Travels,SHREE GANESH TOURS & TRAVELS,match,True
 CLM-30819,img_20260703_175613,vendor,Hotel Krishna Comforts,HOTEL KRISHNA COMFORTS,match,True
-CLM-30820,img-20260704-wa0046,vendor,Petroleum Gajanan,IndianOil,mismatch,True
-CLM-30821,img-20260703-wa0197,vendor,Gajanan Petroleum,IndianOil,mismatch,True
-CLM-30824,img_20260703_165733,vendor,LAXMI AUTO FUELS,BPCL,mismatch,True
-CLM-30826,img-20260704-wa0175,vendor,JAI AMBE FUELS,BPCL,mismatch,True
+CLM-30820,img-20260704-wa0046,vendor,Petroleum Gajanan,GAJANAN PETROLEUM,mismatch,True
+CLM-30821,img-20260703-wa0197,vendor,Gajanan Petroleum,GAJANAN PETROLEUM,match,True
+CLM-30824,img_20260703_165733,vendor,LAXMI AUTO FUELS,LAXMI AUTO FUELS,match,True
+CLM-30826,img-20260704-wa0175,vendor,JAI AMBE FUELS,JAI AMBE FUELS,match,True
 CLM-30827,img_20260704_162231,vendor,Saibaba Hotel Bhojnalaya,HOTEL SAIBABA BHOJNALAYA,mismatch,True
 CLM-30829,img_20260704_102036,vendor,Ashirwad Veg Restaurant,ASHIRWAD VEG RESTAURANT,match,True
 CLM-30833,img_20260703_171453,vendor,Hotel Rajdhani Dhaba,HOTEL RAJDHANI DHABA,match,True
 CLM-30837,img_20260703_154353,vendor,Maa Durga Cab Service,MAA DURGA CAB SERVICE,match,True
 CLM-30840,img_20260703_112843,vendor,Shree Ganesh Tours & Travels,SHREE GANESH TOURS & TRAVELS,match,True
-CLM-30843,img_20260704_133452,vendor,New Highway Service Station,HPCL,mismatch,True
+CLM-30843,img_20260704_133452,vendor,New Highway Service Station,NEW HIGHWAY SERVICE STATION,match,True
 CLM-30846,img-20260704-wa0179,vendor,Ashirwad Veg Restaurant,ASHIRWAD VEG RESTAURANT,match,True
 CLM-30849,img_20260705_110011,vendor,Shivam Family Restaurant Nagpur,SHIVAM FAMILY RESTAURANT,mismatch,True
 CLM-30851,img-20260704-wa0073,vendor,Hotel Pradeep Pre Veg,HOTEL PRADEEP PURE VEG,mismatch,True
 CLM-30854,img_20260705_210409,vendor,Hotel Rajdhani Dhaba,HOTEL RAJDHANI DHABA,match,True
 CLM-30856,img_20260705_125011,vendor,,,not_comparable,True
 CLM-30857,img_20260705_095928,vendor,VIDARBHA EXPRESS COURIER,VIDARBHA EXPRESS COURIER,match,True
-CLM-30860,img_20260705_161531,vendor,Sai Om Fuel Point,HPCL,mismatch,True
+CLM-30860,img_20260705_161531,vendor,Sai Om Fuel Point,OM SAI FUEL POINT,mismatch,True
 CLM-30863,img_20260706_092355,vendor,Hotel Saibaba Bhojnalaya,HOTEL SAIBABA BHOJNALAYA,match,True
 CLM-30865,img_20260706_110511,vendor,PUNJABI TADKA DHABA,PUNJABI TADKA DHABA,match,True
 CLM-30868,img_20260705_180453,vendor,royal travels,ROYAL TRAVELS,match,True
 CLM-30871,img_20260706_112925,vendor,Prompt Parcel Services,PROMPT PARCEL SERVICES,match,True
 CLM-30872,img_20260706_193326,vendor,Sitabuldi Multilevel Parking,SITABULDI MULTILEVEL PARKING,match,True
 CLM-30874,img-20260706-wa0216,vendor,Sitabuldi Multillevel Parking,SITABULDI MULTILEVEL PARKING,mismatch,True
-CLM-30875,img_20260706_192128,vendor,gajanan petroleum,IndianOil,mismatch,True
+CLM-30875,img_20260706_192128,vendor,gajanan petroleum,GAJANAN PETROLEUM,match,True
 CLM-30879,img_20260706_210747,vendor,Ashirwad Veg Restaurant,ASHIRWAD VEG RESTAURANT,match,True
 CLM-30880,img_20260706_123828,vendor,HOTEL RAJDHANI DHABA,HOTEL RAJDHANI DHABA,match,True
 CLM-30883,img-20260706-wa0067,vendor,prrompt parcel services,PROMPT PARCEL SERVICES,mismatch,True
 CLM-30886,img-20260707-wa0066,vendor,,VIDARBHA EXPRESS COURIER,not_comparable,True
 CLM-30887,img-20260706-wa0212,vendor,,,unmatched_image,False
 CLM-30891,img_20260707_190716,vendor,Sitabuldi Multilevel Parking,SITABULDI MULTILEVEL PARKING,match,True
-CLM-30892,img-20260707-wa0210,vendor,Jai Ambe Fuels,BPCL,mismatch,True
-CLM-30893,img_20260707_181142,vendor,Shree Sai Petroleum,IndianOil,mismatch,True
-CLM-30897,img_20260708_135744,vendor,Jai Ambe Fuels,BPCL,mismatch,True
-CLM-30901,img-20260707-wa0203,vendor,Jai Ambe Fuels,BPCL,mismatch,True
-CLM-30902,img_20260708_120658,vendor,Laxmi Auto Fuels Nagpur,BPCL,mismatch,True
-CLM-30904,img-20260708-wa0072,vendor,Om Sai Fuel Point,HPCL,mismatch,True
+CLM-30892,img-20260707-wa0210,vendor,Jai Ambe Fuels,JAI AMBE FUELS,match,True
+CLM-30893,img_20260707_181142,vendor,Shree Sai Petroleum,SHREE SAI PETROLEUM,match,True
+CLM-30897,img_20260708_135744,vendor,Jai Ambe Fuels,JAI AMBE FUELS,match,True
+CLM-30901,img-20260707-wa0203,vendor,Jai Ambe Fuels,JAI AMBE FUELS,match,True
+CLM-30902,img_20260708_120658,vendor,Laxmi Auto Fuels Nagpur,LAXMI AUTO FUELS,mismatch,True
+CLM-30904,img-20260708-wa0072,vendor,Om Sai Fuel Point,OM SAI FUEL POINT,match,True
 CLM-30906,img_20260708_204220,vendor,Ashirwad Veg Restaurant,ASHIRWAD VEG RESTAURANT,match,True
 CLM-30910,img_20260708_205926,vendor,Shree Ganesh Tours & Travels,SHREE GANESH TOURS & TRAVELS,match,True
 CLM-30913,img_20260708_091254,vendor,Royal Travels,ROYAL TRAVELS,match,True
 CLM-30916,img_20260707_110240,vendor,Sitabuldi Multilevel Parking,SITABULDI MULTILEVEL PARKING,match,True
-CLM-30919,img_20260708_103658,vendor,Shree Sai Petroleum,IndianOil,mismatch,True
-CLM-30920,img-20260709-wa0067,vendor,New Highway Service Station,HPCL,mismatch,True
-CLM-30923,img_20260708_190631,vendor,SHREE SAI PETROLEUM,IndianOil,mismatch,True
-CLM-30925,img-20260708-wa0036,vendor,Gajanan Petroleum,IndianOil,mismatch,True
+CLM-30919,img_20260708_103658,vendor,Shree Sai Petroleum,SHREE SAI PETROLEUM,match,True
+CLM-30920,img-20260709-wa0067,vendor,New Highway Service Station,NEW HIGHWAY SERVICE STATION,match,True
+CLM-30923,img_20260708_190631,vendor,SHREE SAI PETROLEUM,SHREE SAI PETROLEUM,match,True
+CLM-30925,img-20260708-wa0036,vendor,Gajanan Petroleum,GAJANAN PETROLEUM,match,True
 CLM-30929,img_20260708_185155,vendor,Spice Route Kitchen,SPICE ROUTE KITCHEN,match,True
 CLM-30932,img_20260708_181536,vendor,hotel rajdhani dhaba,HOTEL RAJDHANI DHABA,match,True
 CLM-30934,img_20260708_142626,vendor,ROYAL TRAVELS,ROYAL TRAVELS,match,True
 CLM-30937,img_20260708_122923,vendor,Vidarbha Express Courier,VIDARBHA EXPRESS COURIER,match,True
 CLM-30940,img-20260709-wa0074,vendor,Sai Palace Lodge,SAI PALACE LODGE,match,True
-CLM-30944,img_20260710_170627,vendor,shree sai petroleum,IndianOil,mismatch,True
-CLM-30947,img_20260710_205455,vendor,Shhree Sai Petroleum,IndianOil,mismatch,True
-CLM-30950,img_20260709_081958,vendor,Shree Sai Petroleum,IndianOil,mismatch,True
-CLM-30954,img-20260710-wa0098,vendor,Shree Sai Petroleum,IndianOil,mismatch,True
-CLM-30957,img-20260710-wa0118,vendor,Om Sai Fueel Point,HPCL,mismatch,True
-CLM-30959,img_20260709_151741,vendor,Laxmi Auto Fuels,BPCL,mismatch,True
+CLM-30944,img_20260710_170627,vendor,shree sai petroleum,SHREE SAI PETROLEUM,match,True
+CLM-30947,img_20260710_205455,vendor,Shhree Sai Petroleum,SHREE SAI PETROLEUM,mismatch,True
+CLM-30950,img_20260709_081958,vendor,Shree Sai Petroleum,SHREE SAI PETROLEUM,match,True
+CLM-30954,img-20260710-wa0098,vendor,Shree Sai Petroleum,SHREE SAI PETROLEUM,match,True
+CLM-30957,img-20260710-wa0118,vendor,Om Sai Fueel Point,OM SAI FUEL POINT,mismatch,True
+CLM-30959,img_20260709_151741,vendor,Laxmi Auto Fuels,LAXMI AUTO FUELS,match,True
 CLM-30963,img_20260709_165630,vendor,Hotel Saibaba Bhojnalaya,HOTEL SAIBABA BHOJNALAYA,match,True
 CLM-30967,img_20260709_130733,vendor,PUNJABI TADKA DHABA,PUNJABI TADKA DHABA,match,True
 CLM-30971,img_20260710_103529,vendor,Shree Ganesh Tours & Travels,SHREE GANESH TOURS & TRAVELS,match,True
 CLM-30974,img-20260709-wa0132,vendor,Krisnha Hotel Comforts,HOTEL KRISHNA COMFORTS,mismatch,True
-CLM-30978,img-20260711-wa0205,vendor,Shree Sai Petroleum,IndianOil,mismatch,True
+CLM-30978,img-20260711-wa0205,vendor,Shree Sai Petroleum,SHREE SAI PETROLEUM,match,True
 CLM-30979,img-20260710-wa0167,vendor,,,not_comparable,True
 CLM-30980,img_20260711_205505,vendor,Green Leaf Restaurant,GREEN LEAF RESTAURANT,match,True
 CLM-30982,img_20260711_165958,vendor,Ashirwad Veg Restaurant,ASHIRWAD VEG RESTAURANT,match,True
@@ -245,19 +245,19 @@ CLM-30996,img_20260711_175810,vendor,Shree Ganesh Tours & Travels - Wardha,SHREE
 CLM-31000,img_20260710_090411,vendor,Vidarbha Express Courier - Wardha,VIDARBHA EXPRESS COURIER,mismatch,True
 CLM-31004,img_20260710_195933,vendor,HOTEL KRISHNA COMFORTS,HOTEL KRISHNA COMFORTS,match,True
 CLM-31007,img_20260711_194359,vendor,medical square pay & park,MEDICAL SQUARE PAY & PARK,match,True
-CLM-31009,img_20260711_124855,vendor,Laxmi Auto Fuels,BPCL,mismatch,True
+CLM-31009,img_20260711_124855,vendor,Laxmi Auto Fuels,LAXMI AUTO FUELS,match,True
 CLM-31010,img-20260711-wa0006,vendor,Shivam Family Restaurant,SHIVAM FAMILY RESTAURANT,match,True
 CLM-31011,img_20260712_170552,vendor,Punjabi Tadka Dhaba,PUNJABI TADKA DHABA,match,True
 CLM-31013,img_20260711_154128,vendor,Punjabi Tadka Dhaba,PUNJABI TADKA DHABA,match,True
 CLM-31015,img_20260711_204304,vendor,HOTEL SHUBHAM RESIDENCY,HOTEL SHUBHAM RESIDENCY,match,True
-CLM-31016,img_20260713_095100,vendor,New Highway Service Station,HPCL,mismatch,True
+CLM-31016,img_20260713_095100,vendor,New Highway Service Station,NEW HIGHWAY SERVICE STATION,match,True
 CLM-31018,img_20260713_173024,vendor,Ashirwad Veg Restaurant,ASHIRWAD VEG RESTAURANT,match,True
 CLM-31019,img-20260712-wa0179,vendor,Family Shivam Restaurant,SHIVAM FAMILY RESTAURANT,mismatch,True
 CLM-31020,img-20260712-wa0059,vendor,Royal Travels,ROYAL TRAVELS,match,True
 CLM-31021,img_20260712_143503,vendor,ganesh shree tours & travels,SHREE GANESH TOURS & TRAVELS,mismatch,True
 CLM-31022,img-20260713-wa0111,vendor,Shree Ganesh Tours & Travels,SHREE GANESH TOURS & TRAVELS,match,True
-CLM-31023,img_20260714_160417,vendor,LAXMI AUTO FUELS,BPCL,mismatch,True
-CLM-31026,img_20260713_165011,vendor,SHREE SAI PETROLEUM,IndianOil,mismatch,True
+CLM-31023,img_20260714_160417,vendor,LAXMI AUTO FUELS,LAXMI AUTO FUELS,match,True
+CLM-31026,img_20260713_165011,vendor,SHREE SAI PETROLEUM,SHREE SAI PETROLEUM,match,True
 CLM-31030,img-20260713-wa0093,vendor,HOTEL SAIBABA BHOJNALAYA,HOTEL SAIBABA BHOJNALAYA,match,True
 CLM-31032,img_20260714_110121,vendor,Annapurna Dining Hall,ANNAPURNA DINING HALL,match,True
 CLM-31034,img-20260713-wa0237,vendor,Hotel Pradeep Pure Veg,HOTEL PRADEEP PURE VEG,match,True
@@ -270,15 +270,15 @@ CLM-31049,img_20260714_171948,vendor,Highway KKing Dhaba,HIGHWAY KING DHABA,mism
 CLM-31053,img_20260714_123934,vendor,Royal Travels,ROYAL TRAVELS,match,True
 CLM-31055,img_20260714_213549,vendor,SHREE GANESH TOURS & TRAVELS,SHREE GANESH TOURS & TRAVELS,match,True
 CLM-31056,img_20260714_202221,vendor,SpeedLink Couriers,SPEEDLINK COURIERS,match,True
-CLM-31057,img-20260715-wa0155,vendor,Shree Shirdi Sai Petro,IndianOil,mismatch,True
-CLM-31059,img_20260715_184332,vendor,Laxmi Auto Fuels,BPCL,mismatch,True
+CLM-31057,img-20260715-wa0155,vendor,Shree Shirdi Sai Petro,SHREE SAI PETROLEUM,mismatch,True
+CLM-31059,img_20260715_184332,vendor,Laxmi Auto Fuels,LAXMI AUTO FUELS,match,True
 CLM-31063,img-20260716-wa0107,vendor,Hotel Rajdhani Dhaba,HOTEL RAJDHANI DHABA,match,True
 CLM-31066,img_20260716_143034,vendor,Express Vidarbha Courier,VIDARBHA EXPRESS COURIER,mismatch,True
 CLM-31067,img_20260715_153311,vendor,Prompt Parcel Services,PROMPT PARCEL SERVICES,match,True
-CLM-31069,img-20260717-wa0088,vendor,New Highway Service Station,HPCL,mismatch,True
+CLM-31069,img-20260717-wa0088,vendor,New Highway Service Station,NEW HIGHWAY SERVICE STATION,match,True
 CLM-31071,img-20260717-wa0051,vendor,Hotel Pradeep Pure Veg,HOTEL PRADEEP PURE VEG,match,True
 CLM-31072,img_20260716_173230,vendor,prompt parcel services,PROMPT PARCEL SERVICES,match,True
-CLM-31075,img-20260717-wa0166,vendor,New Highway Service Station,HPCL,mismatch,True
+CLM-31075,img-20260717-wa0166,vendor,New Highway Service Station,NEW HIGHWAY SERVICE STATION,match,True
 CLM-31079,img_20260718_154240,vendor,Vidarbha Express Courier,VIDARBHA EXPRESS COURIER,match,True
 CLM-31081,img_20260718_081516,vendor,Prompt Parcel Services,PROMPT PARCELSERVICES,mismatch,True
 CLM-31084,img_20260717_194532,vendor,Sitabuldi Multilevel Parking,SITABULDI MULTILEVEL PARKING,match,True
@@ -288,20 +288,20 @@ CLM-30418,img_20260609_210118,receipt_date,08-06-2026,2026-06-08,match,True
 CLM-30421,img_20260610_101606,receipt_date,10-06-2026,2026-06-10,match,True
 CLM-30424,img-20260610-wa0001,receipt_date,11-06-2026,2026-06-11,match,True
 CLM-30425,img_20260612_125007,receipt_date,08-06-2026,2026-06-08,match,True
-CLM-30428,img_20260611_093933,receipt_date,12-06-2026,,not_comparable,True
+CLM-30428,img_20260611_093933,receipt_date,12-06-2026,2026-06-12,match,True
 CLM-30430,img-20260613-wa0094,receipt_date,13-06-2026,2026-06-13,match,True
 CLM-30432,img_20260613_195138,receipt_date,13-06-2026,2026-06-13,match,True
 CLM-30435,img-20260612-wa0058,receipt_date,09-06-2026,2026-06-09,match,True
-CLM-30436,img_20260612_173637,receipt_date,13-06-2026,,not_comparable,True
+CLM-30436,img_20260612_173637,receipt_date,13-06-2026,2026-06-13,match,True
 CLM-30437,img-20260612-wa0109,receipt_date,13-06-2026,2026-06-13,match,True
 CLM-30439,img_20260614_185526,receipt_date,09-06-2026,2026-06-09,match,True
 CLM-30443,img-20260613-wa0212,receipt_date,13-06-2026,2026-06-13,match,True
-CLM-30446,img_20260614_121336,receipt_date,11-06-2026,,not_comparable,True
+CLM-30446,img_20260614_121336,receipt_date,11-06-2026,2026-06-11,match,True
 CLM-30447,img_20260613_202822,receipt_date,14-06-2026,2026-06-14,match,True
 CLM-30451,img-20260614-wa0133,receipt_date,13-06-2026,2026-06-13,match,True
 CLM-30454,img-20260614-wa0165,receipt_date,13-06-2026,2026-06-13,match,True
 CLM-30458,img_20260614_134518,receipt_date,13-06-2026,2026-06-13,match,True
-CLM-30462,img_20260615_083214,receipt_date,11-06-2026,,not_comparable,True
+CLM-30462,img_20260615_083214,receipt_date,11-06-2026,2026-06-11,match,True
 CLM-30465,img_20260615_192519,receipt_date,11-06-2026,2026-06-11,match,True
 CLM-30468,img_20260614_103050,receipt_date,11-06-2026,2026-06-11,match,True
 CLM-30469,img_20260615_132831,receipt_date,15-06-2026,2026-06-15,match,True
@@ -315,22 +315,22 @@ CLM-30488,img_20260616_212151,receipt_date,10-06-2026,2026-06-10,match,True
 CLM-30489,img_20260616_204248,receipt_date,09-06-2026,2026-06-09,match,True
 CLM-30492,img-20260615-wa0239,receipt_date,16-06-2026,2026-06-16,match,True
 CLM-30494,img_20260616_095149,receipt_date,11-06-2026,2026-06-11,match,True
-CLM-30495,img_20260616_111529,receipt_date,09-06-2026,,not_comparable,True
+CLM-30495,img_20260616_111529,receipt_date,09-06-2026,2026-06-09,match,True
 CLM-30499,img_20260617_172550,receipt_date,09-06-2026,2026-06-09,match,True
 CLM-30502,img_20260617_084633,receipt_date,15-06-2026,2026-06-15,match,True
 CLM-30503,img_20260617_084423,receipt_date,08-06-2026,2026-06-08,match,True
 CLM-30506,img-20260617-wa0228,receipt_date,14-06-2026,2026-06-14,match,True
 CLM-30508,img_20260617_205508,receipt_date,12-06-2026,2026-06-12,match,True
-CLM-30509,img-20260617-wa0144,receipt_date,15-06-2026,,not_comparable,True
-CLM-30510,img_20260617_105945,receipt_date,11-06-2026,,not_comparable,True
+CLM-30509,img-20260617-wa0144,receipt_date,15-06-2026,2026-06-15,match,True
+CLM-30510,img_20260617_105945,receipt_date,11-06-2026,2026-06-11,match,True
 CLM-30511,img_20260618_082935,receipt_date,11-06-2026,2026-06-11,match,True
 CLM-30512,img_20260618_103234,receipt_date,12-06-2026,2026-06-12,match,True
 CLM-30514,img_20260617_113530,receipt_date,14-06-2026,2026-06-14,match,True
 CLM-30515,img_20260618_150100,receipt_date,14-06-2026,2026-06-14,match,True
-CLM-30519,img_20260617_192020,receipt_date,13-06-2026,,not_comparable,True
+CLM-30519,img_20260617_192020,receipt_date,13-06-2026,2026-06-14,mismatch,True
 CLM-30523,img-20260618-wa0208,receipt_date,13-06-2026,2026-06-13,match,True
 CLM-30524,img_20260617_121852,receipt_date,18-06-2026,2026-06-18,match,True
-CLM-30527,img_20260618_110458,receipt_date,15-06-2026,,not_comparable,True
+CLM-30527,img_20260618_110458,receipt_date,15-06-2026,2026-06-15,match,True
 CLM-30528,img_20260617_180258,receipt_date,10-06-2026,2026-06-10,match,True
 CLM-30529,img_20260618_205103,receipt_date,17-06-2026,2026-06-17,match,True
 CLM-30531,img_20260617_212342,receipt_date,,,unmatched_image,False
@@ -345,11 +345,11 @@ CLM-30553,img_20260619_155737,receipt_date,15-06-2026,2026-06-15,match,True
 CLM-30556,img_20260618_200822,receipt_date,10-06-2026,2026-06-10,match,True
 CLM-30558,img_20260618_215842,receipt_date,18-06-2026,2026-06-18,match,True
 CLM-30560,img-20260618-wa0179,receipt_date,15-06-2026,2026-06-15,match,True
-CLM-30562,img_20260618_100357,receipt_date,12-06-2026,,not_comparable,True
+CLM-30562,img_20260618_100357,receipt_date,12-06-2026,2026-06-12,match,True
 CLM-30566,img_20260619_114500,receipt_date,19-06-2026,2026-06-19,match,True
 CLM-30568,img-20260619-wa0197,receipt_date,13-06-2026,2026-06-13,match,True
 CLM-30570,img-20260620-wa0200,receipt_date,20-06-2026,2026-06-20,match,True
-CLM-30572,img_20260620_212353,receipt_date,20-06-2026,,not_comparable,True
+CLM-30572,img_20260620_212353,receipt_date,20-06-2026,2026-06-20,match,True
 CLM-30573,img_20260619_115355,receipt_date,20-06-2026,2026-06-20,match,True
 CLM-30577,img-20260619-wa0030,receipt_date,12-06-2026,2026-06-11,mismatch,True
 CLM-30581,img-20260620-wa0193,receipt_date,15-06-2026,2026-06-15,match,True
@@ -369,7 +369,7 @@ CLM-30607,img_20260621_150433,receipt_date,18-06-2026,2026-06-18,match,True
 CLM-30608,img-20260621-wa0194,receipt_date,14-06-2026,2026-06-14,match,True
 CLM-30611,img-20260621-wa0005,receipt_date,13-06-2026,2026-06-13,match,True
 CLM-30614,img_20260622_112339,receipt_date,14-06-2026,2026-06-14,match,True
-CLM-30618,img_20260623_200653,receipt_date,14-06-2026,,not_comparable,True
+CLM-30618,img_20260623_200653,receipt_date,14-06-2026,2026-06-14,match,True
 CLM-30620,img_20260623_114733,receipt_date,15-06-2026,2026-06-15,match,True
 CLM-30623,img_20260622_191832,receipt_date,18-06-2026,2026-06-18,match,True
 CLM-30625,img_20260623_210019,receipt_date,23-06-2026,2026-06-23,match,True
@@ -381,16 +381,16 @@ CLM-30636,img_20260624_125626,receipt_date,15-06-2026,2026-06-15,match,True
 CLM-30639,img_20260624_093028,receipt_date,15-06-2026,2026-06-15,match,True
 CLM-30640,img-20260623-wa0017,receipt_date,17-06-2026,2026-06-17,match,True
 CLM-30642,img_20260623_111031,receipt_date,18-06-2026,2026-06-18,match,True
-CLM-30643,img_20260623_203853,receipt_date,19-06-2026,,not_comparable,True
+CLM-30643,img_20260623_203853,receipt_date,19-06-2026,2026-06-19,match,True
 CLM-30646,img_20260624_185702,receipt_date,16-06-2026,2026-06-16,match,True
 CLM-30648,img_20260624_141220,receipt_date,21-06-2026,2026-06-21,match,True
 CLM-30649,img-20260624-wa0183,receipt_date,23-06-2026,2026-06-23,match,True
 CLM-30652,img_20260625_150759,receipt_date,16-06-2026,2026-06-16,match,True
-CLM-30656,img_20260625_103056,receipt_date,23-06-2026,,not_comparable,True
+CLM-30656,img_20260625_103056,receipt_date,23-06-2026,2026-06-23,match,True
 CLM-30660,img-20260624-wa0037,receipt_date,16-06-2026,2026-06-16,match,True
-CLM-30661,img_20260624_182555,receipt_date,17-06-2026,,not_comparable,True
+CLM-30661,img_20260624_182555,receipt_date,17-06-2026,2026-06-17,match,True
 CLM-30664,img_20260625_081750,receipt_date,21-06-2026,2026-06-21,match,True
-CLM-30665,img_20260624_102953,receipt_date,15-06-2026,,not_comparable,True
+CLM-30665,img_20260624_102953,receipt_date,15-06-2026,2026-06-15,match,True
 CLM-30668,img_20260625_160441,receipt_date,22-06-2026,2026-06-22,match,True
 CLM-30672,img-20260624-wa0019,receipt_date,16-06-2026,2026-06-16,match,True
 CLM-30676,img_20260625_141617,receipt_date,23-06-2026,2026-06-23,match,True
@@ -402,7 +402,7 @@ CLM-30685,img_20260627_101752,receipt_date,21-06-2026,2026-06-21,match,True
 CLM-30687,img_20260626_111444,receipt_date,24-06-2026,2026-06-24,match,True
 CLM-30688,img_20260626_090926,receipt_date,19-06-2026,2026-06-19,match,True
 CLM-30689,img-20260626-wa0140,receipt_date,13-06-2026,2026-06-13,match,True
-CLM-30690,img-20260626-wa0214,receipt_date,20-06-2026,,not_comparable,True
+CLM-30690,img-20260626-wa0214,receipt_date,20-06-2026,2026-06-20,match,True
 CLM-30691,img_20260627_214225,receipt_date,26-06-2026,2026-06-26,match,True
 CLM-30693,img_20260628_140015,receipt_date,24-06-2026,2026-06-24,match,True
 CLM-30697,img-20260628-wa0014,receipt_date,24-06-2026,2026-06-24,match,True
@@ -416,57 +416,57 @@ CLM-30713,img_20260628_215211,receipt_date,20-06-2026,2026-06-20,match,True
 CLM-30717,img_20260629_170328,receipt_date,25-06-2026,2026-06-25,match,True
 CLM-30721,img-20260628-wa0202,receipt_date,27-06-2026,2026-06-27,match,True
 CLM-30724,img_20260629_160432,receipt_date,23-06-2026,2026-06-23,match,True
-CLM-30728,img-20260629-wa0202,receipt_date,25-06-2026,,not_comparable,True
+CLM-30728,img-20260629-wa0202,receipt_date,25-06-2026,2026-06-25,match,True
 CLM-30732,img-20260628-wa0048,receipt_date,25-06-2026,2026-06-25,match,True
 CLM-30735,img-20260628-wa0031,receipt_date,26-06-2026,2026-06-26,match,True
 CLM-30736,img-20260629-wa0090,receipt_date,12-06-2026,2026-06-12,match,True
 CLM-30737,img-20260629-wa0170,receipt_date,26-06-2026,2026-06-26,match,True
-CLM-30738,img_20260629_124013,receipt_date,29-06-2026,,not_comparable,True
+CLM-30738,img_20260629_124013,receipt_date,29-06-2026,2026-06-29,match,True
 CLM-30740,img_20260630_093309,receipt_date,24-06-2026,2026-06-24,match,True
-CLM-30741,img-20260630-wa0154,receipt_date,21-06-2026,,not_comparable,True
+CLM-30741,img-20260630-wa0154,receipt_date,21-06-2026,2026-06-21,match,True
 CLM-30742,img_20260630_164905,receipt_date,29-06-2026,2026-06-29,match,True
 CLM-30745,img_20260629_150245,receipt_date,28-06-2026,2026-06-29,mismatch,True
 CLM-30749,img_20260629_163548,receipt_date,24-06-2026,2026-06-24,match,True
 CLM-30750,img_20260630_180323,receipt_date,23-06-2026,2026-06-23,match,True
-CLM-30751,img_20260629_170106,receipt_date,28-06-2026,,not_comparable,True
+CLM-30751,img_20260629_170106,receipt_date,28-06-2026,2026-06-28,match,True
 CLM-30753,img_20260701_161009,receipt_date,27-06-2026,2026-06-27,match,True
 CLM-30757,img_20260701_194456,receipt_date,23-06-2026,2026-06-23,match,True
 CLM-30759,img_20260630_151546,receipt_date,28-06-2026,2026-06-28,match,True
 CLM-30762,img_20260630_093537,receipt_date,22-06-2026,2026-06-22,match,True
-CLM-30764,img-20260630-wa0097,receipt_date,01-07-2026,,not_comparable,True
+CLM-30764,img-20260630-wa0097,receipt_date,01-07-2026,2026-07-01,match,True
 CLM-30766,img_20260701_090903,receipt_date,30-06-2026,2026-06-30,match,True
 CLM-30767,img_20260701_150314,receipt_date,12-06-2026,2026-06-12,match,True
-CLM-30769,img_20260630_162530,receipt_date,22-06-2026,,not_comparable,True
+CLM-30769,img_20260630_162530,receipt_date,22-06-2026,2026-06-22,match,True
 CLM-30770,img_20260630_175914,receipt_date,24-06-2026,2026-06-24,match,True
-CLM-30774,img-20260701-wa0166,receipt_date,25-06-2026,,not_comparable,True
-CLM-30775,img_20260702_113739,receipt_date,24-06-2026,,not_comparable,True
+CLM-30774,img-20260701-wa0166,receipt_date,25-06-2026,2026-06-25,match,True
+CLM-30775,img_20260702_113739,receipt_date,24-06-2026,2026-06-24,match,True
 CLM-30779,img-20260701-wa0067,receipt_date,23-06-2026,2026-06-23,match,True
 CLM-30780,img_20260701_105637,receipt_date,29-06-2026,2026-06-29,match,True
-CLM-30783,img-20260701-wa0110,receipt_date,25-06-2026,,not_comparable,True
-CLM-30787,img_20260702_104058,receipt_date,25-06-2026,,not_comparable,True
+CLM-30783,img-20260701-wa0110,receipt_date,25-06-2026,2026-06-25,match,True
+CLM-30787,img_20260702_104058,receipt_date,25-06-2026,2026-06-25,match,True
 CLM-30790,img-20260702-wa0131,receipt_date,23-06-2026,2026-06-23,match,True
 CLM-30794,img_20260701_194303,receipt_date,25-06-2026,2026-06-25,match,True
 CLM-30796,img_20260701_161359,receipt_date,28-06-2026,2026-06-28,match,True
 CLM-30797,img-20260701-wa0140,receipt_date,02-07-2026,2026-07-02,match,True
 CLM-30799,img_20260702_154204,receipt_date,19-06-2026,2026-06-19,match,True
 CLM-30803,img_20260702_155903,receipt_date,02-07-2026,2026-07-02,match,True
-CLM-30804,img_20260702_150756,receipt_date,17-06-2026,,not_comparable,True
+CLM-30804,img_20260702_150756,receipt_date,17-06-2026,2026-06-17,match,True
 CLM-30807,img_20260703_090155,receipt_date,24-06-2026,2026-06-24,match,True
-CLM-30811,img_20260703_083622,receipt_date,01-07-2026,,not_comparable,True
+CLM-30811,img_20260703_083622,receipt_date,01-07-2026,2026-07-01,match,True
 CLM-30814,img_20260702_105135,receipt_date,28-06-2026,2026-06-28,match,True
 CLM-30815,img-20260703-wa0152,receipt_date,29-06-2026,2026-06-29,match,True
-CLM-30819,img_20260703_175613,receipt_date,03-07-2026,,not_comparable,True
-CLM-30820,img-20260704-wa0046,receipt_date,04-07-2026,,not_comparable,True
-CLM-30821,img-20260703-wa0197,receipt_date,03-07-2026,,not_comparable,True
+CLM-30819,img_20260703_175613,receipt_date,03-07-2026,2026-07-03,match,True
+CLM-30820,img-20260704-wa0046,receipt_date,04-07-2026,2026-07-04,match,True
+CLM-30821,img-20260703-wa0197,receipt_date,03-07-2026,2026-07-03,match,True
 CLM-30824,img_20260703_165733,receipt_date,04-07-2026,2026-07-04,match,True
 CLM-30826,img-20260704-wa0175,receipt_date,01-07-2026,2026-07-01,match,True
 CLM-30827,img_20260704_162231,receipt_date,25-06-2026,2026-06-25,match,True
-CLM-30829,img_20260704_102036,receipt_date,01-07-2026,,not_comparable,True
+CLM-30829,img_20260704_102036,receipt_date,01-07-2026,2026-07-01,match,True
 CLM-30833,img_20260703_171453,receipt_date,04-07-2026,2026-07-04,match,True
 CLM-30837,img_20260703_154353,receipt_date,25-06-2026,2026-06-25,match,True
 CLM-30840,img_20260703_112843,receipt_date,14-06-2026,2026-06-14,match,True
 CLM-30843,img_20260704_133452,receipt_date,28-06-2026,2026-06-28,match,True
-CLM-30846,img-20260704-wa0179,receipt_date,01-07-2026,,not_comparable,True
+CLM-30846,img-20260704-wa0179,receipt_date,01-07-2026,2026-07-01,match,True
 CLM-30849,img_20260705_110011,receipt_date,26-06-2026,2026-06-26,match,True
 CLM-30851,img-20260704-wa0073,receipt_date,27-06-2026,2026-06-27,match,True
 CLM-30854,img_20260705_210409,receipt_date,04-07-2026,2026-07-04,match,True
@@ -479,8 +479,8 @@ CLM-30868,img_20260705_180453,receipt_date,05-07-2026,2026-07-05,match,True
 CLM-30871,img_20260706_112925,receipt_date,04-07-2026,2026-07-04,match,True
 CLM-30872,img_20260706_193326,receipt_date,02-07-2026,2026-07-02,match,True
 CLM-30874,img-20260706-wa0216,receipt_date,29-06-2026,2026-06-29,match,True
-CLM-30875,img_20260706_192128,receipt_date,05-07-2026,,not_comparable,True
-CLM-30879,img_20260706_210747,receipt_date,01-07-2026,,not_comparable,True
+CLM-30875,img_20260706_192128,receipt_date,05-07-2026,2026-07-05,match,True
+CLM-30879,img_20260706_210747,receipt_date,01-07-2026,2026-07-01,match,True
 CLM-30880,img_20260706_123828,receipt_date,30-06-2026,2026-06-30,match,True
 CLM-30883,img-20260706-wa0067,receipt_date,03-07-2026,2026-07-02,mismatch,True
 CLM-30886,img-20260707-wa0066,receipt_date,,,not_comparable,True
@@ -492,19 +492,19 @@ CLM-30897,img_20260708_135744,receipt_date,30-06-2026,2026-06-30,match,True
 CLM-30901,img-20260707-wa0203,receipt_date,02-07-2026,2026-07-02,match,True
 CLM-30902,img_20260708_120658,receipt_date,08-07-2026,2026-07-08,match,True
 CLM-30904,img-20260708-wa0072,receipt_date,30-06-2026,2026-06-30,match,True
-CLM-30906,img_20260708_204220,receipt_date,08-07-2026,,not_comparable,True
+CLM-30906,img_20260708_204220,receipt_date,08-07-2026,2026-07-08,match,True
 CLM-30910,img_20260708_205926,receipt_date,08-07-2026,2026-07-08,match,True
 CLM-30913,img_20260708_091254,receipt_date,01-07-2026,,not_comparable,True
 CLM-30916,img_20260707_110240,receipt_date,05-07-2026,2026-07-05,match,True
 CLM-30919,img_20260708_103658,receipt_date,08-07-2026,2026-07-08,match,True
 CLM-30920,img-20260709-wa0067,receipt_date,05-07-2026,2026-07-05,match,True
 CLM-30923,img_20260708_190631,receipt_date,06-07-2026,2026-07-06,match,True
-CLM-30925,img-20260708-wa0036,receipt_date,02-07-2026,,not_comparable,True
+CLM-30925,img-20260708-wa0036,receipt_date,02-07-2026,2026-07-02,match,True
 CLM-30929,img_20260708_185155,receipt_date,30-06-2026,2026-06-30,match,True
 CLM-30932,img_20260708_181536,receipt_date,01-07-2026,2026-07-01,match,True
 CLM-30934,img_20260708_142626,receipt_date,06-07-2026,2026-07-06,match,True
 CLM-30937,img_20260708_122923,receipt_date,05-07-2026,2026-07-05,match,True
-CLM-30940,img-20260709-wa0074,receipt_date,05-07-2026,,not_comparable,True
+CLM-30940,img-20260709-wa0074,receipt_date,05-07-2026,2026-07-05,match,True
 CLM-30944,img_20260710_170627,receipt_date,03-07-2026,2026-07-03,match,True
 CLM-30947,img_20260710_205455,receipt_date,02-07-2026,2026-07-02,match,True
 CLM-30950,img_20260709_081958,receipt_date,07-05-2026,2026-07-05,mismatch,True
@@ -514,19 +514,19 @@ CLM-30959,img_20260709_151741,receipt_date,04-07-2026,2026-07-04,match,True
 CLM-30963,img_20260709_165630,receipt_date,19-06-2026,2026-06-19,match,True
 CLM-30967,img_20260709_130733,receipt_date,10-07-2026,2026-07-10,match,True
 CLM-30971,img_20260710_103529,receipt_date,03-07-2026,2026-07-03,match,True
-CLM-30974,img-20260709-wa0132,receipt_date,06-07-2026,,not_comparable,True
+CLM-30974,img-20260709-wa0132,receipt_date,06-07-2026,2026-07-06,match,True
 CLM-30978,img-20260711-wa0205,receipt_date,14-06-2026,2026-06-14,match,True
 CLM-30979,img-20260710-wa0167,receipt_date,,,not_comparable,True
-CLM-30980,img_20260711_205505,receipt_date,13-06-2026,,not_comparable,True
-CLM-30982,img_20260711_165958,receipt_date,21-06-2026,,not_comparable,True
-CLM-30983,img_20260710_081421,receipt_date,06-07-2026,,not_comparable,True
+CLM-30980,img_20260711_205505,receipt_date,13-06-2026,2026-06-13,match,True
+CLM-30982,img_20260711_165958,receipt_date,21-06-2026,2026-06-21,match,True
+CLM-30983,img_20260710_081421,receipt_date,06-07-2026,2026-07-06,match,True
 CLM-30985,img_20260711_162902,receipt_date,06-07-2026,2026-07-06,match,True
 CLM-30989,img_20260711_192652,receipt_date,08-07-2026,2026-07-08,match,True
 CLM-30991,img_20260711_162222,receipt_date,15-06-2026,2026-06-15,match,True
 CLM-30992,img-20260710-wa0115,receipt_date,09-07-2026,2026-07-09,match,True
 CLM-30996,img_20260711_175810,receipt_date,11-07-2026,2026-07-11,match,True
 CLM-31000,img_20260710_090411,receipt_date,03-07-2026,2026-07-03,match,True
-CLM-31004,img_20260710_195933,receipt_date,10-07-2026,,not_comparable,True
+CLM-31004,img_20260710_195933,receipt_date,10-07-2026,2026-07-10,match,True
 CLM-31007,img_20260711_194359,receipt_date,02-07-2026,2026-07-02,match,True
 CLM-31009,img_20260711_124855,receipt_date,05-07-2026,2026-07-05,match,True
 CLM-31010,img-20260711-wa0006,receipt_date,10-07-2026,2026-07-10,match,True
@@ -534,7 +534,7 @@ CLM-31011,img_20260712_170552,receipt_date,08-07-2026,2026-07-08,match,True
 CLM-31013,img_20260711_154128,receipt_date,11-07-2026,2026-07-11,match,True
 CLM-31015,img_20260711_204304,receipt_date,09-07-2026,2026-07-09,match,True
 CLM-31016,img_20260713_095100,receipt_date,06-07-2026,2026-07-06,match,True
-CLM-31018,img_20260713_173024,receipt_date,12-07-2026,,not_comparable,True
+CLM-31018,img_20260713_173024,receipt_date,12-07-2026,2026-07-12,match,True
 CLM-31019,img-20260712-wa0179,receipt_date,11-07-2026,2026-07-11,match,True
 CLM-31020,img-20260712-wa0059,receipt_date,05-07-2026,2026-07-05,match,True
 CLM-31021,img_20260712_143503,receipt_date,12-07-2026,2026-07-12,match,True
@@ -542,11 +542,11 @@ CLM-31022,img-20260713-wa0111,receipt_date,06-07-2026,2026-07-06,match,True
 CLM-31023,img_20260714_160417,receipt_date,19-06-2026,2026-06-19,match,True
 CLM-31026,img_20260713_165011,receipt_date,06-07-2026,2026-07-06,match,True
 CLM-31030,img-20260713-wa0093,receipt_date,07-07-2026,2026-07-07,match,True
-CLM-31032,img_20260714_110121,receipt_date,08-07-2026,,not_comparable,True
+CLM-31032,img_20260714_110121,receipt_date,08-07-2026,2026-07-08,match,True
 CLM-31034,img-20260713-wa0237,receipt_date,13-07-2026,2026-07-13,match,True
 CLM-31035,img_20260714_201050,receipt_date,08-07-2026,2026-07-08,match,True
 CLM-31038,img_20260714_100816,receipt_date,09-07-2026,2026-07-09,match,True
-CLM-31042,img_20260714_183832,receipt_date,15-07-2026,,not_comparable,True
+CLM-31042,img_20260714_183832,receipt_date,15-07-2026,2026-07-15,match,True
 CLM-31045,img-20260714-wa0050,receipt_date,09-07-2026,2026-07-09,match,True
 CLM-31047,img-20260715-wa0213,receipt_date,06-07-2026,2026-07-06,match,True
 CLM-31049,img_20260714_171948,receipt_date,08-07-2026,2026-07-08,match,True
@@ -575,7 +575,7 @@ CLM-30428,img_20260611_093933,receipt_number,A/1202,A/1202,match,True
 CLM-30430,img-20260613-wa0094,receipt_number,001026,001026,match,True
 CLM-30432,img_20260613_195138,receipt_number,006093,006093,match,True
 CLM-30435,img-20260612-wa0058,receipt_number,5726,5726,match,True
-CLM-30436,img_20260612_173637,receipt_number,A/618,,not_comparable,True
+CLM-30436,img_20260612_173637,receipt_number,A/618,A/6178,mismatch,True
 CLM-30437,img-20260612-wa0109,receipt_number,SL92216340,SL92216340,match,True
 CLM-30439,img_20260614_185526,receipt_number,002015,002015,match,True
 CLM-30443,img-20260613-wa0212,receipt_number,003571,003571,match,True
@@ -584,7 +584,7 @@ CLM-30447,img_20260613_202822,receipt_number,001031,001031,match,True
 CLM-30451,img-20260614-wa0133,receipt_number,002123,002123,match,True
 CLM-30454,img-20260614-wa0165,receipt_number,5796,5796,match,True
 CLM-30458,img_20260614_134518,receipt_number,108873,108873,match,True
-CLM-30462,img_20260615_083214,receipt_number,A/649,,not_comparable,True
+CLM-30462,img_20260615_083214,receipt_number,A/649,A/6149,mismatch,True
 CLM-30465,img_20260615_192519,receipt_number,2511,2511,match,True
 CLM-30468,img_20260614_103050,receipt_number,8153,8153,match,True
 CLM-30469,img_20260615_132831,receipt_number,8199,8199,match,True
@@ -632,7 +632,7 @@ CLM-30562,img_20260618_100357,receipt_number,8210,8210,match,True
 CLM-30566,img_20260619_114500,receipt_number,110914,110914,match,True
 CLM-30568,img-20260619-wa0197,receipt_number,1145,1145,match,True
 CLM-30570,img-20260620-wa0200,receipt_number,1293,1293,match,True
-CLM-30572,img_20260620_212353,receipt_number,6896,Date,mismatch,True
+CLM-30572,img_20260620_212353,receipt_number,6896,6896,match,True
 CLM-30573,img_20260619_115355,receipt_number,3353,3353,match,True
 CLM-30577,img-20260619-wa0030,receipt_number,3295,3295,match,True
 CLM-30581,img-20260620-wa0193,receipt_number,8247,8247,match,True
@@ -640,8 +640,8 @@ CLM-30584,img_20260620_143640,receipt_number,3653,3653,match,True
 CLM-30585,img_20260621_144359,receipt_number,686,6866,mismatch,True
 CLM-30586,img_20260620_143225,receipt_number,8230,8230,match,True
 CLM-30587,img-20260620-wa0198,receipt_number,1268,1268,match,True
-CLM-30591,img_20260621_170151,receipt_number,8360,,not_comparable,True
-CLM-30592,img_20260620_204047,receipt_number,109637,,not_comparable,True
+CLM-30591,img_20260621_170151,receipt_number,8360,8360,match,True
+CLM-30592,img_20260620_204047,receipt_number,109637,109637,match,True
 CLM-30594,img_20260622_101042,receipt_number,006595,006595,match,True
 CLM-30596,img-20260622-wa0139,receipt_number,2574,2574,match,True
 CLM-30600,img_20260622_130954,receipt_number,6175,6175,match,True
@@ -671,8 +671,8 @@ CLM-30649,img-20260624-wa0183,receipt_number,002665,002665,match,True
 CLM-30652,img_20260625_150759,receipt_number,001169,001169,match,True
 CLM-30656,img_20260625_103056,receipt_number,008366,008366,match,True
 CLM-30660,img-20260624-wa0037,receipt_number,006429,006429,match,True
-CLM-30661,img_20260624_182555,receipt_number,A/124,,not_comparable,True
-CLM-30664,img_20260625_081750,receipt_number,A/1406,,not_comparable,True
+CLM-30661,img_20260624_182555,receipt_number,A/124,A/1324,mismatch,True
+CLM-30664,img_20260625_081750,receipt_number,A/1406,A/1406,match,True
 CLM-30665,img_20260624_102953,receipt_number,8199,8199,match,True
 CLM-30668,img_20260625_160441,receipt_number,3377,3377,match,True
 CLM-30672,img-20260624-wa0019,receipt_number,3685,3685,match,True
@@ -698,16 +698,16 @@ CLM-30711,img-20260628-wa0004,receipt_number,112002,112002,match,True
 CLM-30713,img_20260628_215211,receipt_number,002385,002385,match,True
 CLM-30717,img_20260629_170328,receipt_number,00402,004023,mismatch,True
 CLM-30721,img-20260628-wa0202,receipt_number,002890,002890,match,True
-CLM-30724,img_20260629_160432,receipt_number,6191,,not_comparable,True
+CLM-30724,img_20260629_160432,receipt_number,6191,6191,match,True
 CLM-30728,img-20260629-wa0202,receipt_number,A/6248,A/6248,match,True
 CLM-30732,img-20260628-wa0048,receipt_number,3747,3747,match,True
-CLM-30735,img-20260628-wa0031,receipt_number,8381,26-6-2026,mismatch,True
+CLM-30735,img-20260628-wa0031,receipt_number,8381,8381,match,True
 CLM-30736,img-20260629-wa0090,receipt_number,HSR/26-27/4873,HSR/26-27/4873,match,True
 CLM-30737,img-20260629-wa0170,receipt_number,112904,112904,match,True
 CLM-30738,img_20260629_124013,receipt_number,008572,008572,match,True
 CLM-30740,img_20260630_093309,receipt_number,002830,002830,match,True
-CLM-30741,img-20260630-wa0154,receipt_number,5967,,not_comparable,True
-CLM-30742,img_20260630_164905,receipt_number,A/1434,,not_comparable,True
+CLM-30741,img-20260630-wa0154,receipt_number,5967,5967,match,True
+CLM-30742,img_20260630_164905,receipt_number,A/1434,A/1434,match,True
 CLM-30745,img_20260629_150245,receipt_number,6313,6313,match,True
 CLM-30749,img_20260629_163548,receipt_number,1286,1286,match,True
 CLM-30750,img_20260630_180323,receipt_number,3408,3408,match,True
@@ -716,14 +716,14 @@ CLM-30753,img_20260701_161009,receipt_number,006738,006738,match,True
 CLM-30757,img_20260701_194456,receipt_number,003841,003841,match,True
 CLM-30759,img_20260630_151546,receipt_number,04137,004137,mismatch,True
 CLM-30762,img_20260630_093537,receipt_number,003752,003752,match,True
-CLM-30764,img-20260630-wa0097,receipt_number,6046,,not_comparable,True
+CLM-30764,img-20260630-wa0097,receipt_number,6046,6046,match,True
 CLM-30766,img_20260701_090903,receipt_number,6416,6416,match,True
 CLM-30767,img_20260701_150314,receipt_number,1130,1130,match,True
-CLM-30769,img_20260630_162530,receipt_number,A/1413,,not_comparable,True
+CLM-30769,img_20260630_162530,receipt_number,A/1413,A/1413,match,True
 CLM-30770,img_20260630_175914,receipt_number,VX33212324,VX33212324,match,True
 CLM-30774,img-20260701-wa0166,receipt_number,HKC/26-27/5205,HKC/26-27/5205,match,True
 CLM-30775,img_20260702_113739,receipt_number,008446,008446,match,True
-CLM-30779,img-20260701-wa0067,receipt_number,001351,,not_comparable,True
+CLM-30779,img-20260701-wa0067,receipt_number,001351,001351,match,True
 CLM-30780,img_20260701_105637,receipt_number,2774,2774,match,True
 CLM-30783,img-20260701-wa0110,receipt_number,A/6280,A/6280,match,True
 CLM-30787,img_20260702_104058,receipt_number,1299,1299,match,True
@@ -733,8 +733,8 @@ CLM-30796,img_20260701_161359,receipt_number,VX35831154,VX35831154,match,True
 CLM-30797,img-20260701-wa0140,receipt_number,HCP/26-27/4602,HCP/26-27/4602,match,True
 CLM-30799,img_20260702_154204,receipt_number,110914,110914,match,True
 CLM-30803,img_20260702_155903,receipt_number,003089,003089,match,True
-CLM-30804,img_20260702_150756,receipt_number,A/1324,,not_comparable,True
-CLM-30807,img_20260703_090155,receipt_number,598,,not_comparable,True
+CLM-30804,img_20260702_150756,receipt_number,A/1324,A/1324,match,True
+CLM-30807,img_20260703_090155,receipt_number,598,5968,mismatch,True
 CLM-30811,img_20260703_083622,receipt_number,A/466,A/1466,mismatch,True
 CLM-30814,img_20260702_105135,receipt_number,1316,1316,match,True
 CLM-30815,img-20260703-wa0152,receipt_number,3780,3780,match,True
@@ -744,7 +744,7 @@ CLM-30821,img-20260703-wa0197,receipt_number,008812,008812,match,True
 CLM-30824,img_20260703_165733,receipt_number,004308,004308,match,True
 CLM-30826,img-20260704-wa0175,receipt_number,001166,001166,match,True
 CLM-30827,img_20260704_162231,receipt_number,6263,6263,match,True
-CLM-30829,img_20260704_102036,receipt_number,6127,,not_comparable,True
+CLM-30829,img_20260704_102036,receipt_number,6127,6127,match,True
 CLM-30833,img_20260703_171453,receipt_number,3485,3485,match,True
 CLM-30837,img_20260703_154353,receipt_number,8293,8293,match,True
 CLM-30840,img_20260703_112843,receipt_number,3678,3678,match,True
@@ -763,7 +763,7 @@ CLM-30871,img_20260706_112925,receipt_number,PP30275457,PP30275457,match,True
 CLM-30872,img_20260706_193326,receipt_number,114424,114424,match,True
 CLM-30874,img-20260706-wa0216,receipt_number,113445,113445,match,True
 CLM-30875,img_20260706_192128,receipt_number,009010,009010,match,True
-CLM-30879,img_20260706_210747,receipt_number,6028,,not_comparable,True
+CLM-30879,img_20260706_210747,receipt_number,6028,6028,match,True
 CLM-30880,img_20260706_123828,receipt_number,3422,3422,match,True
 CLM-30883,img-20260706-wa0067,receipt_number,PP57107049,PP57107049,match,True
 CLM-30886,img-20260707-wa0066,receipt_number,,VX93237127,not_comparable,True
@@ -800,7 +800,7 @@ CLM-30971,img_20260710_103529,receipt_number,3799,3799,match,True
 CLM-30974,img-20260709-wa0132,receipt_number,HKC/26-27/5253,HKC/26-27/5253,match,True
 CLM-30978,img-20260711-wa0205,receipt_number,006239,006239,match,True
 CLM-30979,img-20260710-wa0167,receipt_number,,,not_comparable,True
-CLM-30980,img_20260711_205505,receipt_number,A/6178,,not_comparable,True
+CLM-30980,img_20260711_205505,receipt_number,A/6178,A/6178,match,True
 CLM-30982,img_20260711_165958,receipt_number,5967,5967,match,True
 CLM-30983,img_20260710_081421,receipt_number,A/6356,A/6356,match,True
 CLM-30985,img_20260711_162902,receipt_number,6107,6107,match,True
@@ -812,7 +812,7 @@ CLM-31000,img_20260710_090411,receipt_number,VX42419591,VX42419591,match,True
 CLM-31004,img_20260710_195933,receipt_number,HKC/26-27/5273,HKC/26-27/5273,match,True
 CLM-31007,img_20260711_194359,receipt_number,104727,104727,match,True
 CLM-31009,img_20260711_124855,receipt_number,004338,004338,match,True
-CLM-31010,img-20260711-wa0006,receipt_number,2841,,not_comparable,True
+CLM-31010,img-20260711-wa0006,receipt_number,2841,2841,match,True
 CLM-31011,img_20260712_170552,receipt_number,8286,8286,match,True
 CLM-31013,img_20260711_154128,receipt_number,8309,8309,match,True
 CLM-31015,img_20260711_204304,receipt_number,HSR/26-27/4886,HSR/26-27/4886,match,True
@@ -825,7 +825,7 @@ CLM-31022,img-20260713-wa0111,receipt_number,3824,3824,match,True
 CLM-31023,img_20260714_160417,receipt_number,003638,003638,match,True
 CLM-31026,img_20260713_165011,receipt_number,007038,007038,match,True
 CLM-31030,img-20260713-wa0093,receipt_number,6500,6500,match,True
-CLM-31032,img_20260714_110121,receipt_number,A/1503,,not_comparable,True
+CLM-31032,img_20260714_110121,receipt_number,A/1503,A/1503,match,True
 CLM-31034,img-20260713-wa0237,receipt_number,1451,1451,match,True
 CLM-31035,img_20260714_201050,receipt_number,VX38678601,VX38678601,match,True
 CLM-31038,img_20260714_100816,receipt_number,6144,6144,match,True
@@ -876,7 +876,7 @@ CLM-30475,img_20260615_083022,gstin,,,not_comparable,True
 CLM-30476,img_20260615_164330,gstin,,,not_comparable,True
 CLM-30479,img_20260616_180311,gstin,,,not_comparable,True
 CLM-30481,img-20260615-wa0220,gstin,,,not_comparable,True
-CLM-30484,img_20260616_124009,gstin,27ODUFJ1Q89K3ZU,,not_comparable,True
+CLM-30484,img_20260616_124009,gstin,27ODUFJ1Q89K3ZU,27ODUFJ1789K3ZU,mismatch,True
 CLM-30488,img_20260616_212151,gstin,,,not_comparable,True
 CLM-30489,img_20260616_204248,gstin,,,not_comparable,True
 CLM-30492,img-20260615-wa0239,gstin,27PMLCE5129S3ZO,27PMLCE5129S3ZO,match,True
@@ -908,12 +908,12 @@ CLM-30543,img_20260617_104401,gstin,,,not_comparable,True
 CLM-30546,img-20260618-wa0030,gstin,,,not_comparable,True
 CLM-30549,img_20260619_212359,gstin,,,not_comparable,True
 CLM-30553,img_20260619_155737,gstin,27NCRPN1784A3Z1,27NCRPN1784A3Z1,match,True
-CLM-30556,img_20260618_200822,gstin,27ODUFJ1789K3ZU,,not_comparable,True
+CLM-30556,img_20260618_200822,gstin,27ODUFJ1789K3ZU,27ODUFJ1789K3ZU,match,True
 CLM-30558,img_20260618_215842,gstin,,,not_comparable,True
 CLM-30560,img-20260618-wa0179,gstin,,,not_comparable,True
 CLM-30562,img_20260618_100357,gstin,,,not_comparable,True
 CLM-30566,img_20260619_114500,gstin,,,not_comparable,True
-CLM-30568,img-20260619-wa0197,gstin,27ODUFJ178913ZU,,not_comparable,True
+CLM-30568,img-20260619-wa0197,gstin,27ODUFJ178913ZU,27ODUFJ1789K3ZU,mismatch,True
 CLM-30570,img-20260620-wa0200,gstin,,,not_comparable,True
 CLM-30572,img_20260620_212353,gstin,,,not_comparable,True
 CLM-30573,img_20260619_115355,gstin,,,not_comparable,True
@@ -943,7 +943,7 @@ CLM-30629,img_20260622_200133,gstin,,,not_comparable,True
 CLM-30630,img-20260624-wa0163,gstin,,,not_comparable,True
 CLM-30633,img_20260624_121405,gstin,27DPAFU4120X1ZM,27DPAFU4120X1ZM,match,True
 CLM-30634,img_20260624_101828,gstin,,,not_comparable,True
-CLM-30636,img_20260624_125626,gstin,27ODUFJ1789K3ZU,,not_comparable,True
+CLM-30636,img_20260624_125626,gstin,27ODUFJ1789K3ZU,27ODUFJ1789K3ZU,match,True
 CLM-30639,img_20260624_093028,gstin,,,not_comparable,True
 CLM-30640,img-20260623-wa0017,gstin,,,not_comparable,True
 CLM-30642,img_20260623_111031,gstin,,,not_comparable,True
@@ -960,7 +960,7 @@ CLM-30665,img_20260624_102953,gstin,,,not_comparable,True
 CLM-30668,img_20260625_160441,gstin,,,not_comparable,True
 CLM-30672,img-20260624-wa0019,gstin,,,not_comparable,True
 CLM-30676,img_20260625_141617,gstin,,,not_comparable,True
-CLM-30679,img-20260626-wa0050,gstin,,,not_comparable,True
+CLM-30679,img-20260626-wa0050,gstin,,27OUUFX7743H2ZR,not_comparable,True
 CLM-30680,img_20260625_144518,gstin,27IRWFN4293M2Z1,27IRWFN4293M2Z1,match,True
 CLM-30681,img_20260625_124513,gstin,27BOCPW1223G1Z2,27BOCPW1223G1Z2,match,True
 CLM-30684,img_20260627_171328,gstin,,,not_comparable,True
@@ -968,7 +968,7 @@ CLM-30685,img_20260627_101752,gstin,,,not_comparable,True
 CLM-30687,img_20260626_111444,gstin,,,not_comparable,True
 CLM-30688,img_20260626_090926,gstin,27DPAFU4120X1ZM,27DPAFU4120X1ZM,match,True
 CLM-30689,img-20260626-wa0140,gstin,,,not_comparable,True
-CLM-30690,img-20260626-wa0214,gstin,27OILFO1994Z2ZV,,not_comparable,True
+CLM-30690,img-20260626-wa0214,gstin,27OILFO1994Z2ZV,27OILFO1994Z2ZV,match,True
 CLM-30691,img_20260627_214225,gstin,27XMECH9812R2ZH,27XMECH9812R2ZH,match,True
 CLM-30693,img_20260628_140015,gstin,27ODUFJ1789K3ZU,27ODUFJ1789K3ZU,match,True
 CLM-30697,img-20260628-wa0014,gstin,,,not_comparable,True
@@ -989,21 +989,21 @@ CLM-30736,img-20260629-wa0090,gstin,27UVQFW9408Y1ZS,27UVQFW9408Y1ZS,match,True
 CLM-30737,img-20260629-wa0170,gstin,,,not_comparable,True
 CLM-30738,img_20260629_124013,gstin,,,not_comparable,True
 CLM-30740,img_20260630_093309,gstin,,,not_comparable,True
-CLM-30741,img-20260630-wa0154,gstin,27OILFO1994Z2ZV,,not_comparable,True
+CLM-30741,img-20260630-wa0154,gstin,27OILFO1994Z2ZV,27OILFO1994Z2ZV,match,True
 CLM-30742,img_20260630_164905,gstin,,27TABPX3765R2Z6,not_comparable,True
 CLM-30745,img_20260629_150245,gstin,27MTSPF4455T1ZB,27MTSPF4455T1ZB,match,True
-CLM-30749,img_20260629_163548,gstin,,,not_comparable,True
+CLM-30749,img_20260629_163548,gstin,,27ODUFJ1789K3ZU,not_comparable,True
 CLM-30750,img_20260630_180323,gstin,,,not_comparable,True
 CLM-30751,img_20260629_170106,gstin,27HPFCA5856Y3ZE,27HPFCA5856Y3ZE,match,True
 CLM-30753,img_20260701_161009,gstin,,,not_comparable,True
 CLM-30757,img_20260701_194456,gstin,27DPAFU4120X1ZM,27DPAFU4120X1ZM,match,True
 CLM-30759,img_20260630_151546,gstin,27DPAFU4120X1ZM,27DPAFU4120X1ZM,match,True
 CLM-30762,img_20260630_093537,gstin,27DPAFU4120X1ZM,27DPAFU4120X1ZM,match,True
-CLM-30764,img-20260630-wa0097,gstin,27OILFO1994Z2ZV,,not_comparable,True
+CLM-30764,img-20260630-wa0097,gstin,27OILFO1994Z2ZV,27OILFO1994Z2ZV,match,True
 CLM-30766,img_20260701_090903,gstin,27MTSPF4455T1ZB,27MTSPF4455T1ZB,match,True
-CLM-30767,img_20260701_150314,gstin,27ODUFJ1789K3ZU,,not_comparable,True
-CLM-30769,img_20260630_162530,gstin,27GIZFL1093Q2ZK,,not_comparable,True
-CLM-30770,img_20260630_175914,gstin,27OUUFX7743H2ZR,,not_comparable,True
+CLM-30767,img_20260701_150314,gstin,27ODUFJ1789K3ZU,27ODUFJ1789K3ZU,match,True
+CLM-30769,img_20260630_162530,gstin,27GIZFL1093Q2ZK,27GIZFL1093Q2ZK,match,True
+CLM-30770,img_20260630_175914,gstin,27OUUFX7743H2ZR,27OUUFX7743H2ZR,match,True
 CLM-30774,img-20260701-wa0166,gstin,27H1FCA5856Y3ZE,27HPFCA5856Y3ZE,mismatch,True
 CLM-30775,img_20260702_113739,gstin,,,not_comparable,True
 CLM-30779,img-20260701-wa0067,gstin,,,not_comparable,True
@@ -1027,14 +1027,14 @@ CLM-30821,img-20260703-wa0197,gstin,,,not_comparable,True
 CLM-30824,img_20260703_165733,gstin,27DPAFU412UX1ZM,27DPAFU4120X1ZM,mismatch,True
 CLM-30826,img-20260704-wa0175,gstin,,,not_comparable,True
 CLM-30827,img_20260704_162231,gstin,,27MTSPF4455T1ZB,not_comparable,True
-CLM-30829,img_20260704_102036,gstin,27OILFO1994Z2ZV,,not_comparable,True
+CLM-30829,img_20260704_102036,gstin,27OILFO1994Z2ZV,27OILFO1994Z2ZV,match,True
 CLM-30833,img_20260703_171453,gstin,,,not_comparable,True
 CLM-30837,img_20260703_154353,gstin,,,not_comparable,True
 CLM-30840,img_20260703_112843,gstin,,,not_comparable,True
 CLM-30843,img_20260704_133452,gstin,,,not_comparable,True
-CLM-30846,img-20260704-wa0179,gstin,27OILFO1994Z2ZV,,not_comparable,True
+CLM-30846,img-20260704-wa0179,gstin,27OILFO1994Z2ZV,27OILFO1994Z2ZV,match,True
 CLM-30849,img_20260705_110011,gstin,27XMECH9812R2ZH,27XMECH9812R2ZH,match,True
-CLM-30851,img-20260704-wa0073,gstin,27ODUFJ1789K3ZU,,not_comparable,True
+CLM-30851,img-20260704-wa0073,gstin,27ODUFJ1789K3ZU,27ODUFJ1789K3ZU,match,True
 CLM-30854,img_20260705_210409,gstin,,,not_comparable,True
 CLM-30856,img_20260705_125011,gstin,,,not_comparable,True
 CLM-30857,img_20260705_095928,gstin,27OUUFX7743H2ZR,27OUUFX7743H2ZR,match,True
@@ -1046,9 +1046,9 @@ CLM-30871,img_20260706_112925,gstin,27IRWFN4293M2Z1,27IRWFN4293M2Z1,match,True
 CLM-30872,img_20260706_193326,gstin,,,not_comparable,True
 CLM-30874,img-20260706-wa0216,gstin,,,not_comparable,True
 CLM-30875,img_20260706_192128,gstin,,,not_comparable,True
-CLM-30879,img_20260706_210747,gstin,27OILFO1994Z2ZV,,not_comparable,True
+CLM-30879,img_20260706_210747,gstin,27OILFO1994Z2ZV,27OILFO1994Z2ZV,match,True
 CLM-30880,img_20260706_123828,gstin,,,not_comparable,True
-CLM-30883,img-20260706-wa0067,gstin,27IRWFN4293M2Z1,,not_comparable,True
+CLM-30883,img-20260706-wa0067,gstin,27IRWFN4293M2Z1,27IRWFN4293M2Z1,match,True
 CLM-30886,img-20260707-wa0066,gstin,,27OUUFX7743H2ZR,not_comparable,True
 CLM-30887,img-20260706-wa0212,gstin,,,unmatched_image,False
 CLM-30891,img_20260707_190716,gstin,,,not_comparable,True
@@ -1058,7 +1058,7 @@ CLM-30897,img_20260708_135744,gstin,,,not_comparable,True
 CLM-30901,img-20260707-wa0203,gstin,,,not_comparable,True
 CLM-30902,img_20260708_120658,gstin,27DPAFU4120X1ZM,27DPAFU4120X1ZM,match,True
 CLM-30904,img-20260708-wa0072,gstin,,,not_comparable,True
-CLM-30906,img_20260708_204220,gstin,27OILFO1994Z2ZV,,not_comparable,True
+CLM-30906,img_20260708_204220,gstin,27OILFO1994Z2ZV,27OILFO1994Z2ZV,match,True
 CLM-30910,img_20260708_205926,gstin,,,not_comparable,True
 CLM-30913,img_20260708_091254,gstin,,,not_comparable,True
 CLM-30916,img_20260707_110240,gstin,,,not_comparable,True
@@ -1084,14 +1084,14 @@ CLM-30974,img-20260709-wa0132,gstin,27HPFCA5856Y3ZE,27HPFCA5856Y3ZE,match,True
 CLM-30978,img-20260711-wa0205,gstin,,,not_comparable,True
 CLM-30979,img-20260710-wa0167,gstin,,,not_comparable,True
 CLM-30980,img_20260711_205505,gstin,27YUFFZ9311K2ZV,27YUFFZ9311K2ZV,match,True
-CLM-30982,img_20260711_165958,gstin,,,not_comparable,True
+CLM-30982,img_20260711_165958,gstin,,27OILFO1994Z2ZV,not_comparable,True
 CLM-30983,img_20260710_081421,gstin,,27YUFFZ9311K2ZV,not_comparable,True
 CLM-30985,img_20260711_162902,gstin,27NCRPN1784A3Z1,27NCRPN1784A3Z1,match,True
 CLM-30989,img_20260711_192652,gstin,,,not_comparable,True
 CLM-30991,img_20260711_162222,gstin,,,not_comparable,True
 CLM-30992,img-20260710-wa0115,gstin,,,not_comparable,True
 CLM-30996,img_20260711_175810,gstin,,,not_comparable,True
-CLM-31000,img_20260710_090411,gstin,27OUUFX7743H2ZR,,not_comparable,True
+CLM-31000,img_20260710_090411,gstin,27OUUFX7743H2ZR,27OUUFX7743H2ZR,match,True
 CLM-31004,img_20260710_195933,gstin,27HPFCA5856Y3ZE,27HPFCA5856Y3ZE,match,True
 CLM-31007,img_20260711_194359,gstin,,,not_comparable,True
 CLM-31009,img_20260711_124855,gstin,27DPAFU4120X1ZM,27DPAFU4120X1ZM,match,True
@@ -1100,7 +1100,7 @@ CLM-31011,img_20260712_170552,gstin,,,not_comparable,True
 CLM-31013,img_20260711_154128,gstin,,,not_comparable,True
 CLM-31015,img_20260711_204304,gstin,27UVQFW9408Y1ZS,27UVQFW9408Y1ZS,match,True
 CLM-31016,img_20260713_095100,gstin,,,not_comparable,True
-CLM-31018,img_20260713_173024,gstin,,,not_comparable,True
+CLM-31018,img_20260713_173024,gstin,,27OILFO1994Z2ZV,not_comparable,True
 CLM-31019,img-20260712-wa0179,gstin,27XMECH9812R2ZH,27XMECH9812R2ZH,match,True
 CLM-31020,img-20260712-wa0059,gstin,,,not_comparable,True
 CLM-31021,img_20260712_143503,gstin,,,not_comparable,True
@@ -1110,7 +1110,7 @@ CLM-31026,img_20260713_165011,gstin,,,not_comparable,True
 CLM-31030,img-20260713-wa0093,gstin,27MTSPF4455T1ZB,27MTSPF4455T1ZB,match,True
 CLM-31032,img_20260714_110121,gstin,27GIZFL1093Q2ZK,27GIZFL1093Q2ZK,match,True
 CLM-31034,img-20260713-wa0237,gstin,27ODUFJ1789K3ZU,27ODUFJ1789K3ZU,match,True
-CLM-31035,img_20260714_201050,gstin,27OUUFX7743H2ZR,,not_comparable,True
+CLM-31035,img_20260714_201050,gstin,27OUUFX7743H2ZR,27OUUFX7743H2ZR,match,True
 CLM-31038,img_20260714_100816,gstin,27NCRPN1784A3Z1,27NCRPN1784A3Z1,match,True
 CLM-31042,img_20260714_183832,gstin,27GIZFL1093Q2ZK,27GIZFL1093Q2ZK,match,True
 CLM-31045,img-20260714-wa0050,gstin,,,not_comparable,True
@@ -1125,15 +1125,15 @@ CLM-31063,img-20260716-wa0107,gstin,,,not_comparable,True
 CLM-31066,img_20260716_143034,gstin,27OUUFX7743H2ZR,27OUUFX7743H2ZR,match,True
 CLM-31067,img_20260715_153311,gstin,27IRWFN4293M2Z1,27IRWFN4293M2Z1,match,True
 CLM-31069,img-20260717-wa0088,gstin,,,not_comparable,True
-CLM-31071,img-20260717-wa0051,gstin,27ODUFJ1789K3ZU,,not_comparable,True
-CLM-31072,img_20260716_173230,gstin,27IRWFN4293M2Z1,,not_comparable,True
+CLM-31071,img-20260717-wa0051,gstin,27ODUFJ1789K3ZU,27ODUFJ1789K3ZU,match,True
+CLM-31072,img_20260716_173230,gstin,27IRWFN4293M2Z1,27IRWFN4293M2Z1,match,True
 CLM-31075,img-20260717-wa0166,gstin,,,not_comparable,True
-CLM-31079,img_20260718_154240,gstin,27OUUFX7743H2ZR,,not_comparable,True
+CLM-31079,img_20260718_154240,gstin,27OUUFX7743H2ZR,27OUUFX7743H2ZR,match,True
 CLM-31081,img_20260718_081516,gstin,27IRWFN4293M2Z1,27IRWFN4293M2Z1,match,True
 CLM-31084,img_20260717_194532,gstin,,,not_comparable,True
-CLM-30412,img_20260608_080820,amount,330.00,330,match,True
-CLM-30416,img_20260608_211607,amount,325.00,325,match,True
-CLM-30418,img_20260609_210118,amount,2352.00,1,mismatch,True
+CLM-30412,img_20260608_080820,amount,330.00,330.00,match,True
+CLM-30416,img_20260608_211607,amount,325.00,325.00,match,True
+CLM-30418,img_20260609_210118,amount,2352.00,2352.00,match,True
 CLM-30421,img_20260610_101606,amount,240.00,250.00,mismatch,True
 CLM-30424,img-20260610-wa0001,amount,300.00,300.00,match,True
 CLM-30425,img_20260612_125007,amount,150.00,150.00,match,True
@@ -1141,7 +1141,7 @@ CLM-30428,img_20260611_093933,amount,536.00,536.00,match,True
 CLM-30430,img-20260613-wa0094,amount,250.00,250.00,match,True
 CLM-30432,img_20260613_195138,amount,3680.19,3680.19,match,True
 CLM-30435,img-20260612-wa0058,amount,368.00,368.00,match,True
-CLM-30436,img_20260612_173637,amount,630.00,,not_comparable,True
+CLM-30436,img_20260612_173637,amount,630.00,630.00,match,True
 CLM-30437,img-20260612-wa0109,amount,330.40,330.40,match,True
 CLM-30439,img_20260614_185526,amount,3481.80,3481.80,match,True
 CLM-30443,img-20260613-wa0212,amount,200.00,200.00,match,True
@@ -1152,39 +1152,39 @@ CLM-30454,img-20260614-wa0165,amount,588.00,588.00,match,True
 CLM-30458,img_20260614_134518,amount,30.00,30.00,match,True
 CLM-30462,img_20260615_083214,amount,546.00,546.00,match,True
 CLM-30465,img_20260615_192519,amount,357.00,357.00,match,True
-CLM-30468,img_20260614_103050,amount,410.00,2,mismatch,True
-CLM-30469,img_20260615_132831,amount,435.00,335,mismatch,True
-CLM-30472,img-20260614-wa0186,amount,1120.00,1120,match,True
+CLM-30468,img_20260614_103050,amount,410.00,410.00,match,True
+CLM-30469,img_20260615_132831,amount,435.00,335.00,mismatch,True
+CLM-30472,img-20260614-wa0186,amount,1120.00,1120.00,match,True
 CLM-30475,img_20260615_083022,amount,30.00,30.00,match,True
 CLM-30476,img_20260615_164330,amount,200.00,200.00,match,True
 CLM-30479,img_20260616_180311,amount,500.00,500.00,match,True
 CLM-30481,img-20260615-wa0220,amount,300.00,300.00,match,True
 CLM-30484,img_20260616_124009,amount,178.00,178.00,match,True
-CLM-30488,img_20260616_212151,amount,345.00,345,match,True
-CLM-30489,img_20260616_204248,amount,270.00,270,match,True
-CLM-30492,img-20260615-wa0239,amount,4704.00,,not_comparable,True
+CLM-30488,img_20260616_212151,amount,345.00,345.00,match,True
+CLM-30489,img_20260616_204248,amount,270.00,270.00,match,True
+CLM-30492,img-20260615-wa0239,amount,4704.00,4704.00,match,True
 CLM-30494,img_20260616_095149,amount,30.00,30.00,match,True
 CLM-30495,img_20260616_111529,amount,200.00,200.00,match,True
 CLM-30499,img_20260617_172550,amount,2714.11,2714.11,match,True
-CLM-30502,img_20260617_084633,amount,220.00,220,match,True
-CLM-30503,img_20260617_084423,amount,310.00,310,match,True
-CLM-30506,img-20260617-wa0228,amount,1230.00,,not_comparable,True
+CLM-30502,img_20260617_084633,amount,220.00,220.00,match,True
+CLM-30503,img_20260617_084423,amount,310.00,310.00,match,True
+CLM-30506,img-20260617-wa0228,amount,1230.00,1230.00,match,True
 CLM-30508,img_20260617_205508,amount,1212.40,1212.40,match,True
-CLM-30509,img-20260617-wa0144,amount,2016.00,1,mismatch,True
-CLM-30510,img_20260617_105945,amount,4032.00,1,mismatch,True
+CLM-30509,img-20260617-wa0144,amount,2016.00,2016.00,match,True
+CLM-30510,img_20260617_105945,amount,4032.00,4032.00,match,True
 CLM-30511,img_20260618_082935,amount,488.90,488.90,match,True
 CLM-30512,img_20260618_103234,amount,400.00,400.00,match,True
 CLM-30514,img_20260617_113530,amount,494.00,494.00,match,True
 CLM-30515,img_20260618_150100,amount,614.00,614.00,match,True
 CLM-30519,img_20260617_192020,amount,1806.00,1806.00,match,True
-CLM-30523,img-20260618-wa0208,amount,125.00,125,match,True
-CLM-30524,img_20260617_121852,amount,920.00,920,match,True
-CLM-30527,img_20260618_110458,amount,510.00,510,match,True
+CLM-30523,img-20260618-wa0208,amount,125.00,125.00,match,True
+CLM-30524,img_20260617_121852,amount,920.00,920.00,match,True
+CLM-30527,img_20260618_110458,amount,510.00,510.00,match,True
 CLM-30528,img_20260617_180258,amount,141.60,141.60,match,True
 CLM-30529,img_20260618_205103,amount,226.56,226.56,match,True
 CLM-30531,img_20260617_212342,amount,,,unmatched_image,False
-CLM-30533,img_20260618_112339,amount,2352.00,1,mismatch,True
-CLM-30535,img_20260617_085029,amount,3136.00,1,mismatch,True
+CLM-30533,img_20260618_112339,amount,2352.00,2352.00,match,True
+CLM-30535,img_20260617_085029,amount,3136.00,3136.00,match,True
 CLM-30536,img-20260617-wa0093,amount,30.00,30.00,match,True
 CLM-30539,img-20260618-wa0121,amount,30.00,30.00,match,True
 CLM-30543,img_20260617_104401,amount,30.00,30.00,match,True
@@ -1192,46 +1192,46 @@ CLM-30546,img-20260618-wa0030,amount,30.00,30.00,match,True
 CLM-30549,img_20260619_212359,amount,200.00,200.00,match,True
 CLM-30553,img_20260619_155737,amount,178.00,178.00,match,True
 CLM-30556,img_20260618_200822,amount,798.00,798.00,match,True
-CLM-30558,img_20260618_215842,amount,380.00,380,match,True
-CLM-30560,img-20260618-wa0179,amount,500.00,500,match,True
-CLM-30562,img_20260618_100357,amount,390.00,390,match,True
+CLM-30558,img_20260618_215842,amount,380.00,380.00,match,True
+CLM-30560,img-20260618-wa0179,amount,500.00,500.00,match,True
+CLM-30562,img_20260618_100357,amount,390.00,390.00,match,True
 CLM-30566,img_20260619_114500,amount,30.00,30.00,match,True
 CLM-30568,img-20260619-wa0197,amount,1514.00,1514.00,match,True
-CLM-30570,img-20260620-wa0200,amount,690.00,690,match,True
-CLM-30572,img_20260620_212353,amount,190.00,190,match,True
-CLM-30573,img_20260619_115355,amount,110.00,110,match,True
-CLM-30577,img-20260619-wa0030,amount,110.00,,not_comparable,True
-CLM-30581,img-20260620-wa0193,amount,1380.00,1380,match,True
-CLM-30584,img_20260620_143640,amount,500.00,500,match,True
-CLM-30585,img_20260621_144359,amount,270.00,270,match,True
-CLM-30586,img_20260620_143225,amount,160.00,160,match,True
-CLM-30587,img-20260620-wa0198,amount,190.00,190,match,True
-CLM-30591,img_20260621_170151,amount,1260.00,1260,match,True
+CLM-30570,img-20260620-wa0200,amount,690.00,690.00,match,True
+CLM-30572,img_20260620_212353,amount,190.00,190.00,match,True
+CLM-30573,img_20260619_115355,amount,110.00,110.00,match,True
+CLM-30577,img-20260619-wa0030,amount,110.00,110.00,match,True
+CLM-30581,img-20260620-wa0193,amount,1380.00,1380.00,match,True
+CLM-30584,img_20260620_143640,amount,500.00,500.00,match,True
+CLM-30585,img_20260621_144359,amount,270.00,270.00,match,True
+CLM-30586,img_20260620_143225,amount,160.00,160.00,match,True
+CLM-30587,img-20260620-wa0198,amount,190.00,190.00,match,True
+CLM-30591,img_20260621_170151,amount,1260.00,1260.00,match,True
 CLM-30592,img_20260620_204047,amount,30.00,30.00,match,True
 CLM-30594,img_20260622_101042,amount,300.00,300.00,match,True
 CLM-30596,img-20260622-wa0139,amount,462.00,462.00,match,True
 CLM-30600,img_20260622_130954,amount,672.00,672.00,match,True
 CLM-30601,img_20260621_182008,amount,262.00,262.00,match,True
-CLM-30603,img_20260622_194220,amount,100.00,20,mismatch,True
-CLM-30606,img_20260621_215742,amount,1120.00,76,mismatch,True
+CLM-30603,img_20260622_194220,amount,100.00,20.00,mismatch,True
+CLM-30606,img_20260621_215742,amount,1120.00,76.00,mismatch,True
 CLM-30607,img_20260621_150433,amount,226.56,226.56,match,True
 CLM-30608,img-20260621-wa0194,amount,212.40,212.40,match,True
 CLM-30611,img-20260621-wa0005,amount,339.84,339.84,match,True
 CLM-30614,img_20260622_112339,amount,150.00,150.00,match,True
 CLM-30618,img_20260623_200653,amount,914.00,914.00,match,True
 CLM-30620,img_20260623_114733,amount,262.00,262.00,match,True
-CLM-30623,img_20260622_191832,amount,1940.00,1,mismatch,True
+CLM-30623,img_20260622_191832,amount,1940.00,,not_comparable,True
 CLM-30625,img_20260623_210019,amount,330.40,330.40,match,True
-CLM-30629,img_20260622_200133,amount,30.00,,not_comparable,True
+CLM-30629,img_20260622_200133,amount,30.00,30.00,match,True
 CLM-30630,img-20260624-wa0163,amount,200.00,200.00,match,True
 CLM-30633,img_20260624_121405,amount,500.00,500.00,match,True
 CLM-30634,img_20260624_101828,amount,100.00,100.00,match,True
 CLM-30636,img_20260624_125626,amount,430.00,430.00,match,True
-CLM-30639,img_20260624_093028,amount,275.00,275,match,True
-CLM-30640,img-20260623-wa0017,amount,120.00,120,match,True
-CLM-30642,img_20260623_111031,amount,290.00,290,match,True
-CLM-30643,img_20260623_203853,amount,2016.00,1,mismatch,True
-CLM-30646,img_20260624_185702,amount,2352.00,1,mismatch,True
+CLM-30639,img_20260624_093028,amount,275.00,275.00,match,True
+CLM-30640,img-20260623-wa0017,amount,120.00,120.00,match,True
+CLM-30642,img_20260623_111031,amount,290.00,290.00,match,True
+CLM-30643,img_20260623_203853,amount,2016.00,2016.00,match,True
+CLM-30646,img_20260624_185702,amount,2352.00,2352.00,match,True
 CLM-30648,img_20260624_141220,amount,30.00,30.00,match,True
 CLM-30649,img-20260624-wa0183,amount,200.00,200.00,match,True
 CLM-30652,img_20260625_150759,amount,2658.91,2658.91,match,True
@@ -1239,13 +1239,13 @@ CLM-30656,img_20260625_103056,amount,500.00,500.00,match,True
 CLM-30660,img-20260624-wa0037,amount,300.00,300.00,match,True
 CLM-30661,img_20260624_182555,amount,1559.00,1559.00,match,True
 CLM-30664,img_20260625_081750,amount,987.00,987.00,match,True
-CLM-30665,img_20260624_102953,amount,335.00,335,match,True
-CLM-30668,img_20260625_160441,amount,420.00,420,match,True
-CLM-30672,img-20260624-wa0019,amount,1260.00,,not_comparable,True
-CLM-30676,img_20260625_141617,amount,340.00,340,match,True
+CLM-30665,img_20260624_102953,amount,335.00,335.00,match,True
+CLM-30668,img_20260625_160441,amount,420.00,420.00,match,True
+CLM-30672,img-20260624-wa0019,amount,1260.00,1260.00,match,True
+CLM-30676,img_20260625_141617,amount,340.00,340.00,match,True
 CLM-30679,img-20260626-wa0050,amount,448.40,448.40,match,True
 CLM-30680,img_20260625_144518,amount,528.64,528.64,match,True
-CLM-30681,img_20260625_124513,amount,6272.00,1,mismatch,True
+CLM-30681,img_20260625_124513,amount,6272.00,6272.00,match,True
 CLM-30684,img_20260627_171328,amount,3698.30,3698.30,match,True
 CLM-30685,img_20260627_101752,amount,300.00,300.00,match,True
 CLM-30687,img_20260626_111444,amount,300.00,300.00,match,True
@@ -1254,9 +1254,9 @@ CLM-30689,img-20260626-wa0140,amount,300.00,300.00,match,True
 CLM-30690,img-20260626-wa0214,amount,892.00,892.00,match,True
 CLM-30691,img_20260627_214225,amount,336.00,336.00,match,True
 CLM-30693,img_20260628_140015,amount,861.00,861.00,match,True
-CLM-30697,img-20260628-wa0014,amount,210.00,210,match,True
-CLM-30701,img-20260627-wa0099,amount,240.00,240,match,True
-CLM-30702,img_20260627_205055,amount,430.00,,not_comparable,True
+CLM-30697,img-20260628-wa0014,amount,210.00,210.00,match,True
+CLM-30701,img-20260627-wa0099,amount,240.00,240.00,match,True
+CLM-30702,img_20260627_205055,amount,430.00,430.00,match,True
 CLM-30703,img-20260627-wa0143,amount,330.40,330.40,match,True
 CLM-30706,img_20260628_193333,amount,330.40,330.40,match,True
 CLM-30710,img_20260627_161208,amount,,,unmatched_image,False
@@ -1266,9 +1266,9 @@ CLM-30717,img_20260629_170328,amount,558.00,558.00,match,True
 CLM-30721,img-20260628-wa0202,amount,333.64,333.64,match,True
 CLM-30724,img_20260629_160432,amount,315.00,315.00,match,True
 CLM-30728,img-20260629-wa0202,amount,840.00,840.00,match,True
-CLM-30732,img-20260628-wa0048,amount,700.00,700,match,True
-CLM-30735,img-20260628-wa0031,amount,1060.00,1060,match,True
-CLM-30736,img-20260629-wa0090,amount,2352.00,,not_comparable,True
+CLM-30732,img-20260628-wa0048,amount,700.00,700.00,match,True
+CLM-30735,img-20260628-wa0031,amount,1060.00,1060.00,match,True
+CLM-30736,img-20260629-wa0090,amount,2352.00,2352.00,match,True
 CLM-30737,img-20260629-wa0170,amount,30.00,30.00,match,True
 CLM-30738,img_20260629_124013,amount,200.00,200.00,match,True
 CLM-30740,img_20260630_093309,amount,3566.52,3566.52,match,True
@@ -1276,61 +1276,61 @@ CLM-30741,img-20260630-wa0154,amount,1102.00,1102.00,match,True
 CLM-30742,img_20260630_164905,amount,672.00,672.00,match,True
 CLM-30745,img_20260629_150245,amount,514.00,514.00,match,True
 CLM-30749,img_20260629_163548,amount,504.00,504.00,match,True
-CLM-30750,img_20260630_180323,amount,50.00,50,match,True
-CLM-30751,img_20260629_170106,amount,4032.00,1,mismatch,True
+CLM-30750,img_20260630_180323,amount,50.00,50.00,match,True
+CLM-30751,img_20260629_170106,amount,4032.00,4032.00,match,True
 CLM-30753,img_20260701_161009,amount,500.00,500.00,match,True
 CLM-30757,img_20260701_194456,amount,400.00,400.00,match,True
 CLM-30759,img_20260630_151546,amount,250.00,250.00,match,True
 CLM-30762,img_20260630_093537,amount,200.00,200.00,match,True
-CLM-30764,img-20260630-wa0097,amount,1268.00,,not_comparable,True
+CLM-30764,img-20260630-wa0097,amount,1268.00,1268.00,match,True
 CLM-30766,img_20260701_090903,amount,640.00,640.00,match,True
 CLM-30767,img_20260701_150314,amount,178.00,178.00,match,True
 CLM-30769,img_20260630_162530,amount,394.00,394.00,match,True
 CLM-30770,img_20260630_175914,amount,528.64,528.64,match,True
-CLM-30774,img-20260701-wa0166,amount,2016.00,1,mismatch,True
+CLM-30774,img-20260701-wa0166,amount,2016.00,2016.00,match,True
 CLM-30775,img_20260702_113739,amount,400.00,400.00,match,True
 CLM-30779,img-20260701-wa0067,amount,500.00,500.00,match,True
 CLM-30780,img_20260701_105637,amount,578.00,578.00,match,True
 CLM-30783,img-20260701-wa0110,amount,578.00,578.00,match,True
-CLM-30787,img_20260702_104058,amount,220.00,220,match,True
-CLM-30790,img-20260702-wa0131,amount,1550.00,1550,match,True
+CLM-30787,img_20260702_104058,amount,220.00,220.00,match,True
+CLM-30790,img-20260702-wa0131,amount,1550.00,1550.00,match,True
 CLM-30794,img_20260701_194303,amount,339.84,339.84,match,True
 CLM-30796,img_20260701_161359,amount,339.84,339.84,match,True
-CLM-30797,img-20260701-wa0140,amount,3136.00,1,mismatch,True
+CLM-30797,img-20260701-wa0140,amount,3136.00,3136.00,match,True
 CLM-30799,img_20260702_154204,amount,30.00,30.00,match,True
 CLM-30803,img_20260702_155903,amount,403.72,403.72,match,True
 CLM-30804,img_20260702_150756,amount,1559.00,1559.00,match,True
 CLM-30807,img_20260703_090155,amount,1008.00,1008.00,match,True
 CLM-30811,img_20260703_083622,amount,662.00,662.00,match,True
-CLM-30814,img_20260702_105135,amount,279.00,270,mismatch,True
-CLM-30815,img-20260703-wa0152,amount,1080.00,,not_comparable,True
-CLM-30819,img_20260703_175613,amount,2016.00,,not_comparable,True
+CLM-30814,img_20260702_105135,amount,279.00,270.00,mismatch,True
+CLM-30815,img-20260703-wa0152,amount,1080.00,1080.00,match,True
+CLM-30819,img_20260703_175613,amount,2016.00,2016.00,match,True
 CLM-30820,img-20260704-wa0046,amount,259.00,250.00,mismatch,True
 CLM-30821,img-20260703-wa0197,amount,333.16,333.16,match,True
 CLM-30824,img_20260703_165733,amount,300.00,300.00,match,True
 CLM-30826,img-20260704-wa0175,amount,150.00,150.00,match,True
 CLM-30827,img_20260704_162231,amount,436.00,436.00,match,True
 CLM-30829,img_20260704_102036,amount,388.00,388.00,match,True
-CLM-30833,img_20260703_171453,amount,200.00,200,match,True
-CLM-30837,img_20260703_154353,amount,1130.00,1130,match,True
-CLM-30840,img_20260703_112843,amount,1120.00,1120,match,True
+CLM-30833,img_20260703_171453,amount,200.00,200.00,match,True
+CLM-30837,img_20260703_154353,amount,1130.00,1130.00,match,True
+CLM-30840,img_20260703_112843,amount,1120.00,1120.00,match,True
 CLM-30843,img_20260704_133452,amount,200.00,200.00,match,True
 CLM-30846,img-20260704-wa0179,amount,620.00,620.00,match,True
 CLM-30849,img_20260705_110011,amount,483.00,483.00,match,True
 CLM-30851,img-20260704-wa0073,amount,430.00,430.00,match,True
-CLM-30854,img_20260705_210409,amount,360.00,360,match,True
+CLM-30854,img_20260705_210409,amount,360.00,360.00,match,True
 CLM-30856,img_20260705_125011,amount,,,not_comparable,True
 CLM-30857,img_20260705_095928,amount,141.60,141.60,match,True
 CLM-30860,img_20260705_161531,amount,100.00,100.00,match,True
 CLM-30863,img_20260706_092355,amount,220.00,220.00,match,True
-CLM-30865,img_20260706_110511,amount,80.00,80,match,True
-CLM-30868,img_20260705_180453,amount,1130.00,1130,match,True
+CLM-30865,img_20260706_110511,amount,80.00,80.00,match,True
+CLM-30868,img_20260705_180453,amount,1130.00,1130.00,match,True
 CLM-30871,img_20260706_112925,amount,141.60,141.60,match,True
 CLM-30872,img_20260706_193326,amount,30.00,30.00,match,True
 CLM-30874,img-20260706-wa0216,amount,30.00,30.00,match,True
 CLM-30875,img_20260706_192128,amount,500.00,500.00,match,True
 CLM-30879,img_20260706_210747,amount,388.00,388.00,match,True
-CLM-30880,img_20260706_123828,amount,170.00,170,match,True
+CLM-30880,img_20260706_123828,amount,170.00,170.00,match,True
 CLM-30883,img-20260706-wa0067,amount,141.60,141.60,match,True
 CLM-30886,img-20260707-wa0066,amount,,,not_comparable,True
 CLM-30887,img-20260706-wa0212,amount,,,unmatched_image,False
@@ -1342,18 +1342,18 @@ CLM-30901,img-20260707-wa0203,amount,300.00,300.00,match,True
 CLM-30902,img_20260708_120658,amount,500.00,500.00,match,True
 CLM-30904,img-20260708-wa0072,amount,200.00,200.00,match,True
 CLM-30906,img_20260708_204220,amount,630.00,630.00,match,True
-CLM-30910,img_20260708_205926,amount,1550.00,,not_comparable,True
-CLM-30913,img_20260708_091254,amount,290.00,290,match,True
+CLM-30910,img_20260708_205926,amount,1550.00,1550.00,match,True
+CLM-30913,img_20260708_091254,amount,290.00,290.00,match,True
 CLM-30916,img_20260707_110240,amount,30.00,30.00,match,True
 CLM-30919,img_20260708_103658,amount,800.00,800.00,match,True
 CLM-30920,img-20260709-wa0067,amount,482.58,482.58,match,True
 CLM-30923,img_20260708_190631,amount,2949.80,2949.80,match,True
 CLM-30925,img-20260708-wa0036,amount,100.00,100.00,match,True
 CLM-30929,img_20260708_185155,amount,420.00,420.00,match,True
-CLM-30932,img_20260708_181536,amount,1225.00,1225,match,True
-CLM-30934,img_20260708_142626,amount,1020.00,1020,match,True
+CLM-30932,img_20260708_181536,amount,1225.00,1225.00,match,True
+CLM-30934,img_20260708_142626,amount,1020.00,1020.00,match,True
 CLM-30937,img_20260708_122923,amount,212.40,212.40,match,True
-CLM-30940,img-20260709-wa0074,amount,6272.00,1,mismatch,True
+CLM-30940,img-20260709-wa0074,amount,6272.00,6272.00,match,True
 CLM-30944,img_20260710_170627,amount,100.00,100.00,match,True
 CLM-30947,img_20260710_205455,amount,300.00,300.00,match,True
 CLM-30950,img_20260709_081958,amount,500.00,500.00,match,True
@@ -1361,33 +1361,33 @@ CLM-30954,img-20260710-wa0098,amount,300.00,300.00,match,True
 CLM-30957,img-20260710-wa0118,amount,300.00,300.00,match,True
 CLM-30959,img_20260709_151741,amount,308.84,308.84,match,True
 CLM-30963,img_20260709_165630,amount,672.00,672.00,match,True
-CLM-30967,img_20260709_130733,amount,50.00,50,match,True
-CLM-30971,img_20260710_103529,amount,1280.00,1280,match,True
-CLM-30974,img-20260709-wa0132,amount,2016.00,1,mismatch,True
+CLM-30967,img_20260709_130733,amount,50.00,50.00,match,True
+CLM-30971,img_20260710_103529,amount,1280.00,1280.00,match,True
+CLM-30974,img-20260709-wa0132,amount,2016.00,2016.00,match,True
 CLM-30978,img-20260711-wa0205,amount,150.00,150.00,match,True
 CLM-30979,img-20260710-wa0167,amount,,,not_comparable,True
 CLM-30980,img_20260711_205505,amount,630.00,630.00,match,True
 CLM-30982,img_20260711_165958,amount,1102.00,1102.00,match,True
 CLM-30983,img_20260710_081421,amount,399.00,399.00,match,True
-CLM-30985,img_20260711_162902,amount,346.00,,not_comparable,True
-CLM-30989,img_20260711_192652,amount,195.00,195,match,True
-CLM-30991,img_20260711_162222,amount,500.00,500,match,True
-CLM-30992,img-20260710-wa0115,amount,900.00,900,match,True
-CLM-30996,img_20260711_175810,amount,370.00,,not_comparable,True
+CLM-30985,img_20260711_162902,amount,346.00,346.00,match,True
+CLM-30989,img_20260711_192652,amount,195.00,195.00,match,True
+CLM-30991,img_20260711_162222,amount,500.00,500.00,match,True
+CLM-30992,img-20260710-wa0115,amount,900.00,900.00,match,True
+CLM-30996,img_20260711_175810,amount,370.00,370.00,match,True
 CLM-31000,img_20260710_090411,amount,141.60,141.60,match,True
-CLM-31004,img_20260710_195933,amount,2016.00,,not_comparable,True
+CLM-31004,img_20260710_195933,amount,2016.00,2016.00,match,True
 CLM-31007,img_20260711_194359,amount,20.00,20.00,match,True
 CLM-31009,img_20260711_124855,amount,1536.01,1536.01,match,True
 CLM-31010,img-20260711-wa0006,amount,819.00,819.00,match,True
-CLM-31011,img_20260712_170552,amount,130.00,130,match,True
-CLM-31013,img_20260711_154128,amount,330.00,330,match,True
-CLM-31015,img_20260711_204304,amount,4704.00,,not_comparable,True
+CLM-31011,img_20260712_170552,amount,130.00,130.00,match,True
+CLM-31013,img_20260711_154128,amount,330.00,330.00,match,True
+CLM-31015,img_20260711_204304,amount,4704.00,4704.00,match,True
 CLM-31016,img_20260713_095100,amount,100.00,100.00,match,True
-CLM-31018,img_20260713_173024,amount,546.00,,not_comparable,True
+CLM-31018,img_20260713_173024,amount,546.00,546.00,match,True
 CLM-31019,img-20260712-wa0179,amount,304.00,304.00,match,True
-CLM-31020,img-20260712-wa0059,amount,370.00,370,match,True
-CLM-31021,img_20260712_143503,amount,850.00,850,match,True
-CLM-31022,img-20260713-wa0111,amount,1130.00,1130,match,True
+CLM-31020,img-20260712-wa0059,amount,370.00,370.00,match,True
+CLM-31021,img_20260712_143503,amount,850.00,850.00,match,True
+CLM-31022,img-20260713-wa0111,amount,1130.00,1130.00,match,True
 CLM-31023,img_20260714_160417,amount,150.00,150.00,match,True
 CLM-31026,img_20260713_165011,amount,300.00,300.00,match,True
 CLM-31030,img-20260713-wa0093,amount,682.00,682.00,match,True
@@ -1396,19 +1396,19 @@ CLM-31034,img-20260713-wa0237,amount,756.00,756.00,match,True
 CLM-31035,img_20260714_201050,amount,212.40,212.40,match,True
 CLM-31038,img_20260714_100816,amount,1113.00,1113.00,match,True
 CLM-31042,img_20260714_183832,amount,326.00,326.00,match,True
-CLM-31045,img-20260714-wa0050,amount,110.00,110,match,True
-CLM-31047,img-20260715-wa0213,amount,310.00,310,match,True
-CLM-31049,img_20260714_171948,amount,200.00,190,mismatch,True
-CLM-31053,img_20260714_123934,amount,260.00,260,match,True
-CLM-31055,img_20260714_213549,amount,900.00,900,match,True
+CLM-31045,img-20260714-wa0050,amount,110.00,110.00,match,True
+CLM-31047,img-20260715-wa0213,amount,310.00,310.00,match,True
+CLM-31049,img_20260714_171948,amount,200.00,190.00,mismatch,True
+CLM-31053,img_20260714_123934,amount,260.00,260.00,match,True
+CLM-31055,img_20260714_213549,amount,900.00,900.00,match,True
 CLM-31056,img_20260714_202221,amount,339.84,339.84,match,True
 CLM-31057,img-20260715-wa0155,amount,200.00,200.00,match,True
 CLM-31059,img_20260715_184332,amount,400.00,400.00,match,True
-CLM-31063,img-20260716-wa0107,amount,325.00,325,match,True
+CLM-31063,img-20260716-wa0107,amount,325.00,325.00,match,True
 CLM-31066,img_20260716_143034,amount,226.56,226.56,match,True
 CLM-31067,img_20260715_153311,amount,528.64,528.64,match,True
 CLM-31069,img-20260717-wa0088,amount,500.00,500.00,match,True
-CLM-31071,img-20260717-wa0051,amount,662.00,,not_comparable,True
+CLM-31071,img-20260717-wa0051,amount,662.00,662.00,match,True
 CLM-31072,img_20260716_173230,amount,330.40,330.40,match,True
 CLM-31075,img-20260717-wa0166,amount,486.75,486.75,match,True
 CLM-31079,img_20260718_154240,amount,448.40,448.40,match,True

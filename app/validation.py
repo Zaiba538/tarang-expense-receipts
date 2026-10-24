@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import re
+from decimal import Decimal, InvalidOperation
 from typing import Any
 
 from app.normalization import (
@@ -28,6 +29,41 @@ def validate_gstin(value: object) -> bool:
     return bool(GSTIN_PATTERN.fullmatch(gstin))
 
 
+def _parse_amount_for_validation(value: object) -> Decimal | None:
+    """Parse an amount while preserving negative values for validation."""
+    if value is None or isinstance(value, bool):
+        return None
+
+    raw = str(value).strip()
+    if not raw:
+        return None
+
+    # Parse the original sign before using the normalizer, which may
+    # reject negative amounts as unsuitable receipt totals.
+    cleaned = (
+        raw.replace("₹", "")
+        .replace("â‚¹", "")
+        .replace(",", "")
+        .strip()
+    )
+    cleaned = re.sub(r"(?i)\bINR\b|\bRs\.?|\brupees?\b", "", cleaned)
+    cleaned = cleaned.strip()
+
+    try:
+        amount = Decimal(cleaned)
+    except InvalidOperation:
+        amount = None
+
+    if amount is not None and amount.is_finite():
+        return amount
+
+    normalized = normalize_amount(value)
+    if normalized is None:
+        return None
+
+    return Decimal(str(normalized))
+
+
 def validate_receipt_fields(fields: dict[str, Any]) -> dict[str, Any]:
     """
     Check extracted receipt fields without guessing missing values.
@@ -39,7 +75,8 @@ def validate_receipt_fields(fields: dict[str, Any]) -> dict[str, Any]:
     receipt_date = normalize_date(fields.get("receipt_date"))
     receipt_number = normalize_text(fields.get("receipt_number"))
     gstin = normalize_gstin(fields.get("gstin"))
-    total_amount = normalize_amount(fields.get("total_amount"))
+    raw_amount = fields.get("total_amount")
+    parsed_amount = _parse_amount_for_validation(raw_amount)
 
     errors: list[str] = []
 
@@ -52,13 +89,18 @@ def validate_receipt_fields(fields: dict[str, Any]) -> dict[str, Any]:
     if not receipt_number:
         errors.append("receipt_number_missing_or_unreadable")
 
-    if total_amount is None:
+    if parsed_amount is None:
         errors.append("total_amount_missing_or_unreadable")
-    elif total_amount < 0:
+    elif parsed_amount < 0:
         errors.append("total_amount_invalid")
 
     if gstin and not validate_gstin(gstin):
         errors.append("gstin_invalid_format")
+
+    # Keep the public normalized output consistent with the existing API.
+    normalized_amount = normalize_amount(raw_amount)
+    if parsed_amount is not None and parsed_amount < 0:
+        normalized_amount = parsed_amount
 
     return {
         "valid": not errors,
@@ -69,7 +111,9 @@ def validate_receipt_fields(fields: dict[str, Any]) -> dict[str, Any]:
             "receipt_number": receipt_number,
             "gstin": gstin,
             "total_amount": (
-                float(total_amount) if total_amount is not None else None
+                float(normalized_amount)
+                if normalized_amount is not None
+                else None
             ),
         },
     }

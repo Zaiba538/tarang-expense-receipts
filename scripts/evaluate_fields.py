@@ -1,4 +1,16 @@
 
+"""Compare OCR-extracted receipt fields with clerk-entered fields.
+
+The reference is the clerk-entered bill fields on training claims. Clerk
+entries are not independently verified, so the result is agreement with
+clerk entries, not extraction accuracy. Photo-verified accuracy is reported
+separately by scripts/evaluate_photo_truth.py (reports/photo_field_evaluation.md).
+
+Usage (from the project root):
+    python scripts/evaluate_fields.py [--ocr PATH]
+"""
+
+import argparse
 from pathlib import Path
 import re
 
@@ -10,11 +22,12 @@ DATA_DIR = ROOT / "data" / "Task 2 Files"
 REPORT_DIR = ROOT / "reports"
 
 CLAIMS_FILE = DATA_DIR / "claims_train.csv"
-OCR_FILE = REPORT_DIR / "ocr_extractions.csv"
+# Fields re-extracted from the stored OCR text with the current rules.
+OCR_FILE = REPORT_DIR / "ocr_extractions_v3.csv"
 
 
 # Actual reference columns in claims_train.csv.
-# Actual OCR columns in ocr_extractions.csv.
+# Actual OCR columns in the OCR extraction file.
 FIELD_PAIRS = {
     "vendor": ("clerk_vendor", "ocr_vendor"),
     "receipt_date": ("clerk_bill_date", "ocr_receipt_date"),
@@ -110,14 +123,18 @@ def clean_image_filename(value):
 
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    parser.add_argument("--ocr", type=Path, default=OCR_FILE)
+    ocr_file = parser.parse_args().ocr
+
     if not CLAIMS_FILE.exists():
         raise FileNotFoundError(f"Claims file not found: {CLAIMS_FILE}")
 
-    if not OCR_FILE.exists():
-        raise FileNotFoundError(f"OCR file not found: {OCR_FILE}")
+    if not ocr_file.exists():
+        raise FileNotFoundError(f"OCR file not found: {ocr_file}")
 
     claims = pd.read_csv(CLAIMS_FILE, dtype=str)
-    ocr = pd.read_csv(OCR_FILE, dtype=str)
+    ocr = pd.read_csv(ocr_file, dtype=str)
 
     if "image_file" not in claims.columns:
         raise ValueError(
@@ -127,7 +144,7 @@ def main():
 
     if "image_filename" not in ocr.columns:
         raise ValueError(
-            f"ocr_extractions.csv is missing image_filename. "
+            f"{ocr_file.name} is missing image_filename. "
             f"Columns: {ocr.columns.tolist()}"
         )
 
@@ -248,7 +265,7 @@ def main():
 
         comparable = correct + incorrect
         not_comparable = len(merged) - comparable
-        accuracy = (
+        agreement = (
             round(correct / comparable * 100, 2)
             if comparable
             else 0.0
@@ -265,7 +282,7 @@ def main():
             "not_comparable": not_comparable,
             "missing_reference": missing_reference,
             "missing_ocr": missing_ocr,
-            "accuracy_percent": accuracy,
+            "clerk_agreement_percent": agreement,
         })
 
     REPORT_DIR.mkdir(parents=True, exist_ok=True)
@@ -280,8 +297,24 @@ def main():
     summary_df.to_csv(summary_csv_path, index=False)
 
     with summary_txt_path.open("w", encoding="utf-8") as file:
-        file.write("Receipt OCR Field Evaluation\n")
-        file.write("============================\n\n")
+        file.write("Receipt OCR Field Agreement with Clerk Entries\n")
+        file.write("==============================================\n\n")
+        try:
+            shown_path = ocr_file.resolve().relative_to(ROOT).as_posix()
+        except ValueError:
+            shown_path = str(ocr_file)
+        file.write(f"OCR fields: {shown_path}\n")
+        file.write("Reference: clerk-entered bill fields on training claims (not photo-verified).\n")
+        file.write(
+            "clerk_agreement_percent = correct / comparable. A claim is comparable only\n"
+            "when its image matched and both the clerk value and the OCR value are\n"
+            "present; blank values are counted in missing_reference / missing_ocr and\n"
+            "left out of the percentage, so it does not reflect how many fields are blank.\n"
+        )
+        file.write(
+            "This is agreement with clerk entries, not extraction accuracy: clerk entries\n"
+            "can be wrong. Photo-verified accuracy: reports/photo_field_evaluation.md.\n\n"
+        )
         file.write(f"Training claims: {len(claims)}\n")
         file.write(f"Unique OCR images: {len(ocr)}\n")
         file.write(f"Matched claims: {matched_count}\n")

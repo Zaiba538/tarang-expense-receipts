@@ -3,10 +3,18 @@
 
 from __future__ import annotations
 
+from decimal import Decimal
 from typing import Any
 
+from app.integrity_checks import check_receipt_integrity, find_hostile_text
+from app.normalization import normalize_amount
 from app.policy_engine import evaluate_policy
 from app.validation import validate_claim_amount, validate_receipt_fields
+
+
+# Expense policy v3.2, section 7 (draft): clerks check claims of Rs 2,000
+# and above; only smaller claims may be approved without a clerk.
+CLERK_REVIEW_THRESHOLD = Decimal("2000")
 
 
 def make_decision(
@@ -15,8 +23,14 @@ def make_decision(
     employee: dict[str, Any] | None = None,
     receipt_available: bool = True,
     duplicate_info: dict[str, Any] | None = None,
+    vehicle_registry: dict[str, str] | None = None,
 ) -> dict[str, Any]:
-    """Produce a conservative approve/review decision with an explainable reason."""
+    """Produce a conservative approve/review decision with an explainable reason.
+
+    When the receipt carries its OCR text as "raw_text", the printed figures
+    are cross-checked and any printed instructions are reported. Receipt text
+    is untrusted content: it can only add reasons for review, never remove one.
+    """
     receipt = receipt or {}
     employee = employee or {}
     duplicate_info = duplicate_info or {}
@@ -29,16 +43,59 @@ def make_decision(
         duplicate_detected=bool(
             duplicate_info.get("duplicate_detected", False)
         ),
+        vehicle_registry=vehicle_registry,
     )
 
     reasons = list(policy_result.get("reasons", []))
     field_errors: list[str] = []
+    flags: list[str] = []
 
     if duplicate_info.get("possible_matches"):
+        match_type = duplicate_info.get("match_type") or "possible"
+        # Overlapping parking is a conflict between tickets, not a duplicate bill.
+        flags.append(
+            "parking_time_conflict" if match_type == "parking_overlap" else f"duplicate_{match_type}"
+        )
+        if duplicate_info.get("cross_employee"):
+            flags.append("duplicate_cross_employee")
         reasons.append(
-            "Possible related claims found: "
+            duplicate_info.get("reason")
+            or "Possible related claims found: "
             + ", ".join(duplicate_info["possible_matches"])
             + "; verify before payment."
+        )
+
+    if policy_result.get("vehicle_status") not in ("", "match"):
+        flags.append(f"vehicle_{policy_result['vehicle_status']}")
+
+    raw_text = receipt.get("raw_text") if receipt_available else None
+    if find_hostile_text(raw_text):
+        flags.append("hostile_text")
+        reasons.append(
+            "Receipt contains printed instructions addressed to approvers or "
+            "automated processing; treated as untrusted content and ignored."
+        )
+
+    for finding in check_receipt_integrity(
+        raw_text, receipt.get("total_amount"), claim.get("amount_claimed")
+    ):
+        flags.append(finding["code"])
+        reasons.append(finding["message"])
+
+    # The larger figure counts, so a low claim cannot hide a high bill.
+    amounts = [
+        amount
+        for amount in (
+            normalize_amount(claim.get("amount_claimed")),
+            normalize_amount(receipt.get("total_amount")),
+        )
+        if amount is not None
+    ]
+    if amounts and max(amounts) >= CLERK_REVIEW_THRESHOLD:
+        flags.append("clerk_threshold")
+        reasons.append(
+            f"Amount is Rs {CLERK_REVIEW_THRESHOLD:,.0f} or more; clerk check "
+            "required under the proposed auto-approval rule."
         )
 
     if receipt_available:
@@ -75,6 +132,7 @@ def make_decision(
         and receipt_available
         and not field_errors
         and not has_duplicate_concern
+        and not flags
         else "review"
     )
 
@@ -98,4 +156,5 @@ def make_decision(
             duplicate_info.get("duplicate_detected", False)
         ),
         "possible_matches": duplicate_info.get("possible_matches", []),
+        "flags": list(dict.fromkeys(flags)),
     }

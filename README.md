@@ -1,133 +1,94 @@
 # Tarang Pharma Expense Receipt Review
 
-## 1. Project Overview
+Reads receipt photos with local OCR, checks each claim against its bill, the expense policy and other claims, and recommends **approve** (every available check passed) or **review** (a clerk must look). It supports a clerk; it does not replace policy or human judgement. No API key or paid service is needed.
 
-This project extracts information from expense receipt images using Optical Character Recognition (OCR) and applies rule-based checks to support expense claim review.
-
-The system produces two possible decisions:
-
-- **Approve:** Available evidence passes the implemented checks.
-- **Review:** Additional verification or human review is required.
-
-The system supports reimbursement review; it does not replace company policy or human judgment.
-
-## 2. Key Features
-
-- OCR-based receipt field extraction.
-- Vendor, date, receipt number, GSTIN, and amount normalization.
-- Receipt validation and claim amount comparison.
-- Expense policy checks for supported categories.
-- Duplicate and possible-duplicate detection.
-- FastAPI decision endpoint.
-- Automated tests.
-- Training evaluation and error analysis reports.
-- CSV predictions matching the supplied submission format.
-
-## 3. Project Structure
-
-- `app/` — Application, extraction, validation, and decision logic.
-- `data/` — Task data and data documentation.
-- `images/` — Downloaded receipt images, if present.
-- `reports/` — OCR, image matching, evaluation, and error analysis outputs.
-- `scripts/` — Receipt extraction, image matching, evaluation, and prediction scripts.
-- `tests/` — Automated tests.
-- `ui/` — User interface files, if configured.
-- `predictions.csv` — Generated test predictions.
-- `requirements.txt` — Python dependencies.
-- `Dockerfile` — Container build configuration.
-- `docker-compose.yml` — Container orchestration configuration.
-
-## 4. Requirements
-
-Python 3.11 is recommended. Install the dependencies in the project's virtual environment.
+## 1. Setup (Windows, Python 3.11)
 
 ```powershell
-python -m pip install -r requirements.txt
+cd C:\path\to\tarang-expense-receipts
+python -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
 ```
 
-PaddleOCR may require compatible PaddlePaddle and OCR model assets. Follow the official installation instructions if an OCR dependency is missing.
+`requirements.txt` includes PaddleOCR and PaddlePaddle (CPU). The OCR models download on first use (about 180 MB, cached in `%USERPROFILE%\.paddlex`). Copy `.env.example` to `.env` if you want to change `APP_ENV` or `LOG_LEVEL`; nothing else is configured.
 
-## 5. Extract Receipt Information
+The receipt photos are not in the repository (they are git-ignored). Place them in `tarang-expense-receipts\images\` (`manifest.csv` lists the expected files and SHA-256 hashes).
 
-Run this command from the project root:
+## 2. Run the API (FastAPI)
 
 ```powershell
-python scripts/extract_receipts.py
+.\.venv\Scripts\python.exe -m uvicorn app.main:app --host 127.0.0.1 --port 8000
 ```
 
-The OCR extraction results are saved to `reports/ocr_extractions.csv`.
+- `GET /health` returns `{"status": "ok"}`; interactive docs at `http://127.0.0.1:8000/docs`.
+- `POST /review` (form data): `photo` (JPG/PNG/WEBP, max 10 MB), `claim_id`, `employee_id`, `category`, `amount_claimed`, optional `receipt_date`. Returns the extracted fields, `decision`, `reason`, `employee_found` and `limitations`. This single-photo endpoint does not compare against other claims (duplicates, colleague vehicles, parking overlaps); those checks run in the batch pipeline.
+- `POST /decide` (JSON): decide on receipt fields you supply.
 
-## 6. Match Receipt Images
+Example (PowerShell, image 011 is a parking ticket):
 
 ```powershell
-python scripts/match_images.py
+$img = (Get-ChildItem .\tarang-expense-receipts\images\011_*.jpg).FullName
+curl.exe -s -X POST http://127.0.0.1:8000/review -F "photo=@$img;type=image/jpeg" -F "claim_id=SMOKE-1" -F "employee_id=TPD-0431" -F "category=Parking" -F "amount_claimed=30"
 ```
 
-Check `reports/image_match_report.csv` for missing or ambiguous image matches.
+The first `/review` call is slow while the OCR models load.
 
-## 7. Generate Predictions
+## 3. Run the screen (Streamlit)
 
 ```powershell
-python scripts/generate_predictions.py
+.\.venv\Scripts\python.exe -m streamlit run ui\streamlit_app.py --server.port 8501
 ```
 
-This generates `predictions.csv` in the project root. The expected submission contains 190 test claims and the following columns:
+Open `http://localhost:8501`: upload a photo, enter the claim details, **Extract receipt fields**, correct any field, then **Evaluate claim**. Uploading a different photo clears the previous receipt's fields and result (matched by file content).
 
-`claim_id, vendor, receipt_date, receipt_number, gstin, total_amount, decision, reason`
-
-Missing receipt fields should remain blank when they cannot be reliably extracted. Do not invent receipt information.
-
-## 8. Run the API
+## 4. Batch pipeline (reproduces the deliverables)
 
 ```powershell
-python -m uvicorn app.main:app --reload
+# OCR text + fields for every photo (about 50 minutes on a laptop CPU)
+.\.venv\Scripts\python.exe scripts\extract_receipts.py --output reports\ocr_extractions_v3.csv
+# or: re-apply the current field rules to stored OCR text (seconds)
+.\.venv\Scripts\python.exe scripts\reextract_from_raw_text.py --input reports\ocr_extractions.csv --output reports\ocr_extractions_v3.csv
+.\.venv\Scripts\python.exe scripts\generate_predictions.py     # predictions.csv (190 test claims)
+.\.venv\Scripts\python.exe scripts\build_audit_ledger.py       # reports\audit_exposure_ledger.csv
+.\.venv\Scripts\python.exe scripts\evaluate_photo_truth.py     # reports\photo_field_evaluation.md
+.\.venv\Scripts\python.exe scripts\evaluate_fields.py          # agreement with clerk entries
+.\.venv\Scripts\python.exe scripts\evaluate.py                 # training decisions vs historical status
 ```
 
-Open `http://127.0.0.1:8000/docs` to access the interactive API documentation.
+**This submission's `reports/ocr_extractions_v3.csv` was built from stored OCR text**, not a fresh full OCR run: a full re-run was stopped at 10 images when the machine ran low on memory (those 10 matched the stored text exactly). The enhanced second OCR pass (`raw_text_enhanced`) is therefore empty in v3. Earlier extraction files are kept as records: `ocr_extractions.csv` (original OCR run) and `ocr_extractions_v2.csv`.
 
-The health endpoint is available at `http://127.0.0.1:8000/health`.
-
-## 9. Run Automated Tests
+## 5. Tests
 
 ```powershell
-python -m pytest -q
+.\.venv\Scripts\python.exe -m pytest -q
 ```
 
-The previously recorded baseline was **56 passing tests**. Run the command again after code changes to verify the current project.
+180 tests passed on 24 October 2026 (extraction rules, normalization, duplicate and parking checks, integrity checks, decisions, policy, audit ledger, API and Streamlit screen; OCR is stubbed in the UI tests).
 
-## 10. Evaluate Training Claims
+## 6. Outputs and evidence
 
-```powershell
-python scripts/evaluate.py
-```
+| File | What it is |
+|---|---|
+| `predictions.csv` | 190 test claims in the `sample_submission.csv` format: 80 approve, 110 review |
+| `memo-to-nilesh.md` | Findings, costs and the recommended pilot |
+| `reports/ocr_extractions_v3.csv` | Fields, amount in words, route/km, fuel rate/volume and raw OCR text for all 467 photos |
+| `audit/photo_field_truth.csv` | 52 photos read by eye (30 random within layout families, 22 chosen as difficult) |
+| `reports/photo_field_evaluation.md` | Extraction vs those photos: vendor 49/49, date 43/46, number 47/48, GSTIN 47/48, total 46/47; all misses are blanks |
+| `audit/photo_review_findings.csv` | 47 photo-reviewed findings (altered totals, duplicates, colleague vehicles, printed instructions) |
+| `reports/audit_exposure_ledger.csv` | Every finding, its evidence category and potential exposure, each claim counted once |
+| `reports/field_evaluation_summary.txt` | Agreement with clerk-typed fields on 283 training claims (not accuracy: clerk entries can be wrong) |
+| `reports/evaluation_summary.txt` | Training decisions vs historical status: 127/283 agree (44.9%); historical approvals are not proof of policy compliance |
+| `reports/v2_regeneration_change_report.md` | Every change to extraction and predictions, traced |
 
-The evaluation generates:
+`reports/evaluation.md` and `reports/error_analysis.md` describe an earlier version and are kept for history.
 
-- `reports/training_evaluation.csv`
-- `reports/evaluation_summary.txt`
+## 7. Limitations
 
-The recorded evaluation compared 283 training claims with historical statuses. It produced 88 agreements out of 283 claims, or 31.1%.
+- The photo-checked sample is 52 photos and deliberately difficult; it is not a dataset-wide accuracy figure. Blank fields go to review; they are never guessed.
+- Who paid a bill, fuel field days, driver's receipts, courier purpose and lodging eligibility cannot be established from the data, so those claims go to review.
+- Duplicate, altered-total, colleague-vehicle and parking findings are evidence for a reviewer, not findings of misconduct.
+- The same photo can OCR differently after re-compression (seen on image 051); figures confirmed by the bill's amount in words are the most reliable.
 
-This is agreement with historical labels, not verified policy accuracy. The result indicates that the decision rules require further investigation.
+## 8. Security
 
-## 11. Reports
-
-- `reports/ocr_extractions.csv` — Extracted receipt fields.
-- `reports/image_match_report.csv` — Receipt image matching results.
-- `reports/training_evaluation.csv` — Claim-level historical-label comparison.
-- `reports/evaluation.md` — Evaluation summary.
-- `reports/error_analysis.md` — Disagreements and recommended investigation.
-
-## 12. Important Limitations and Safeguards
-
-- A missing or unreadable receipt should trigger clarification or review, not automatic rejection.
-- Missing GSTIN alone is not automatically a policy violation for every expense category.
-- Some policy requirements need evidence not present in the structured claim data.
-- A possible duplicate is not proof of fraud.
-- OCR results can contain errors and may require manual verification.
-- Historical approvals do not prove compliance with the current policy.
-- Final reimbursement decisions should follow company policy and appropriate human review.
-
-## 13. Security
-
-Do not commit API keys, passwords, signed download URLs, or private employee information. Keep `.env` out of version control and use environment variables for secrets.
+Do not commit `.env`, API keys, passwords, signed download URLs or private employee data. `.env`, the virtual environment, caches, backups and the receipt photos are git-ignored.

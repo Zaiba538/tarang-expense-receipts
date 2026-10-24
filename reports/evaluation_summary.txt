@@ -9,8 +9,8 @@ Training claims: 283
 Claims with a matched OCR image: 280
 Claims without a matched OCR image: 3
 Claims with a recognized historical reference label: 283
-Label agreements: 88
-Agreement with historical labels: 31.1%
+Label agreements: 127
+Agreement with historical labels: 44.9%
 
 Historical status counts:
   approved: 275
@@ -18,13 +18,13 @@ Historical status counts:
   rejected: 2
 
 Predicted decision counts:
-  approve: 80
-  review: 203
+  approve: 119
+  review: 164
 
 Historical-label comparison:
 Predicted decision          approve  review
 Historical reference label                 
-approve                          80     195
+approve                         119     156
 review                            0       8
 
 Detailed claim-level results: training_evaluation.csv
@@ -34,3 +34,5 @@ Limitations:
 - OCR extraction errors can affect the predicted decision.
 - Historical approvals, queries, and rejections may not reflect current policy.
 - Agreement is not proof of policy correctness or production readiness.
+- Some historically approved claims carry altered totals or duplicates found
+  in the photo audit; disagreeing with those approvals is intended.

@@ -151,3 +151,42 @@ def test_result_contains_explanation_and_receipt_fields():
     assert isinstance(result["reason"], str)
     assert result["reason"].strip()
     assert isinstance(result["reasons"], list)
+
+
+def test_claim_just_below_clerk_threshold_can_be_approved():
+    result = make_decision(
+        make_claim(amount=1999), make_receipt(amount=1999), make_employee()
+    )
+
+    assert result["decision"] == "approve"
+    assert "clerk_threshold" not in result["flags"]
+
+
+def test_claim_at_clerk_threshold_goes_to_review():
+    result = make_decision(
+        make_claim(amount=2000), make_receipt(amount=2000), make_employee()
+    )
+
+    assert result["decision"] == "review"
+    assert "clerk_threshold" in result["flags"]
+    assert "Rs 2,000 or more" in result["reason"]
+
+
+def test_bill_total_at_threshold_counts_even_when_claim_is_lower():
+    result = make_decision(
+        make_claim(amount=1995), make_receipt(amount=2001), make_employee()
+    )
+
+    assert result["decision"] == "review"
+    assert "clerk_threshold" in result["flags"]
+
+
+def test_clerk_threshold_keeps_other_review_reasons():
+    result = make_decision(
+        make_claim(category="food", amount=2600),
+        make_receipt(amount=2600),
+        make_employee(),
+    )
+
+    assert "clerk_threshold" in result["flags"]
+    assert "prior approval" in result["reason"].lower()

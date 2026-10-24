@@ -1,6 +1,7 @@
 """Streamlit UI for Tarang Pharma expense receipt review."""
 
 import csv
+import hashlib
 import sys
 import tempfile
 from pathlib import Path
@@ -36,6 +37,17 @@ with st.sidebar:
     st.warning(
         "An amount below ₹2,000 does not automatically make a claim eligible."
     )
+
+
+# Editable receipt fields: (label, receipt key). Each widget key is edit_<key>.
+RECEIPT_FIELDS = [
+    ("Vendor", "vendor"),
+    ("Receipt date", "receipt_date"),
+    ("Receipt number", "receipt_number"),
+    ("GSTIN", "gstin"),
+    ("Total amount", "total_amount"),
+    ("Vehicle number", "vehicle_no"),
+]
 
 
 def load_employee(emp_id: str) -> dict:
@@ -76,6 +88,23 @@ uploaded_file = st.file_uploader(
     "Upload a receipt photo",
     type=["jpg", "jpeg", "png", "webp", "bmp"],
 )
+
+# Results belong to one image. When the uploaded image changes (by content,
+# not by name) or is removed, drop the previous receipt's extraction, edits
+# and decision so they are never shown against a different photo.
+RECEIPT_STATE_KEYS = (
+    "receipt", "claim", "receipt_editor_values", "edited_receipt",
+    "last_result", "last_final_receipt", "last_employee",
+)
+current_image_hash = (
+    hashlib.sha256(uploaded_file.getvalue()).hexdigest() if uploaded_file else None
+)
+if st.session_state.get("receipt_image_hash") != current_image_hash:
+    for state_key in RECEIPT_STATE_KEYS:
+        st.session_state.pop(state_key, None)
+    for _, field_key in RECEIPT_FIELDS:
+        st.session_state.pop(f"edit_{field_key}", None)
+    st.session_state["receipt_image_hash"] = current_image_hash
 
 left, right = st.columns(2)
 
@@ -174,6 +203,15 @@ if st.button("Extract receipt fields", type="primary"):
         # A new extraction invalidates the previous decision.
         st.session_state.pop("last_result", None)
 
+        # It also replaces the editable fields. The text inputs keep their
+        # own state by key, so clear those too or they show the old receipt.
+        st.session_state["receipt_editor_values"] = {
+            key: "" if receipt.get(key) is None else str(receipt.get(key))
+            for _, key in RECEIPT_FIELDS
+        }
+        for _, key in RECEIPT_FIELDS:
+            st.session_state.pop(f"edit_{key}", None)
+
     except Exception as exc:
         st.error("Receipt processing failed. Check the image and OCR installation.")
         st.caption(f"{type(exc).__name__}: {exc}")
@@ -197,25 +235,16 @@ if "receipt" in st.session_state and "claim" in st.session_state:
 
     # Use extracted values as editable defaults.
     # The key keeps reviewer edits available across Streamlit reruns.
-    fields = [
-        ("Vendor", "vendor"),
-        ("Receipt date", "receipt_date"),
-        ("Receipt number", "receipt_number"),
-        ("GSTIN", "gstin"),
-        ("Total amount", "total_amount"),
-        ("Vehicle number", "vehicle_no"),
-    ]
-
     if "receipt_editor_values" not in st.session_state:
         st.session_state["receipt_editor_values"] = {
             key: "" if receipt.get(key) is None else str(receipt.get(key, ""))
-            for _, key in fields
+            for _, key in RECEIPT_FIELDS
         }
 
     edited_receipt = {}
     columns = st.columns(2)
 
-    for index, (label, key) in enumerate(fields):
+    for index, (label, key) in enumerate(RECEIPT_FIELDS):
         current_value = st.session_state["receipt_editor_values"].get(key, "")
 
         edited_receipt[key] = columns[index % 2].text_input(

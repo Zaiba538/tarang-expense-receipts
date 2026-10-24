@@ -1,5 +1,7 @@
 ﻿# Training Evaluation
 
+> **Superseded (kept for history).** These figures describe an earlier version. Current results: `reports/evaluation_summary.txt` (127/283, 44.9% agreement with historical status), `reports/field_evaluation_summary.txt` and the photo-verified `reports/photo_field_evaluation.md`.
+
 ## Purpose
 
 This evaluation compares predicted decisions with historical statuses and compares extracted receipt fields with clerk-entered reference fields.

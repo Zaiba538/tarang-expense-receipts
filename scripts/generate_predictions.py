@@ -1,8 +1,14 @@
 
-"""Generate the required predictions.csv for Tarang Pharma claims."""
+"""Generate the required predictions.csv for Tarang Pharma claims.
+
+Usage (from the project root):
+    python scripts/generate_predictions.py [--ocr PATH]
+"""
 
 from __future__ import annotations
 
+import argparse
+import hashlib
 import re
 from pathlib import Path
 from typing import Any
@@ -23,7 +29,11 @@ from app.duplicate_detection import detect_duplicates
 ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "data" / "Task 2 Files"
 REPORT_DIR = ROOT / "reports"
-OCR_FILE = REPORT_DIR / "ocr_extractions.csv"
+# Fields re-extracted from the stored OCR text with the current rules
+# (scripts/reextract_from_raw_text.py); the original run is ocr_extractions.csv.
+# v3: full OCR re-run with the enhanced second pass (scripts/extract_receipts.py).
+OCR_FILE = REPORT_DIR / "ocr_extractions_v3.csv"
+IMAGE_DIR = ROOT / "tarang-expense-receipts" / "images"
 OUTPUT_FILE = ROOT / "predictions.csv"
 
 SUBMISSION_COLUMNS = [
@@ -88,13 +98,36 @@ def truthy(value: Any) -> bool:
     }
 
 
+def submission_vendor(receipt: dict[str, Any]) -> str:
+    """Vendor as read from the bill; blank when OCR could not read one.
+
+    The rep-typed claim vendor is never substituted: the submission asks
+    for the vendor as printed on the bill.
+    """
+    if not receipt.get("_receipt_available"):
+        return ""
+    return clean(receipt.get("vendor"))
+
+
+def image_sha256(image_filename: Any) -> str:
+    """Hash the receipt image file so resubmitted photos can be matched."""
+    path = IMAGE_DIR / clean(image_filename)
+    if not clean(image_filename) or not path.is_file():
+        return ""
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
 def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    parser.add_argument("--ocr", type=Path, default=OCR_FILE)
+    ocr_file = parser.parse_args().ocr
+
     train_path = DATA_DIR / "claims_train.csv"
     test_path = DATA_DIR / "claims_test.csv"
     employees_path = DATA_DIR / "employees.csv"
     submission_path = DATA_DIR / "sample_submission.csv"
 
-    for path in [train_path, test_path, employees_path, submission_path, OCR_FILE]:
+    for path in [train_path, test_path, employees_path, submission_path, ocr_file]:
         if not path.is_file():
             raise FileNotFoundError(f"Required file not found: {path}")
 
@@ -114,7 +147,7 @@ def main() -> None:
             f"Test has {len(test)} rows but sample submission has {len(sample)}."
         )
 
-    ocr_df = pd.read_csv(OCR_FILE).fillna("")
+    ocr_df = pd.read_csv(ocr_file).fillna("")
     ocr_df["filename_key"] = ocr_df["image_filename"].map(filename_key)
 
     # Only use OCR filenames that identify one unique record.
@@ -130,6 +163,11 @@ def main() -> None:
         for row in employees_df.to_dict("records")
         if clean(row.get("emp_id"))
     }
+    vehicle_registry = {
+        re.sub(r"[^A-Z0-9]", "", clean(row.get("vehicle_no")).upper()): emp_id
+        for emp_id, row in employees.items()
+        if clean(row.get("vehicle_no"))
+    }
 
     def receipt_for_claim(claim: dict[str, Any]) -> dict[str, Any]:
         key = filename_key(claim.get("image_file"))
@@ -143,6 +181,8 @@ def main() -> None:
                 "gstin": clean(ocr.get("gstin")),
                 "total_amount": clean(ocr.get("total_amount")),
                 "vehicle_no": clean(ocr.get("vehicle_no")),
+                "raw_text": clean(ocr.get("raw_text")),
+                "image_sha256": image_sha256(ocr.get("image_filename")),
                 "readable": truthy(ocr.get("readable")),
                 "gst_tax_invoice": False,
                 "driver_receipt": False,
@@ -194,7 +234,7 @@ def main() -> None:
         if claim_id:
             all_receipts[claim_id] = receipt_for_claim(claim)
 
-    duplicate_results = detect_duplicates(all_claims, all_receipts)
+    duplicate_results = detect_duplicates(all_claims, all_receipts, vehicle_registry)
 
     # Historical training data uses clerk fields if OCR did not match.
     # The test decision itself always requires a matched OCR image.
@@ -224,11 +264,10 @@ def main() -> None:
             employee=employee,
             receipt_available=receipt_available,
             duplicate_info=duplicate_info,
+            vehicle_registry=vehicle_registry,
         )
 
-        # Use the claim vendor only as a fallback display value; it does
-        # not imply the receipt vendor was verified.
-        vendor = clean(receipt.get("vendor")) or clean(claim.get("vendor"))
+        vendor = submission_vendor(receipt)
 
         results.append({
             "claim_id": claim_id,

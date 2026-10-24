@@ -1,5 +1,7 @@
 ﻿# Error Analysis
 
+> **Superseded (kept for history).** This analysis describes an earlier version. Current findings: `memo-to-nilesh.md`, `reports/audit_exposure_ledger.csv` and `reports/v2_regeneration_change_report.md`.
+
 ## Current Findings
 
 The training evaluation covered 283 claims.

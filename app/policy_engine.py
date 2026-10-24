@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from typing import Any
 
+from app.integrity_checks import classify_vehicle
 from app.normalization import normalize_amount, normalize_text
 
 
@@ -28,8 +29,13 @@ def evaluate_policy(
     employee: dict[str, Any] | None = None,
     receipt_available: bool = True,
     duplicate_detected: bool = False,
+    vehicle_registry: dict[str, str] | None = None,
 ) -> dict[str, Any]:
-    """Evaluate a claim against policy rules."""
+    """Evaluate a claim against policy rules.
+
+    vehicle_registry maps normalized plate numbers to employee IDs and is
+    used to identify a fuel bill showing a colleague's vehicle.
+    """
     receipt = receipt or {}
     employee = employee or {}
 
@@ -43,6 +49,7 @@ def evaluate_policy(
 
     reasons: list[str] = []
     hard_flags: list[str] = []
+    vehicle_status = ""
 
     if not receipt_available or not _truthy(receipt.get("readable", True)):
         reasons.append(
@@ -63,19 +70,23 @@ def evaluate_policy(
         expected_vehicle = "".join(
             normalize_text(employee.get("vehicle_no")).upper().split()
         )
-        receipt_vehicle = "".join(
-            normalize_text(receipt.get("vehicle_no")).upper().split()
-        )
         if not expected_vehicle:
             reasons.append(
                 "Employee vehicle details are unavailable; verify fuel eligibility."
             )
-        elif not receipt_vehicle:
-            reasons.append("Vehicle number is not readable on the fuel bill.")
-        elif expected_vehicle.casefold() != receipt_vehicle.casefold():
-            hard_flags.append(
-                "Fuel bill vehicle number does not match employee records."
+        else:
+            vehicle = classify_vehicle(
+                receipt.get("vehicle_no"),
+                expected_vehicle,
+                vehicle_registry,
+                normalize_text(employee.get("emp_id")),
             )
+            vehicle_status = vehicle["status"]
+            # Only a reliably read plate is a hard flag; uncertain OCR is not.
+            if vehicle["status"] in {"other_employee", "mismatch"}:
+                hard_flags.append(vehicle["message"])
+            elif vehicle["status"] in {"missing", "uncertain"}:
+                reasons.append(vehicle["message"])
 
         if not _truthy(claim.get("field_day")):
             reasons.append(
@@ -142,6 +153,7 @@ def evaluate_policy(
         "decision": decision,
         "reasons": list(dict.fromkeys(reasons)),
         "hard_flags": hard_flags,
+        "vehicle_status": vehicle_status,
         "vendor": vendor,
         "amount": float(amount) if amount is not None else None,
     }

@@ -30,3 +30,12 @@ images/
 tarang-expense-receipts/images/
 
 # Local generated OCR cache, if present
+
+# Local backups, drafts and intermediate files (not deliverables)
+backups/
+*.bak
+uploads/
+app/extraction_backup.py
+reports/ocr_extractions_before_fix.csv
+reports/ocr_extractions_pre_rerun_backup.csv
+reports/memo_to_nilesh_draft.md

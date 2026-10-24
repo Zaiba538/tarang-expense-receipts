@@ -1,6 +1,8 @@
 
 # OCR and image processing
 paddleocr>=3.2,<4
+# PaddleOCR does not install the framework itself; tested with paddlepaddle 3.2.0 (CPU).
+paddlepaddle>=3.0,<4
 Pillow>=10.0
 
 # Data processing

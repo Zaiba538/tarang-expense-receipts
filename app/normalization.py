@@ -1,94 +1,111 @@
 
-"""Normalization helpers for Tarang Pharma expense receipts."""
+"""Normalization helpers for receipt OCR and expense claim validation."""
 
 from __future__ import annotations
 
 import re
 from datetime import datetime
 from decimal import Decimal, InvalidOperation
-from typing import Optional
+from typing import Any
 
 
-def normalize_text(value: object) -> str:
-    """Normalize whitespace and casing while preserving the original meaning."""
+MIN_PLAUSIBLE_YEAR = 2000
+MAX_PLAUSIBLE_YEAR = 2099
+
+
+def normalize_text(value: Any) -> str:
     if value is None:
         return ""
     text = str(value).strip()
-    if text.lower() in {"nan", "none", "null", "nat"}:
+    if text.casefold() in {"", "nan", "none", "nat", "null"}:
         return ""
     return re.sub(r"\s+", " ", text)
 
 
-def normalize_vendor(value: object) -> str:
-    """Normalize a vendor name for comparison; retain readable capitalization."""
+def normalize_vendor(value: Any) -> str:
     return normalize_text(value)
 
 
-def normalize_amount(value: object) -> Optional[Decimal]:
-    """Parse currency values such as 'Rs 330', '₹1,234.50' or '330.00'."""
+def normalize_amount(value: Any) -> Decimal | None:
+    """Parse amounts like Rs. 30, ₹1,250.50, and INR 500 safely."""
     text = normalize_text(value)
     if not text:
         return None
 
-    text = re.sub(r"(?i)\b(?:INR|Rs\.?)\b", "", text)
-    text = text.replace("₹", "").replace(",", "").strip()
-    text = re.sub(r"[^\d.\-]", "", text)
+    text = text.replace("₹", "").replace("â‚¹", "")
+    text = re.sub(r"(?i)\bINR\b|\bRs\.?|\brupees?\b", "", text)
+    text = text.replace(",", "").replace(" ", "").strip()
 
-    if not text or text in {".", "-", "-."}:
+    # After removing currency labels, allow an optional sign and decimals.
+    match = re.search(r"(?<![\d.])-?\d+(?:\.\d{1,2})?(?![\d.])", text)
+    if not match:
         return None
 
     try:
-        amount = Decimal(text)
-        if not amount.is_finite():
-            return None
-        return amount
+        amount = Decimal(match.group(0))
     except InvalidOperation:
         return None
 
+    if not amount.is_finite() or amount < 0:
+        return None
 
-def normalize_date(value: object) -> str:
-    """Return a recognized date as YYYY-MM-DD; otherwise return an empty string."""
+    return amount.quantize(Decimal("0.01"))
+
+
+def normalize_date(value: Any) -> str:
+    """Normalize supported dates to YYYY-MM-DD using day-first dates."""
     text = normalize_text(value)
     if not text:
         return ""
 
-    formats = (
-        "%Y-%m-%d",
-        "%d-%m-%Y",
-        "%d/%m/%Y",
-        "%Y/%m/%d",
-        "%d-%b-%Y",
-        "%d %b %Y",
-        "%d %B %Y",
-        "%d/%m/%y",
-    )
+    text = re.sub(
+        r"(?i)^\s*(?:date|dated|bill\s+date|invoice\s+date)\s*[:\-]?\s*",
+        "",
+        text,
+    ).strip()
+    text = text.replace(".", "/")
+
+    formats = [
+        "%Y-%m-%d", "%Y/%m/%d",
+        "%d-%m-%Y", "%d/%m/%Y",
+        "%d-%m-%y", "%d/%m/%y",
+        "%d/%b/%Y", "%d-%b-%Y",
+        "%d/%b/%y", "%d-%b-%y",
+        "%d/%B/%Y", "%d-%B-%Y",
+        "%d %b %Y", "%d %B %Y",
+        "%d %b %y", "%d %B %y",
+        "%b %d, %Y", "%B %d, %Y",
+        "%b %d %Y", "%B %d %Y",
+    ]
 
     for fmt in formats:
         try:
-            return datetime.strptime(text, fmt).date().isoformat()
+            parsed = datetime.strptime(text, fmt)
         except ValueError:
             continue
+        # OCR can misread a year ("2826") or glue a time onto it
+        # ("13/06/2614:56"); an implausible year is not a date.
+        if MIN_PLAUSIBLE_YEAR <= parsed.year <= MAX_PLAUSIBLE_YEAR:
+            return parsed.strftime("%Y-%m-%d")
 
     return ""
 
 
-def normalize_receipt_number(value: object) -> str:
-    """Normalize whitespace around a receipt or invoice number."""
-    return normalize_text(value).upper()
+def normalize_receipt_number(value: Any) -> str:
+    return re.sub(r"\s+", "", normalize_text(value)).upper()
 
 
-def normalize_gstin(value: object) -> str:
-    """Normalize a GSTIN for comparison without creating one when absent."""
-    text = normalize_text(value).upper()
-    return re.sub(r"\s+", "", text)
+def normalize_gstin(value: Any) -> str:
+    return re.sub(r"\s+", "", normalize_text(value)).upper()
 
 
-def amounts_match(claimed: object, billed: object) -> bool:
-    """Compare claimed and billed amounts, allowing the policy's ₹10 rounding."""
-    claim_amount = normalize_amount(claimed)
-    bill_amount = normalize_amount(billed)
-
-    if claim_amount is None or bill_amount is None:
+def amounts_match(
+    claimed: Any,
+    billed: Any,
+    tolerance: Decimal = Decimal("10"),
+) -> bool:
+    claimed_amount = normalize_amount(claimed)
+    billed_amount = normalize_amount(billed)
+    if claimed_amount is None or billed_amount is None:
         return False
-
-    return abs(claim_amount - bill_amount) <= Decimal("10")
+    return abs(claimed_amount - billed_amount) <= tolerance

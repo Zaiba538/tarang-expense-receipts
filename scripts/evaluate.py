@@ -1,11 +1,16 @@
 ﻿"""Evaluate training-claim decisions against historical clerk statuses.
 
 Historical statuses are reference labels, not verified policy-compliance ground truth.
-Only matched OCR evidence is used for receipt fields in this evaluation.
+Only matched OCR evidence is used for receipt fields in this evaluation. The
+receipt evidence passed to the decision engine (OCR text, image hash and the
+employee vehicle registry) matches scripts/generate_predictions.py, so the
+same integrity, duplicate, vehicle and threshold checks apply. Duplicates are
+compared within the training claims only.
 """
 
 from __future__ import annotations
 
+import re
 import sys
 from pathlib import Path
 from typing import Any
@@ -18,13 +23,13 @@ if str(ROOT) not in sys.path:
 
 from app.decision_engine import make_decision
 from app.duplicate_detection import detect_duplicates
-from scripts.generate_predictions import clean, filename_key, truthy
+from scripts.generate_predictions import clean, filename_key, image_sha256, truthy
 
 DATA_DIR = ROOT / "data" / "Task 2 Files"
 REPORT_DIR = ROOT / "reports"
 TRAIN_FILE = DATA_DIR / "claims_train.csv"
 EMPLOYEE_FILE = DATA_DIR / "employees.csv"
-OCR_FILE = REPORT_DIR / "ocr_extractions.csv"
+OCR_FILE = REPORT_DIR / "ocr_extractions_v3.csv"
 OUTPUT_FILE = REPORT_DIR / "training_evaluation.csv"
 SUMMARY_FILE = REPORT_DIR / "evaluation_summary.txt"
 
@@ -58,6 +63,11 @@ def main() -> None:
         for row in employees_df.to_dict("records")
         if clean(row.get("emp_id"))
     }
+    vehicle_registry = {
+        re.sub(r"[^A-Z0-9]", "", clean(row.get("vehicle_no")).upper()): emp_id
+        for emp_id, row in employees.items()
+        if clean(row.get("vehicle_no"))
+    }
 
     claims = claims_df.to_dict("records")
     receipts: dict[str, dict[str, Any]] = {}
@@ -86,6 +96,8 @@ def main() -> None:
                 "gstin": clean(ocr.get("gstin")),
                 "total_amount": clean(ocr.get("total_amount")),
                 "vehicle_no": clean(ocr.get("vehicle_no")),
+                "raw_text": clean(ocr.get("raw_text")),
+                "image_sha256": image_sha256(ocr.get("image_filename")),
                 "readable": truthy(ocr.get("readable")),
                 "_receipt_available": True,
             }
@@ -111,6 +123,7 @@ def main() -> None:
                 claim_id,
                 {"duplicate_detected": False, "possible_matches": []},
             ),
+            vehicle_registry=vehicle_registry,
         )
 
         historical_status = clean(claim.get("status")).casefold()
@@ -189,6 +202,8 @@ def main() -> None:
         "- OCR extraction errors can affect the predicted decision.",
         "- Historical approvals, queries, and rejections may not reflect current policy.",
         "- Agreement is not proof of policy correctness or production readiness.",
+        "- Some historically approved claims carry altered totals or duplicates found",
+        "  in the photo audit; disagreeing with those approvals is intended.",
     ])
 
     SUMMARY_FILE.write_text("\n".join(lines) + "\n", encoding="utf-8")
