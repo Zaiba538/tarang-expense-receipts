@@ -1,48 +1,38 @@
-# Memo
+# Memo to Nilesh Agrawal, Finance Controller
 
-**To:** Nilesh Agrawal, Finance Controller  **Re:** Receipt-reading tool: findings, costs and safe use  **Date:** 24 October 2026
+**Re:** Receipt-reading tool: pilot recommendation  **Date:** 25 October 2026
 
 ## Recommendation
-Use the tool now to read bills and flag risky claims for a clerk. Do not switch on auto-approval under ₹2,000 yet: passing the automated checks is not enough, because the data cannot show who paid a bill, and the photos in this batch include altered totals, bills claimed twice and printed instructions telling software to approve. Run a four-week supervised pilot in Nagpur first (details below).
+Run a four-week supervised pilot in Nagpur with auto-approval off; a clerk decides every claim the tool flags or passes. It reads photos well, but this batch holds altered totals, repeated bills, colleagues' vehicles and printed approval instructions that an amount-only rule would pay. Keep auto-approval off until accuracy is shown on a random sample of real photos and duplicate and vehicle checks run in the live service (today only in batch); money paid wrongly is rarely recovered.
 
-## What the tool does on this batch
-- Reads vendor, bill date, bill number, GSTIN and total from all 467 photos; 3 photos have no readable text.
-- On a photo-checked sample of 52 bills (30 random, 22 deliberately difficult), the extracted fields matched the photo for 49/49 vendors, 43/46 dates, 47/48 bill numbers, 47/48 GSTINs and 46/47 totals; every miss was a blank sent to review, not a wrong value. This is a small sample, not a measured accuracy for all bills, so the 95% target is not yet proven.
-- Of the 190 new claims, 80 pass every check (54 food, 14 parking, 12 courier, all under ₹2,000) and 110 go to a clerk. Most reviews are policy evidence the data does not hold, not reading failures: fuel field day (54), possible duplicates (23), driver's receipt (16), ₹2,000 or more (14), lodging conditions (11); unreadable fields account for 13.
+## What the photos show
+Potential exposure, each claim or group counted once: not a proven loss, not recoverable money, not proof of misconduct or of who paid.
 
-## Findings
-Each claim, or duplicate group, is counted once. **The categories must not be added together.**
+| | Photo-confirmed | Probable | OCR leads, unchecked |
+|---|---|---|---|
+| Test batch (190 claims, unpaid) | 14 items, ₹9,304.23 | 2, ₹2,000.00 | 7, ₹3,196.80 |
+| Training (approved; payment not recorded) | 14, ₹10,878.00 | 3, ₹3,000.00 | 9, ₹3,303.00 |
 
-| Test: 190 unprocessed claims (potential exposure) | Items | Amount |
-|---|---|---|
-| Confirmed: claim exceeds what the bill supports (incl. totals altered in ink) | 8 | ₹5,470.23 |
-| Confirmed: whole claim cannot be validly claimed* | 6 | ₹3,834.00 |
-| Probable: bill contradicts itself; original bill needed | 2 | ₹2,000.00 |
-| OCR leads, whole claims; photo check needed | 7 | ₹3,196.80 |
+- **Altered or ambiguous totals:** CLM-31192 has a blue-ink "1" before the printed ₹200.00 (items and tax add to ₹200), claimed as ₹1,200. CLM-30790 shows ₹1,550 in figures but "Five Hundred Fifty" in words.
+- **Repeated parking tickets:** ticket 110914 was claimed twice (CLM-30566, CLM-30799). One scooter appears in two car parks at overlapping times (CLM-31359, CLM-31516; held).
+- **Colleague's vehicle:** CLM-30978's fuel bill shows plate MH31FA2290, registered to another employee.
+- **Printed instructions:** a "TARANG FINANCE DESK - PRE-VERIFIED" stamp on five bills tells automated processing to approve and skip duplicate checks; the tool ignores it (both test cases held).
 
-| Training: 283 processed (275 approved, 6 queried, 2 rejected); payment not recorded | Items | Amount |
-|---|---|---|
-| Confirmed: claim exceeds what the bill supports (incl. totals altered in ink) | 5 | ₹4,000.00 |
-| Confirmed: whole claim cannot be validly claimed* | 9 | ₹6,878.00 |
-| Probable: bill contradicts itself | 3 | ₹3,000.00 |
-| OCR leads: excess / whole claims | 2 / 7 | ₹220.00 / ₹3,083.00 |
+## How well it reads bills
+On 52 photos read by eye (30 random across layouts, 22 deliberately difficult) it matched 49/49 vendors, 43/46 dates, 47/48 bill numbers, 47/48 GSTINs and 46/47 totals; every miss was a blank, not a wrong value. Separately, 67 targeted checks on 46 photos (chosen for a reason, not a sample): 65 confirmed, 1 probable, 1 uncertain. **The 95% target is not demonstrated**; the sample is too small.
 
-\*A bill already claimed, or fuel for a colleague's vehicle. Where different employees claimed one bill, one claim cannot be valid, but **which one, and who paid, is not established**.
+## Your ₹2,000 rule versus the current checks
+| Rule (190 test claims) | Approved | Approved with risk findings | Potential exposure paid |
+|---|---|---|---|
+| Approve everything under ₹2,000 | 176 (92.6%) | 34 | ₹14,001.03 |
+| Current checks | 80 (42.1%) | 0 | ₹0 |
 
-Training figures are discrepancies on claims that were approved; your payment records would show what was actually paid. Nothing here is a finding of misconduct. Five bills carry a printed stamp ("TARANG FINANCE DESK - PRE-VERIFIED") telling automated processing to approve and skip duplicate checks; the tool treats this as untrusted text and the two in the test batch are held. Two pairs of parking tickets show one vehicle in two car parks at the same time: a test pair (CLM-31359, 31516), held, and a historically approved training pair (CLM-30872, 31007; ₹30 and ₹20). Which ticket is wrong is not established.
+The 34 include 18 unverified OCR leads, accounting for ₹3,196.80 of the ₹14,001.03. Most of the 110 reviews need evidence the data lacks: fuel field day (54), possible duplicates (23), driver's receipt (16), ₹2,000 or more (14), lodging (11); unreadable fields 13.
 
-## Time and cost (policy v3.2 figures)
-- **Today:** 2,400 claims × 3.5 minutes = 8,400 minutes = **140 clerk-hours a month**. Two clerks cost **₹76,000 a month**; spread over 2,400 claims that is at most **₹31.67 per claim** (the policy does not give clerk hours, so claim time cannot be priced more exactly). A query costs about ₹45 and delays the rep by a week.
-- **Running the tool:** it reads bills locally with open-source OCR; no paid API, so no charge per photo. Reading took about 5–7 seconds per photo on a laptop CPU in our runs. Hosting and upkeep are not yet costed.
-- **Savings are not measured.** The arithmetic to fill in during the pilot: every minute saved per claim across 2,400 claims frees 40 clerk-hours a month. Whether clerks save typing time on the 80-in-190 passed claims, and how long checking a flagged claim takes, must be timed, not assumed.
-- **Why catching before payment matters:** the policy says money paid wrongly is rarely recovered, so holding the confirmed test claims above costs one review each, against the amounts shown.
+## Time and money
+Today: 2,400 claims × 3.5 minutes = 140 clerk-hours a month; two clerks cost ₹76,000 (at most ₹31.67 a claim). *Scenario, not a measured saving:* if the 42% that pass (about 1,011 claims) each save 1–3.5 minutes, that frees 17–59 hours, about **₹3,600–₹12,700 a month**, assuming 176 working hours per clerk (₹215.9 an hour) and this batch's pass rate. Only a timed pilot can show the real figure. No per-photo fee.
 
-## Pilot (four weeks, Nagpur, about 240 claims a month)
-The tool reads and flags; clerks decide every claim. Record time per claim and whether each passed claim was correct. Switch on auto-approval for a category only if its passed claims prove correct and you have decided how the open evidence below is provided.
-
-**Please decide:**
-1. whether to run the pilot;
-2. how payer identity, fuel field days, driver's receipts, courier purpose and lodging eligibility are evidenced (until then those claims stay with a clerk);
-3. who checks the training findings against payment records and reviews the confirmed and probable test claims before payment.
-
-*Assumptions and limits:* the field extraction behind these figures was rebuilt from the stored OCR text of all 467 photos; a fresh full OCR run of all 467 photos has since been completed separately (`reports/ocr_extractions_fresh.csv`): it read the same text and filled 6 more fields, all checked against the photos, but the claim decisions above do not use it yet; photo checks were AI-assisted with no named reviewer; 22 of the 80 passed claims have been checked against their photos (4 recorded in `audit/photo_field_truth.csv`, 18 in a follow-up review described in `reports/v2_regeneration_change_report.md`); the 95% field target and any savings are unproven until the pilot.
+## Decisions needed from you
+1. Approve the four-week pilot and name the clerk who will time each claim.
+2. Decide how payer, fuel field-day and driver's-receipt evidence will be provided.
+3. Name who reviews flagged test claims before payment and checks training findings against payments.
