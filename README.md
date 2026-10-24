@@ -68,7 +68,7 @@ Earlier extraction files are kept as records: `ocr_extractions.csv` (original OC
 .\.venv\Scripts\python.exe -m pytest -q
 ```
 
-The latest recorded run on 24 October 2026: 183 tests passed (extraction rules, normalization, duplicate and parking checks, integrity checks, decisions, policy, audit ledger, resumable OCR checkpointing, API and Streamlit screen; OCR is stubbed in the UI and resume tests). The suite was not re-run for this documentation update.
+When re-run on 25 October 2026: 191 tests passed (extraction rules, normalization, duplicate and parking checks, integrity checks, decisions, policy, audit ledger, resumable OCR checkpointing, API and Streamlit screen; OCR is stubbed in the UI and resume tests).
 
 ## 6. Outputs and evidence
 
